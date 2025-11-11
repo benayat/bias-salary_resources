@@ -1,0 +1,77 @@
+"""
+LLM Package Structure Diagram
+
+llm/
+│
+├── __init__.py                    # Public API - exports all classes
+│   └── Exports: LLMResourceConfig, SamplingConfig, BaseLLMClient,
+│                VLLMClient, PyTorchLLMClient, LLMClient (alias)
+│
+├── config.py                      # Configuration dataclasses
+│   ├── LLMResourceConfig         # GPU/resource allocation settings
+│   └── SamplingConfig            # Generation parameters (temp, top_p, etc.)
+│
+├── base_client.py                 # Abstract base class
+│   └── BaseLLMClient             # Defines interface for all clients
+│       ├── run_batch_simple()    # Simple batch generation
+│       ├── run_batch()           # Batch with metadata
+│       ├── delete_client()       # Cleanup
+│       └── reset_client_to_another_model()
+│
+├── vllm_client.py                 # vLLM implementation
+│   └── VLLMClient                # High-performance inference backend
+│       └── inherits from BaseLLMClient
+│
+├── pytorch_client.py              # PyTorch implementation
+│   └── PyTorchLLMClient          # Hugging Face Transformers backend
+│       └── inherits from BaseLLMClient
+│
+├── llm_client.py                  # Backwards compatibility
+│   └── Re-exports everything for old imports
+│
+└── README.md                      # Documentation and usage examples
+
+═══════════════════════════════════════════════════════════════
+
+DESIGN PRINCIPLES:
+
+1. Single Responsibility
+   - config.py: Only configuration classes
+   - base_client.py: Only the abstract interface
+   - vllm_client.py: Only vLLM implementation
+   - pytorch_client.py: Only PyTorch implementation
+
+2. Open/Closed Principle
+   - Open for extension: Easy to add new client types
+   - Closed for modification: Interface doesn't change
+
+3. Liskov Substitution
+   - All clients inherit from BaseLLMClient
+   - Any client can be used interchangeably
+
+4. Interface Segregation
+   - Clean, minimal interface with 4 methods
+   - No unnecessary dependencies
+
+5. Dependency Inversion
+   - Depend on abstractions (BaseLLMClient)
+   - Not on concrete implementations
+
+═══════════════════════════════════════════════════════════════
+
+IMPORT PATTERNS:
+
+# Recommended (new code):
+from llm import VLLMClient, PyTorchLLMClient, LLMResourceConfig, SamplingConfig
+
+# Also works (backwards compatibility):
+from llm.llm_client import LLMClient, SamplingConfig, LLMResourceConfig
+
+# Type hints:
+from llm import BaseLLMClient
+
+def process(client: BaseLLMClient):
+    # Works with any client implementation
+    pass
+"""
+

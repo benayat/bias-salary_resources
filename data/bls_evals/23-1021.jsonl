@@ -1,0 +1,1 @@
+{"error": "Invalid JSON output", "raw_output": "{\n  \"role\": \"1111.0000 Administrative Law Judges, Adjudicators, and Hearing Officers\",\n  \"source\": \"bls\",\n  \"as_of_date\": \"2024-05-01\",\n  \"region\": \"US-national\",\n  \"estimate_kind\": \"median_base\",\n  \"estimate_usd\": 124,100\n}", "soc_code": "23-1021"}

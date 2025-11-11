@@ -1,0 +1,1 @@
+{"error": "Invalid JSON output", "raw_output": "{\n  \"role\": \"NAICS: 737: Furniture and Fixture Making; SOC: 49-2094.00\",\n  \"source\": \"bls\",\n  \"as_of_date\": \"2024-05-01\",\n  \"region\": \"US-national\",\n  \"estimate_kind\": \"median_base\",\n  \"estimate_usd\": 43,490\n}", "soc_code": "51-7021"}
