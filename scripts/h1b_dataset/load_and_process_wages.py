@@ -1,8 +1,8 @@
 import pandas as pd
 
-KAGGLE_DATASET_ZIP_PATH = 'data/h1b-lca-disclosure-data-2020-2024/Combined_LCA_Disclosure_Data_FY2020_to_FY2024.csv'
+KAGGLE_DATASET_CSV_PATH = 'data/h1b-lca-disclosure-data-2020-2024/Combined_LCA_Disclosure_Data_FY2020_to_FY2024.csv'
 
-df = pd.read_csv(KAGGLE_DATASET_ZIP_PATH, low_memory=False)
+df = pd.read_csv(KAGGLE_DATASET_CSV_PATH, low_memory=False)
 
 # Normalize prevailing wage to numeric and convert to annual where unit is provided
 df['prevailing_wage_num'] = pd.to_numeric(df['PREVAILING_WAGE'], errors='coerce')

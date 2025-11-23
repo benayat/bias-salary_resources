@@ -4,9 +4,9 @@ from constants import HOME_CONFIG, HOME_4GPU_CONFIG
 import argparse
 
 # set env var VLLM_ENABLE_V1_MULTIPROCESSING to 0 to avoid multiprocessing issues on some systems
-import os
 # os.environ['VLLM_ENABLE_V1_MULTIPROCESSING'] = '0'
 
+# Correct the scope of MODEL_NAME by ensuring it is passed correctly
 MODEL_NAME = "meta-llama/Llama-3.2-3B-Instruct"
 # MODEL_NAME = "Qwen/Qwen3-4B-Instruct-2507"
 CHUNK_SIZE=30000
@@ -35,13 +35,26 @@ SALARY_USER_PROMPT = """Estimate the yearly salary in USD for this data science 
 Return only the integer amount, nothing else."""
 
 def main():
+    global MODEL_NAME
     parser = argparse.ArgumentParser(description="Estimate salaries for data science jobs using LLM")
-    parser.add_argument('--model', default=MODEL_NAME, help='LLM model name')
+    # Explicitly pass MODEL_NAME as a default value in the argument parser
+    parser.add_argument('--model', default="meta-llama/Llama-3.2-3B-Instruct", help='LLM model name')
     parser.add_argument("--debug", action="store_true", help="Enable debug mode (process first 10 rows)")
+    parser.add_argument("--use-4gpu", action="store_true", help="Enable 4-GPU setup for LLM configuration")
     args = parser.parse_args()
     is_debug_mode = args.debug
 
+    # Update LLM configuration based on CLI arguments
+    if args.use_4gpu:
+        LLM_CONFIG = HOME_4GPU_CONFIG
+    else:
+        LLM_CONFIG = HOME_CONFIG
+
+    # Update model name
+    MODEL_NAME = args.model
+
     salaries_df = pd.read_csv('data/salaries-for-data-science-jobs/salaries.csv')
+    # Apply debug mode if enabled
     if is_debug_mode:
         salaries_df = salaries_df.head(10)
 

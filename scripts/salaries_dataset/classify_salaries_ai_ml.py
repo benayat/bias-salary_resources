@@ -4,7 +4,9 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 import pandas as pd
 from llm.llm_client import LLMClient, SamplingConfig
-from constants import HOME_CONFIG
+from constants import HOME_CONFIG, HOME_4GPU_CONFIG
+
+import argparse
 
 MODEL_NAME = "meta-llama/Llama-3.2-3B-Instruct"
 LLM_CONFIG = HOME_CONFIG
@@ -17,6 +19,27 @@ median_salary_df = pd.read_csv('data/salaries-for-data-science-jobs/salaries_med
 unique_job_titles = median_salary_df['job_title'].dropna().unique().tolist()
 llm = LLMClient(model_name=MODEL_NAME, config=LLM_CONFIG)
 sampling_params = SamplingConfig(temperature=0.0, top_p=1.0, max_tokens=4)
+
+# Parse CLI arguments
+parser = argparse.ArgumentParser(description="Classify AI/ML job titles using LLM")
+parser.add_argument('--model', default=MODEL_NAME, help='LLM model name')
+parser.add_argument("--debug", action="store_true", help="Enable debug mode (process first 10 rows)")
+parser.add_argument("--use-4gpu", action="store_true", help="Enable 4-GPU setup for LLM configuration")
+args = parser.parse_args()
+is_debug_mode = args.debug
+
+# Update LLM configuration based on CLI arguments
+if args.use_4gpu:
+    LLM_CONFIG = HOME_4GPU_CONFIG
+else:
+    LLM_CONFIG = HOME_CONFIG
+
+# Update model name
+MODEL_NAME = args.model
+
+# Apply debug mode if enabled
+if is_debug_mode:
+    unique_job_titles = unique_job_titles[:10]
 
 prompts = []
 for title in unique_job_titles:
