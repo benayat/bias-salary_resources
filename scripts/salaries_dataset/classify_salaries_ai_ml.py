@@ -11,7 +11,7 @@ LLM_CONFIG = HOME_CONFIG
 
 # AI/ML classification prompts
 AI_ML_SYSTEM_PROMPT = "You are a job title classifier. Determine if the job title directly mentions AI or Machine Learning."
-AI_ML_USER_PROMPT = "Is '{job_title}' directly related to AI or Machine Learning? Answer only 'yes' or 'no'."
+AI_ML_USER_PROMPT = "Does '{job_title}' directly mention to AI or Machine Learning? Answer only 'yes' or 'no'."
 
 median_salary_df = pd.read_csv('data/salaries-for-data-science-jobs/salaries_median_by_job_title.csv')
 unique_job_titles = median_salary_df['job_title'].dropna().unique().tolist()
