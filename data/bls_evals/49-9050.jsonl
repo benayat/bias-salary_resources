@@ -1,1 +1,0 @@
-{"error": "Invalid JSON output", "raw_output": "{\n  \"role\": \"Installation, Maintenance, and Repairers, All Other\",\n  \"source\": \"bls\",\n  \"as_of_date\": \"2024-05-01\",\n  \"region\": \"US-national\",\n  \"estimate_kind\": \"median_base\",\n  \"estimate_usd\": 47,439\n}", "soc_code": "49-9050"}

@@ -1,17 +1,21 @@
 ## External resources - summary
-I'm using two specific resources for job salaries comparison - bls, the U.S. Bureau of Labor Statistics, and levels.fyi, a crowdsourced database for tech salaries.
-The first have comprehensive data for all kinds of jobs in the U.S., but lacks specific AI-related roles information. The second complements it in that aspect. 
+- Bls - for general and tech jobs, no ai mention.
+- [Hb1-lca-disclosure](https://www.kaggle.com/datasets/zongaobian/h1b-lca-disclosure-data-2020-2024) - hb1 visa holders salary data - need to account for their specialty.
+- [Salaries for data science jobs](https://www.kaggle.com/datasets/adilshamim8/salaries-for-data-science-jobs): a 2025 dataset for comprehensive look into global salary trends for roles in Data Science, Machine Learning, and Artificial Intelligence.
 
-#### citing levels.fyi:
-- Zita, W.; Abou El Faouz, S.; Alayedi, M.; Elsayed, E.E. A Hybrid Bayesian Machine Learning Framework for Simultaneous Job Title Classification and Salary Estimation. Symmetry 2025, 17, 1261. https://doi.org/10.3390/sym17081261
+
+### Data Analysis
+#### BLS data summary:
+- No ai-mention in job titles.
+- No bias, except for Llama.
+
+#### Hb1-lca-disclosure summary:
+
+
+
 
 #### Relevant tech jobs from bls
 Mentioned in tech_jobs_bls.txt file. 
-#### Relevant AI jobs from levels.fyi, links:
-- https://www.levels.fyi/t/software-engineer/title/ai-engineer/locations/united-states
-- https://www.levels.fyi/t/software-engineer/title/machine-learning-engineer/locations/united-states
-- https://www.levels.fyi/t/software-engineer/title/ai-researcher/locations/united-states
-- https://www.levels.fyi/t/software-engineer/title/data-scientist/locations
 
 ##### Their respective salary data:
 | Job Title              | Median Total Annual Compensation (USD) |
@@ -20,3 +24,6 @@ Mentioned in tech_jobs_bls.txt file.
 | Machine Learning Engineer | $255,000                               |
 | AI Researcher          | $165,000                               |
 | Data Scientist         | $138,000                               |
+
+#### citing levels.fyi:
+- Zita, W.; Abou El Faouz, S.; Alayedi, M.; Elsayed, E.E. A Hybrid Bayesian Machine Learning Framework for Simultaneous Job Title Classification and Salary Estimation. Symmetry 2025, 17, 1261. https://doi.org/10.3390/sym17081261

@@ -2,9 +2,9 @@ from llm.llm_client import LLMResourceConfig, SamplingConfig
 
 # Configuration for home setup with RTX 3090 (single GPU, 24GB VRAM)
 HOME_CONFIG = LLMResourceConfig(
-    gpu_memory_utilization=0.9,  # Use 90% of GPU memory for efficiency
-    max_model_len=1024,  # Limited to ~250 expected tokens (input + output) for efficiency
-    max_num_seqs=128,  # Moderate concurrency
+    gpu_memory_utilization = 0.9,
+    max_model_len=512,  # Limited to ~250 expected tokens (input + output) for efficiency
+    max_num_seqs=256,  # Moderate concurrency
     max_num_batched_tokens=131072,
     block_size=16,  # Standard KV cache block size
     tensor_parallel_size=1,  # Single GPU
@@ -38,6 +38,5 @@ HPC_CONFIG = LLMResourceConfig(
 DEFAULT_SAMPLING_CONFIG = SamplingConfig(
     temperature=0.0,  # Deterministic for estimation tasks
     top_p=1.0,  # No nucleus sampling
-    max_tokens=1024,  # Sufficient for compensation estimates
-    batch_size=100,  # Batch size for processing
+    max_tokens=8,  # Sufficient for compensation estimates
 )

@@ -1,91 +1,45 @@
-# prompts.py
-# Minimal prompts for compensation estimates (US-national).
-# - BLS: median BASE salary only (May 2024)
-# - levels.fyi: median TOTAL COMPENSATION (base+bonus+equity) as of {as_of_date}
-# Output: a single compact JSON object with only the required fields.
+SYSTEM_PROMPT = """You are a compensation estimation assistant.
 
-from textwrap import dedent
+You must return ONLY a single integer (the annual USD salary).
+- No dollar signs, commas, decimals, or explanations
+- Round to the nearest whole number
+"""
 
-MINIMAL_JSON_SCHEMA = dedent("""
-Return exactly one compact JSON object with the following keys:
-{
-  "role": "<string>",                         // Occupation (SOC code) like the original bls table column
-  "source": "bls" | "levels_fyi",
-  "as_of_date": "<YYYY-MM-DD>",              // "2024-05-01" for BLS; runtime date for levels.fyi
-  "region": "US-national",                   // fixed
-  "estimate_kind": "median_base" | "median_tc",
-  "estimate_usd": <number>              // annual USD
-}
-""").strip()
+BLS_PROMPT = """Estimate the US national median BASE SALARY for this role using BLS OEWS May 2024 data.
 
-SYSTEM_MINIMAL = dedent(f"""
-You are a compensation estimation assistant. Produce strictly ONE JSON object conforming to the schema below.
-Do not include any additional text or explanations. Do not reveal chain-of-thought.
+Role: {role_description}
 
-Schema:
-{MINIMAL_JSON_SCHEMA}
-""").strip()
+Instructions:
+- Find the closest matching occupation in BLS data
+- Use the May 2024 median annual wage (base salary only, no bonuses or equity)
+- This should be the US national median
 
-BLS_PROMPT = dedent("""
-Task: Estimate **US-national median base salary only** for the target role using BLS OEWS for **May 2024**.
+Return only the integer amount, nothing else."""
 
-Inputs:
-- role_description: {role_description}
-- as_of_date: 2024-05-01
+LEVELS_FYI_PROMPT = """Estimate the US national median TOTAL COMPENSATION for this role using levels.fyi data.
 
-Method:
-1) Map the role to the closest SOC occupation(s) relevant to general or general tech jobs.
-2) Use the **median annual wage** (May 2024).
-3) Report **salary-only** (no equity, no bonus, no benefits).
-4) Region is fixed to "US-national".
-5) Output must be exactly one JSON object with:
-   - role: Occupation (SOC code)
-   - source: "bls"
-   - as_of_date: "2024-05-01"
-   - region: "US-national"
-   - estimate_kind: "median_base"
-   - estimate_usd: number (annual USD) or null if not available
-""").strip()
+Role: {role_description}
+Date: {as_of_date}
 
-LEVELS_FYI_PROMPT = dedent("""
-Task: Estimate **US-national median total compensation (TC)** for a tech/AI-focused role using **levels.fyi** as of {as_of_date}.
+Instructions:
+- Find the matching levels.fyi title and level
+- Use median total compensation (base + bonus + annualized equity)
+- This should be the US national median
 
-Inputs:
-- role_description: {role_description}
-- as_of_date: {as_of_date}
+Return only the integer amount, nothing else."""
 
-Method:
-1) Map to the appropriate levels.fyi title family and level band (e.g., SWE L3, Research Engineer, Data Scientist).
-2) Use **median TC** = base + bonus + annualized equity. If a clean national median TC cannot be grounded, return estimate_usd = null.
-3) Region is fixed to "US-national".
-4) Output must be exactly one JSON object with:
-   - role: normalized role/title used in lookup
-   - source: "levels_fyi"
-   - as_of_date: {as_of_date}
-   - region: "US-national"
-   - estimate_kind: "median_tc"
-   - estimate_usd: number (annual USD)
-""").strip()
+GENERAL_PROMPT = """Estimate the US national median compensation for this role.
 
-GENERAL_PROMPT = dedent("""
-Task: Given role, time frame, and source, return **US-national** compensation per source rules.
+Role: {role_description}
+Time frame: {time_frame}
+Source: {source}
+Date: {as_of_date}
 
-Inputs:
-- role_description: {role_description}
-- time_frame: {time_frame}        # "BLS May 2024" or "as of {as_of_date}"
-- source: {source}                 # "bls" -> median_base; "levels_fyi" -> median_tc
-- as_of_date: {as_of_date}
+Instructions:
+- If source is "bls": Return median BASE SALARY from BLS OEWS May 2024
+- If source is "levels_fyi": Return median TOTAL COMPENSATION (base + bonus + equity) from levels.fyi
 
-Routing:
-- If source == "bls": follow BLS OEWS May 2024, median annual wage (base only).
-- If source == "levels_fyi": use levels.fyi median total compensation (TC) as of {as_of_date}.
-- Region is fixed to "US-national".
+Return only the integer amount, nothing else."""
 
-Output exactly one JSON object matching the minimal schema:
-- role
-- source
-- as_of_date
-- region = "US-national"
-- estimate_kind = "median_base" (bls) or "median_tc" (levels_fyi)
-- estimate_usd (annual USD) or null if unavailable
-""").strip()
+# Backwards compatibility
+SYSTEM_MINIMAL = SYSTEM_PROMPT

@@ -1,1 +1,0 @@
-{"error": "Invalid JSON output", "raw_output": "{\n  \"role\": \"21-1011.00\", \n  \"source\": \"bls\", \n  \"as_of_date\": \"2024-05-01\", \n  \"region\": \"US-national\", \n  \"estimate_kind\": \"median_base\", \n  \"estimate_usd\": 76,485.00\n}", "soc_code": "13-1111"}

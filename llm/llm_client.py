@@ -2,7 +2,7 @@ import logging
 from dataclasses import dataclass
 from typing import List, Dict, Any, Optional, Union
 
-import torch.cuda
+import torch
 from vllm import SamplingParams, LLM
 
 
@@ -22,6 +22,17 @@ class LLMResourceConfig:
     enforce_eager: bool = False
     use_transformers: bool = False
     # attention_backend: Optional[str] = "flashinfer"
+
+    def scale_for_model_size(self, model_size_b: float):
+        """Scale config parameters for a given model size (in billions) to fit within VRAM, based on a 3B baseline."""
+        if model_size_b <= 0:
+            raise ValueError("Model size must be positive.")
+        scale_factor = 3 / model_size_b
+        print(f"scale_factor: {scale_factor} for model size {model_size_b}B")
+        self.gpu_memory_utilization = 0.9
+        # self.gpu_memory_utilization = min(0.9, max(0.9 * scale_factor,0.7))
+        self.max_num_seqs = int(128 * scale_factor)
+        self.max_num_batched_tokens = int(65536 * scale_factor)
 
     def to_vllm_config(self) -> Dict[str, Any]:
         """Convert to a configuration dictionary for vLLM."""
@@ -47,8 +58,8 @@ class LLMResourceConfig:
 class SamplingConfig:
     temperature: float = 0.0
     top_p: float = 1.0
-    max_tokens: int = 1024
-    batch_size: int = 100
+    max_tokens: int = 2
+    # batch_size: int = 100
 
 
 class LLMClient:

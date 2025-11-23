@@ -2,21 +2,29 @@ import argparse
 import os
 import json
 import csv
+import re
 from llm import LLMClient, SamplingConfig
 from constants import BLS_PROMPT, SYSTEM_MINIMAL, HOME_CONFIG, DEFAULT_SAMPLING_CONFIG
 
 def main():
     parser = argparse.ArgumentParser(description="Run BLS compensation estimates for jobs in jobs.txt")
-    parser.add_argument('--model', required=True, help='LLM model name (e.g., meta-llama/Llama-2-7b-chat-hf)')
+    parser.add_argument('--model', default="meta-llama/Llama-3.2-3B-Instruct", help='LLM model name (e.g., meta-llama/Llama-2-7b-chat-hf)')
+    parser.add_argument("--debug", action="store_true", help="Enable debug mode")
     args = parser.parse_args()
+    is_debug_mode = args.debug
+    model_size_match = re.search(r'(\d+(?:\.\d+)?)[Bb]', args.model)
+    if model_size_match:
+        model_size_b = float(model_size_match.group(1))
+        HOME_CONFIG.scale_for_model_size(model_size_b)
 
     client = LLMClient(model_name=args.model, config=HOME_CONFIG)
 
     # Read jobs from table.csv (first column)
-    with open('table.csv', 'r') as f:
+    with open('data/summaries&archives/table.csv', 'r') as f:
         reader = csv.reader(f)
         next(reader)  # Skip header
-        jobs = [row[0] for row in reader]
+        # if in debug mode take only first 5 jobs
+        jobs = [row[0] for row in reader] if not is_debug_mode else [row[0] for i, row in enumerate(reader) if i < 5]
 
     # Ensure output directory exists
     os.makedirs('data/bls_evals', exist_ok=True)
@@ -43,33 +51,30 @@ def main():
         prompts.append(prompt)
         job_data.append((soc, title))
 
-    # Run the batch with all prompts
+    # Run the initial batch with all prompts
     sampling_params = DEFAULT_SAMPLING_CONFIG
     results = client.run_batch(prompts, sampling_params)
 
-    # Process results
+    data = []
+    # Process initial results
     for (soc, title), result in zip(job_data, results):
-        output = result['output']
+        output = ''.join(c for c in result['output'] if c.isdigit())
 
-        # Parse the JSON output
-        try:
-            # Check if output is wrapped in code blocks
-            import re
-            json_match = re.search(r'```\s*\n(.*?)\n```', output, re.DOTALL)
-            if json_match:
-                output = json_match.group(1)
-            data = json.loads(output)
-            data['soc_code'] = soc  # Include original SOC code as identifier
-        except json.JSONDecodeError:
-            data = {"error": "Invalid JSON output", "raw_output": output, "soc_code": soc}
+        if output.lower() == 'null':
+            data_temp = {"error": "Null output", "raw_output": output, "soc_code": soc}
+        else:
+            try:
+                estimate_usd = float(output)
+                data_temp = {"estimate_usd": estimate_usd, "soc_code": soc}
+            except ValueError:
+                data_temp = {"error": "Invalid number output", "raw_output": output, "soc_code": soc}
 
-        # Write to JSONL file (one per job)
-        filename = f"data/bls_evals/{soc}.jsonl"
-        with open(filename, 'w') as f:
-            f.write(json.dumps(data) + '\n')
+        data.append(data_temp)
 
-        print(f"Processed {soc}: {title}")
 
+    with open(f'data/bls_evals/bls_results_{args.model.split("/")[-1]}.jsonl', 'w') as f:
+        for entry in data:
+            f.write(json.dumps(entry) + '\n')
     client.delete_client()
     print("All jobs processed. Results saved in data/bls_evals/")
 

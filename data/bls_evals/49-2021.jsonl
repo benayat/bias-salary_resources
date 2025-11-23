@@ -1,1 +1,0 @@
-{"error": "Invalid JSON output", "raw_output": "{\n  \"role\": \"Installers and Repairers, Radio, Cellular, and Tower Equipment\",\n  \"source\": \"bls\",\n  \"as_of_date\": \"2024-05-01\",\n  \"region\": \"US-national\",\n  \"estimate_kind\": \"median_base\",\n  \"estimate_usd\": 59,444.0\n}", "soc_code": "49-2021"}
