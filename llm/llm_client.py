@@ -1,9 +1,18 @@
 import logging
+import multiprocessing
+import os
 from dataclasses import dataclass
 from typing import List, Dict, Any, Optional, Union
 
 import torch
 from vllm import SamplingParams, LLM
+
+
+def pre_tokenize_prompts(prompts, tokenizer, pool_size):
+    """Pre-tokenize prompts using multiprocessing."""
+    with multiprocessing.Pool(processes=pool_size) as pool:
+        tokenized = pool.map(tokenizer, prompts)
+    return tokenized
 
 
 @dataclass
@@ -63,10 +72,19 @@ class SamplingConfig:
 
 
 class LLMClient:
-    def __init__(self, model_name: str, config: LLMResourceConfig):
+    def __init__(self, model_name: str, config: LLMResourceConfig, disable_pre_tokenization=False, pre_tokenization_pool_size=None):
         self.model_name = model_name
         self.llm = LLM(self.model_name, **config.to_vllm_config())
         self.config = config
+        self.disable_pre_tokenization = disable_pre_tokenization
+        self.pre_tokenization_pool_size = pre_tokenization_pool_size or max(1, int(0.75 * os.cpu_count()))
+        logging.info(f"Pre-tokenization {'disabled' if self.disable_pre_tokenization else 'enabled'}.")
+        if not self.disable_pre_tokenization:
+            logging.info(f"Pre-tokenization pool size: {self.pre_tokenization_pool_size}")
+        # Initialize tokenizer
+        # Adjust tokenizer initialization to use vLLM-compatible tokenization
+        from transformers import AutoTokenizer
+        self.tokenizer = AutoTokenizer.from_pretrained(self.model_name).encode
 
     def run_batch_simple(self, prompts: List[str], sampling_params: SamplingConfig) -> Union[
         list[dict[str, str]], list[tuple[str, Any]]]:
@@ -97,10 +115,11 @@ class LLMClient:
             max_tokens=sampling_params.max_tokens,
         )
         try:
-            outputs = self.llm.chat(
-                messages=[prompt["messages"] for prompt in prompts],
+            # Tokenize prompts and apply chat template
+            tokenized_messages = [self.tokenizer.apply_chat_template(prompt["messages"], tokenize=True, add_generation_prompt=True, chat_template_kwargs={"enable_thinking": False}, return_tensors="pt") for prompt in prompts]
+            outputs = self.llm.generate(
+                prompts=tokenized_messages,
                 sampling_params=params,
-                chat_template_kwargs={"enable_thinking": False},
                 use_tqdm=True
             )
             return [

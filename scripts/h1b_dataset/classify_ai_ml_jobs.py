@@ -1,6 +1,6 @@
 import pandas as pd
 from llm.llm_client import LLMClient, SamplingConfig
-from constants import HOME_CONFIG, HOME_4GPU_CONFIG
+from constants import HOME_CONFIG, HOME_4GPU_CONFIG, HPC_CONFIG
 import argparse
 
 MODEL_NAME = "meta-llama/Llama-3.2-3B-Instruct"

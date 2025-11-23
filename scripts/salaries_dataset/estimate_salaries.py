@@ -1,6 +1,6 @@
 import pandas as pd
 from llm import LLMClient, SamplingConfig
-from constants import HOME_CONFIG, HOME_4GPU_CONFIG
+from constants import HOME_CONFIG, HOME_4GPU_CONFIG, HPC_CONFIG
 import argparse
 
 # set env var VLLM_ENABLE_V1_MULTIPROCESSING to 0 to avoid multiprocessing issues on some systems
