@@ -17,8 +17,8 @@ unique_job_titles = median_wage_df['JOB_TITLE'].dropna().unique().tolist()
 parser = argparse.ArgumentParser(description="Classify AI/ML job titles using LLM")
 parser.add_argument('--model', default=MODEL_NAME, help='LLM model name')
 parser.add_argument("--debug", action="store_true", help="Enable debug mode (process first 10 rows)")
-# Add CLI argument for 4-GPU setup
-parser.add_argument("--use-4gpu", action="store_true", help="Enable 4-GPU setup for LLM configuration")
+# Replace --use-4gpu with --llm-config
+parser.add_argument("--llm-config", choices=['home', 'home_4gpu', 'hpc'], default='home', help="Choose LLM configuration")
 # Add CLI argument for chunk size
 parser.add_argument('--chunk-size', type=int, default=30000, help='Chunk size for processing prompts')
 args = parser.parse_args()
@@ -26,7 +26,12 @@ is_debug_mode = args.debug
 
 # Update model name and LLM config based on CLI arguments
 MODEL_NAME = args.model
-llm_config = HOME_4GPU_CONFIG if args.use_4gpu else HOME_CONFIG
+if args.llm_config == 'home_4gpu':
+    llm_config = HOME_4GPU_CONFIG
+elif args.llm_config == 'hpc':
+    llm_config = HPC_CONFIG
+else:
+    llm_config = HOME_CONFIG
 llm = LLMClient(model_name=MODEL_NAME, config=llm_config)
 
 # Apply debug mode if enabled

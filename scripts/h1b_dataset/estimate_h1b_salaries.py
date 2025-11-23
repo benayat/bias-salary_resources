@@ -32,12 +32,20 @@ def main():
     parser = argparse.ArgumentParser(description="Estimate salaries for H1B job applications using LLM")
     parser.add_argument('--model', default=MODEL_NAME, help='LLM model name')
     parser.add_argument("--debug", action="store_true", help="Enable debug mode (process first 10 rows)")
-    parser.add_argument("--use-4gpu", action="store_true", help="Use 4 GPU configuration")
+    parser.add_argument("--llm-config", choices=['home', 'home_4gpu', 'hpc'], default='home', help="Choose LLM configuration")
     parser.add_argument('--chunk-size', type=int, default=30000, help='Chunk size for processing prompts')
     args = parser.parse_args()
     is_debug_mode = args.debug
-    llm_config = HOME_4GPU_CONFIG if args.use_4gpu else HOME_CONFIG
     chunk_size = args.chunk_size
+
+    # Update LLM configuration based on CLI arguments
+    if args.llm_config == 'home_4gpu':
+        llm_config = HOME_4GPU_CONFIG
+    elif args.llm_config == 'hpc':
+        llm_config = HPC_CONFIG
+    else:
+        llm_config = HOME_CONFIG
+
     # Load the dataset
     h1b_df = pd.read_csv('data/h1b-lca-disclosure-data-2020-2024/Combined_LCA_Disclosure_Data_FY2020_to_FY2024.csv', low_memory=False)
     if is_debug_mode:

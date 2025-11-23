@@ -40,15 +40,17 @@ def main():
     # Explicitly pass MODEL_NAME as a default value in the argument parser
     parser.add_argument('--model', default="meta-llama/Llama-3.2-3B-Instruct", help='LLM model name')
     parser.add_argument("--debug", action="store_true", help="Enable debug mode (process first 10 rows)")
-    parser.add_argument("--use-4gpu", action="store_true", help="Enable 4-GPU setup for LLM configuration")
+    parser.add_argument("--llm-config", choices=['home', 'home_4gpu', 'hpc'], default='home', help="Choose LLM configuration")
     # Add CLI argument for chunk size
     parser.add_argument('--chunk-size', type=int, default=30000, help='Chunk size for processing prompts')
     args = parser.parse_args()
     is_debug_mode = args.debug
 
     # Update LLM configuration based on CLI arguments
-    if args.use_4gpu:
+    if args.llm_config == 'home_4gpu':
         LLM_CONFIG = HOME_4GPU_CONFIG
+    elif args.llm_config == 'hpc':
+        LLM_CONFIG = HPC_CONFIG
     else:
         LLM_CONFIG = HOME_CONFIG
 
