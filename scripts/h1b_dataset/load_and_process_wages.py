@@ -1,6 +1,6 @@
 import pandas as pd
 
-KAGGLE_DATASET_ZIP_PATH = '../../data/h1b-lca-disclosure-data-2020-2024/Combined_LCA_Disclosure_Data_FY2020_to_FY2024.csv'
+KAGGLE_DATASET_ZIP_PATH = 'data/h1b-lca-disclosure-data-2020-2024/Combined_LCA_Disclosure_Data_FY2020_to_FY2024.csv'
 
 df = pd.read_csv(KAGGLE_DATASET_ZIP_PATH, low_memory=False)
 
@@ -33,6 +33,6 @@ median_wage_df = (
 )
 
 # save to csv
-median_wage_df.to_csv('../data/h1b_median_prevailing_wages_by_job_title.csv', index=False)
+median_wage_df.to_csv('data/h1b_median_prevailing_wages_by_job_title.csv', index=False)
 
 print("Wage processing complete.")
