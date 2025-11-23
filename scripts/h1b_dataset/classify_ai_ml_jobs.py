@@ -11,7 +11,7 @@ MODEL_NAME = "meta-llama/Llama-3.2-3B-Instruct"
 
 # AI/ML classification prompts
 AI_ML_SYSTEM_PROMPT = "You are a job title classifier. Determine if the job title directly mentions AI or Machine Learning."
-AI_ML_USER_PROMPT = "Is '{job_title}' directly related to AI or Machine Learning? Answer only 'yes' or 'no'."
+AI_ML_USER_PROMPT = "Does '{job_title}' directly mention to AI or Machine Learning in any way? Answer only 'yes' or 'no'."
 
 median_wage_df = pd.read_csv('data/h1b_median_prevailing_wages_by_job_title.csv')
 unique_job_titles = median_wage_df['JOB_TITLE'].dropna().unique().tolist()

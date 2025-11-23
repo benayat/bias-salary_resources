@@ -17,6 +17,23 @@ HOME_CONFIG = LLMResourceConfig(
     use_transformers=False,  # Use vLLM backend
 )
 
+# Configuration for home setup with 4x RTX 3090 (96GB total VRAM)
+HOME_4GPU_CONFIG = LLMResourceConfig(
+    gpu_memory_utilization=0.9,
+    max_model_len=1024,  # Increased for larger models
+    max_num_seqs=512,  # Higher concurrency with more GPUs
+    max_num_batched_tokens=262144,  # Larger batch size
+    block_size=32,  # Larger block size for better performance
+    tensor_parallel_size=4,  # 4 GPUs
+    dtype="auto",  # Automatic data type selection
+    trust_remote_code=True,  # Allow custom models
+    disable_log_stats=True,  # Disable verbose logging
+    max_parallel_loading_workers=8,  # More workers for faster loading
+    enable_prefix_caching=True,  # Enable prefix caching
+    enforce_eager=False,  # Use default execution mode
+    use_transformers=False,  # Use vLLM backend
+)
+
 # Configuration for university HPC with H200/B200 GPUs (multi-GPU cluster)
 HPC_CONFIG = LLMResourceConfig(
     gpu_memory_utilization=0.95,  # Higher utilization for cluster efficiency
