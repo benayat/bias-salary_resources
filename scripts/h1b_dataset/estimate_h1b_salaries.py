@@ -1,6 +1,6 @@
 import pandas as pd
 from llm import LLMClient, SamplingConfig
-from constants import HOME_CONFIG
+from constants import HOME_CONFIG, HOME_4GPU_CONFIG
 import argparse
 
 MODEL_NAME = "meta-llama/Llama-3.2-3B-Instruct"
@@ -32,15 +32,16 @@ def main():
     parser = argparse.ArgumentParser(description="Estimate salaries for H1B job applications using LLM")
     parser.add_argument('--model', default=MODEL_NAME, help='LLM model name')
     parser.add_argument("--debug", action="store_true", help="Enable debug mode (process first 10 rows)")
+    parser.add_argument("--use-4gpu", action="store_true", help="Use 4 GPU configuration")
     args = parser.parse_args()
     is_debug_mode = args.debug
-
+    llm_config = HOME_4GPU_CONFIG if args.use_4gpu else HOME_CONFIG
     # Load the dataset
     h1b_df = pd.read_csv('data/h1b-lca-disclosure-data-2020-2024/Combined_LCA_Disclosure_Data_FY2020_to_FY2024.csv', low_memory=False)
     if is_debug_mode:
         h1b_df = h1b_df.head(10)
 
-    llm = LLMClient(model_name=args.model, config=HOME_CONFIG)
+    llm = LLMClient(model_name=args.model, config=llm_config)
     sampling_params = SamplingConfig(temperature=0.0, top_p=1.0, max_tokens=10)
 
     def chunk_list(lst, chunk_size):

@@ -1,6 +1,7 @@
 import pandas as pd
 from llm.llm_client import LLMClient, SamplingConfig
-from constants import HOME_CONFIG
+from constants import HOME_CONFIG, HOME_4GPU_CONFIG
+import argparse
 
 # set env var VLLM_ENABLE_V1_MULTIPROCESSING to 0 to avoid multiprocessing issues on some systems
 import os
@@ -15,7 +16,25 @@ AI_ML_USER_PROMPT = "Does '{job_title}' directly mention to AI or Machine Learni
 
 median_wage_df = pd.read_csv('data/h1b_median_prevailing_wages_by_job_title.csv')
 unique_job_titles = median_wage_df['JOB_TITLE'].dropna().unique().tolist()
-llm = LLMClient(model_name=MODEL_NAME, config=HOME_CONFIG)
+
+# Parse CLI arguments
+parser = argparse.ArgumentParser(description="Classify AI/ML job titles using LLM")
+parser.add_argument('--model', default=MODEL_NAME, help='LLM model name')
+parser.add_argument("--debug", action="store_true", help="Enable debug mode (process first 10 rows)")
+# Add CLI argument for 4-GPU setup
+parser.add_argument("--use-4gpu", action="store_true", help="Enable 4-GPU setup for LLM configuration")
+args = parser.parse_args()
+is_debug_mode = args.debug
+
+# Update model name and LLM config based on CLI arguments
+MODEL_NAME = args.model
+llm_config = HOME_4GPU_CONFIG if args.use_4gpu else HOME_CONFIG
+llm = LLMClient(model_name=MODEL_NAME, config=llm_config)
+
+# Apply debug mode if enabled
+if is_debug_mode:
+    unique_job_titles = unique_job_titles[:10]
+
 sampling_params = SamplingConfig(temperature=0.0, top_p=1.0, max_tokens=4)
 
 
