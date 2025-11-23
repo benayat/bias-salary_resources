@@ -41,6 +41,8 @@ def main():
     parser.add_argument('--model', default="meta-llama/Llama-3.2-3B-Instruct", help='LLM model name')
     parser.add_argument("--debug", action="store_true", help="Enable debug mode (process first 10 rows)")
     parser.add_argument("--use-4gpu", action="store_true", help="Enable 4-GPU setup for LLM configuration")
+    # Add CLI argument for chunk size
+    parser.add_argument('--chunk-size', type=int, default=30000, help='Chunk size for processing prompts')
     args = parser.parse_args()
     is_debug_mode = args.debug
 

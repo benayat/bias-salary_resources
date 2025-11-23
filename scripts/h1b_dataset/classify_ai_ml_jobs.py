@@ -3,10 +3,6 @@ from llm.llm_client import LLMClient, SamplingConfig
 from constants import HOME_CONFIG, HOME_4GPU_CONFIG
 import argparse
 
-# set env var VLLM_ENABLE_V1_MULTIPROCESSING to 0 to avoid multiprocessing issues on some systems
-import os
-# os.environ['VLLM_ENABLE_V1_MULTIPROCESSING'] = '0'
-
 MODEL_NAME = "meta-llama/Llama-3.2-3B-Instruct"
 # MODEL_NAME = "Qwen/Qwen3-4B-Instruct-2507"
 
@@ -23,6 +19,8 @@ parser.add_argument('--model', default=MODEL_NAME, help='LLM model name')
 parser.add_argument("--debug", action="store_true", help="Enable debug mode (process first 10 rows)")
 # Add CLI argument for 4-GPU setup
 parser.add_argument("--use-4gpu", action="store_true", help="Enable 4-GPU setup for LLM configuration")
+# Add CLI argument for chunk size
+parser.add_argument('--chunk-size', type=int, default=30000, help='Chunk size for processing prompts')
 args = parser.parse_args()
 is_debug_mode = args.debug
 
@@ -44,7 +42,7 @@ def chunk_list(lst, chunk_size):
 
 ai_ml_related_titles = []
 
-for chunk in chunk_list(unique_job_titles, 30000):
+for chunk in chunk_list(unique_job_titles, args.chunk_size):
     prompts = []
     for title in chunk:
         user_content = AI_ML_USER_PROMPT.format(job_title=title)

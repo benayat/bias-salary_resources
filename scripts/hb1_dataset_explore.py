@@ -1,6 +1,7 @@
 import pandas as pd
 from llm.llm_client import LLMClient, SamplingConfig
 from constants import HOME_CONFIG
+import argparse
 
 # Script constants
 KAGGLE_DATASET_ZIP_PATH = '../data/h1b-lca-disclosure-data-2020-2024/Combined_LCA_Disclosure_Data_FY2020_to_FY2024.csv'
@@ -10,6 +11,11 @@ LLM_CONFIG = HOME_CONFIG
 # AI/ML classification prompts
 AI_ML_SYSTEM_PROMPT = "You are a job title classifier. Determine if the job title directly mentions AI or Machine Learning."
 AI_ML_USER_PROMPT = "Is '{job_title}' directly related to AI or Machine Learning? Answer only 'yes' or 'no'."
+
+# Add CLI argument for chunk size
+parser = argparse.ArgumentParser()
+parser.add_argument('--chunk-size', type=int, default=30000, help='Chunk size for processing prompts')
+args = parser.parse_args()
 
 df = pd.read_csv(KAGGLE_DATASET_ZIP_PATH, low_memory=False)
 print(df.head())
@@ -33,13 +39,16 @@ for title in unique_job_titles:
     prompt = {"messages": messages}
     prompts.append(prompt)
 
-results = llm.run_batch(prompts, sampling_params)
-
+# Process in chunks
 ai_ml_related_titles = []
-for title, result in zip(unique_job_titles, results):
-    output = result['output'].lower().strip()
-    if output == 'yes':
-        ai_ml_related_titles.append(title)
+for i in range(0, len(prompts), args.chunk_size):
+    chunk = prompts[i:i + args.chunk_size]
+    results = llm.run_batch(chunk, sampling_params)
+
+    for title, result in zip(unique_job_titles[i:i + args.chunk_size], results):
+        output = result['output'].lower().strip()
+        if output == 'yes':
+            ai_ml_related_titles.append(title)
 
 llm.delete_client()
 

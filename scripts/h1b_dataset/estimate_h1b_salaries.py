@@ -33,9 +33,11 @@ def main():
     parser.add_argument('--model', default=MODEL_NAME, help='LLM model name')
     parser.add_argument("--debug", action="store_true", help="Enable debug mode (process first 10 rows)")
     parser.add_argument("--use-4gpu", action="store_true", help="Use 4 GPU configuration")
+    parser.add_argument('--chunk-size', type=int, default=30000, help='Chunk size for processing prompts')
     args = parser.parse_args()
     is_debug_mode = args.debug
     llm_config = HOME_4GPU_CONFIG if args.use_4gpu else HOME_CONFIG
+    chunk_size = args.chunk_size
     # Load the dataset
     h1b_df = pd.read_csv('data/h1b-lca-disclosure-data-2020-2024/Combined_LCA_Disclosure_Data_FY2020_to_FY2024.csv', low_memory=False)
     if is_debug_mode:
@@ -72,7 +74,7 @@ def main():
         row_indices.append(idx)
 
     estimated_salaries = []
-    for chunk_prompts, chunk_indices in zip(chunk_list(prompts, CHUNK_SIZE), chunk_list(row_indices, CHUNK_SIZE)):
+    for chunk_prompts, chunk_indices in zip(chunk_list(prompts, chunk_size), chunk_list(row_indices, chunk_size)):
         results = llm.run_batch(chunk_prompts, sampling_params, output_field='output')
         for idx, result in zip(chunk_indices, results):
             output = result['output'].strip()

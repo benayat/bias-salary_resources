@@ -25,8 +25,11 @@ parser = argparse.ArgumentParser(description="Classify AI/ML job titles using LL
 parser.add_argument('--model', default=MODEL_NAME, help='LLM model name')
 parser.add_argument("--debug", action="store_true", help="Enable debug mode (process first 10 rows)")
 parser.add_argument("--use-4gpu", action="store_true", help="Enable 4-GPU setup for LLM configuration")
+# Add CLI argument for chunk size
+parser.add_argument('--chunk-size', type=int, default=30000, help='Chunk size for processing prompts')
 args = parser.parse_args()
 is_debug_mode = args.debug
+chunk_size = args.chunk_size
 
 # Update LLM configuration based on CLI arguments
 if args.use_4gpu:
@@ -41,6 +44,7 @@ MODEL_NAME = args.model
 if is_debug_mode:
     unique_job_titles = unique_job_titles[:10]
 
+# Chunk processing
 prompts = []
 for title in unique_job_titles:
     user_content = AI_ML_USER_PROMPT.format(job_title=title)
@@ -51,13 +55,17 @@ for title in unique_job_titles:
     prompt = {"messages": messages}
     prompts.append(prompt)
 
-results = llm.run_batch(prompts, sampling_params)
+def chunk_list(lst, chunk_size):
+    for i in range(0, len(lst), chunk_size):
+        yield lst[i:i + chunk_size]
 
 ai_ml_related_titles = []
-for title, result in zip(unique_job_titles, results):
-    output = result['output'].lower().strip()
-    if output == 'yes':
-        ai_ml_related_titles.append(title)
+for chunk in chunk_list(prompts, chunk_size):
+    results = llm.run_batch(chunk, sampling_params)
+    for title, result in zip(unique_job_titles, results):
+        output = result['output'].lower().strip()
+        if output == 'yes':
+            ai_ml_related_titles.append(title)
 
 llm.delete_client()
 
