@@ -4,7 +4,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 import pandas as pd
 from llm.llm_client import LLMClient, SamplingConfig
-from constants import HOME_CONFIG, HOME_4GPU_CONFIG
+from constants import HOME_CONFIG, HOME_4GPU_CONFIG, HPC_CONFIG
 
 import argparse
 
