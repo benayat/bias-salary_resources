@@ -13,7 +13,7 @@ LLM_CONFIG = HOME_CONFIG
 AI_ML_SYSTEM_PROMPT = "You are a job title classifier. Determine if the job title directly mentions AI or Machine Learning."
 AI_ML_USER_PROMPT = "Is '{job_title}' directly related to AI or Machine Learning? Answer only 'yes' or 'no'."
 
-median_salary_df = pd.read_csv('../../data/salaries-for-data-science-jobs/salaries_median_by_job_title.csv')
+median_salary_df = pd.read_csv('data/salaries-for-data-science-jobs/salaries_median_by_job_title.csv')
 unique_job_titles = median_salary_df['job_title'].dropna().unique().tolist()
 llm = LLMClient(model_name=MODEL_NAME, config=LLM_CONFIG)
 sampling_params = SamplingConfig(temperature=0.0, top_p=1.0, max_tokens=4)
@@ -39,7 +39,7 @@ for title, result in zip(unique_job_titles, results):
 llm.delete_client()
 
 print(f"AI/ML related titles: {ai_ml_related_titles}")
-with open('../data/salaries_ai_ml_job_titles.txt', 'w') as f:
+with open('data/salaries-for-data-science-jobs/salaries_ai_ml_job_titles.txt', 'w') as f:
     f.write('\n'.join(ai_ml_related_titles))
 
 print("Classification complete.")
