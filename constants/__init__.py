@@ -1,6 +1,6 @@
 # from .prompts import BLS_PROMPT, LEVELS_FYI_PROMPT, SYSTEM_MINIMAL
 from .prompts_new import BLS_PROMPT, LEVELS_FYI_PROMPT, SYSTEM_MINIMAL
-from .llm_configs import DEFAULT_SAMPLING_CONFIG, HPC_CONFIG, HOME_CONFIG
+from .llm_configs import DEFAULT_SAMPLING_CONFIG, HPC_CONFIG, HOME_CONFIG, HOME_4GPU_CONFIG
 #    - role: Occupation/title
 __all__ = [
     "SYSTEM_MINIMAL",
@@ -8,5 +8,6 @@ __all__ = [
     "LEVELS_FYI_PROMPT",
     "HOME_CONFIG",
     "HPC_CONFIG",
+    "HOME_4GPU_CONFIG",
     "DEFAULT_SAMPLING_CONFIG",
 ]

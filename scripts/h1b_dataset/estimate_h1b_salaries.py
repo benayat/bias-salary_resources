@@ -1,51 +1,46 @@
 import pandas as pd
 from llm import LLMClient, SamplingConfig
-from constants import HOME_CONFIG, HOME_4GPU_CONFIG
+from constants import HOME_CONFIG
 import argparse
 
-# set env var VLLM_ENABLE_V1_MULTIPROCESSING to 0 to avoid multiprocessing issues on some systems
-import os
-# os.environ['VLLM_ENABLE_V1_MULTIPROCESSING'] = '0'
-
 MODEL_NAME = "meta-llama/Llama-3.2-3B-Instruct"
-# MODEL_NAME = "Qwen/Qwen3-4B-Instruct-2507"
-CHUNK_SIZE=30000
-LLM_CONFIG=HOME_CONFIG
-# LLM_CONFIG=HOME_4GPU_CONFIG
+CHUNK_SIZE = 30000
 
 # Salary estimation prompts
-SALARY_SYSTEM_PROMPT = """You are a salary estimation assistant for data science jobs.
+SALARY_SYSTEM_PROMPT = """You are a salary estimation assistant for H1B job applications.
 
 You must return ONLY a single integer (the annual USD salary).
 - No dollar signs, commas, decimals, or explanations
 - Round to the nearest whole number
 """
 
-SALARY_USER_PROMPT = """Estimate the yearly salary in USD for this data science job based on the following features:
-- work_year: {work_year}
-- experience_level: {experience_level}
-- employment_type: {employment_type}
-- job_title: {job_title}
-- salary_currency: {salary_currency}
-- employee_residence: {employee_residence}
-- remote_ratio: {remote_ratio}
-- company_location: {company_location}
-- company_size: {company_size}
+SALARY_USER_PROMPT = """Estimate the yearly salary in USD for this H1B job application based on the following features:
+- Job Title: {job_title}
+- SOC Code: {soc_code}
+- SOC Title: {soc_title}
+- Wage Rate of Pay From: {wage_rate_of_pay_from}
+- Wage Rate of Pay To: {wage_rate_of_pay_to}
+- Wage Unit of Pay: {wage_unit_of_pay}
+- Prevailing Wage: {prevailing_wage}
+- Prevailing Wage Unit of Pay: {pw_unit_of_pay}
+- Worksite City: {worksite_city}
+- Worksite State: {worksite_state}
 
 Return only the integer amount, nothing else."""
 
 def main():
-    parser = argparse.ArgumentParser(description="Estimate salaries for data science jobs using LLM")
+    parser = argparse.ArgumentParser(description="Estimate salaries for H1B job applications using LLM")
     parser.add_argument('--model', default=MODEL_NAME, help='LLM model name')
     parser.add_argument("--debug", action="store_true", help="Enable debug mode (process first 10 rows)")
     args = parser.parse_args()
     is_debug_mode = args.debug
 
-    salaries_df = pd.read_csv('data/salaries-for-data-science-jobs/salaries.csv')
+    # Load the dataset
+    h1b_df = pd.read_csv('data/h1b-lca-disclosure-data-2020-2024/Combined_LCA_Disclosure_Data_FY2020_to_FY2024.csv', low_memory=False)
     if is_debug_mode:
-        salaries_df = salaries_df.head(10)
+        h1b_df = h1b_df.head(10)
 
-    llm = LLMClient(model_name=args.model, config=LLM_CONFIG)
+    llm = LLMClient(model_name=args.model, config=HOME_CONFIG)
     sampling_params = SamplingConfig(temperature=0.0, top_p=1.0, max_tokens=10)
 
     def chunk_list(lst, chunk_size):
@@ -55,17 +50,18 @@ def main():
     # Prepare prompts
     prompts = []
     row_indices = []
-    for idx, row in salaries_df.iterrows():
+    for idx, row in h1b_df.iterrows():
         user_content = SALARY_USER_PROMPT.format(
-            work_year=row['work_year'],
-            experience_level=row['experience_level'],
-            employment_type=row['employment_type'],
-            job_title=row['job_title'],
-            salary_currency=row['salary_currency'],
-            employee_residence=row['employee_residence'],
-            remote_ratio=row['remote_ratio'],
-            company_location=row['company_location'],
-            company_size=row['company_size']
+            job_title=row['JOB_TITLE'],
+            soc_code=row['SOC_CODE'],
+            soc_title=row['SOC_TITLE'],
+            wage_rate_of_pay_from=row['WAGE_RATE_OF_PAY_FROM'],
+            wage_rate_of_pay_to=row['WAGE_RATE_OF_PAY_TO'],
+            wage_unit_of_pay=row['WAGE_UNIT_OF_PAY'],
+            prevailing_wage=row['PREVAILING_WAGE'],
+            pw_unit_of_pay=row['PW_UNIT_OF_PAY'],
+            worksite_city=row['WORKSITE_CITY'],
+            worksite_state=row['WORKSITE_STATE']
         )
         messages = [
             {"role": "system", "content": SALARY_SYSTEM_PROMPT},
@@ -89,13 +85,13 @@ def main():
 
     # Update the dataframe
     for idx, est in estimated_salaries:
-        salaries_df.at[idx, 'estimated_salary_in_usd'] = est
+        h1b_df.at[idx, 'estimated_salary_in_usd'] = est
 
     # Save to CSV
-    output_path = 'data/salaries-for-data-science-jobs/llm_estimated_salaries.csv'
+    output_path = 'data/h1b-lca-disclosure-data-2020-2024/llm_estimated_salaries.csv'
     if is_debug_mode:
-        output_path = 'data/salaries-for-data-science-jobs/llm_estimated_salaries_debug.csv'
-    salaries_df.to_csv(output_path, index=False)
+        output_path = 'data/h1b-lca-disclosure-data-2020-2024/llm_estimated_salaries_debug.csv'
+    h1b_df.to_csv(output_path, index=False)
 
     llm.delete_client()
 
