@@ -56,7 +56,7 @@ def main():
 
     # Update model name
     MODEL_NAME = args.model
-
+    CHUNK_SIZE=args.chunk_size
     salaries_df = pd.read_csv('data/salaries-for-data-science-jobs/salaries.csv')
     # Apply debug mode if enabled
     if is_debug_mode:
@@ -64,7 +64,7 @@ def main():
 
     llm = LLMClient(model_name=args.model, config=LLM_CONFIG)
     sampling_params = SamplingConfig(temperature=0.0, top_p=1.0, max_tokens=10)
-
+    
     def chunk_list(lst, chunk_size):
         for i in range(0, len(lst), chunk_size):
             yield lst[i:i + chunk_size]

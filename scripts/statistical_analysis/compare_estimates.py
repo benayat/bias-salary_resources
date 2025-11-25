@@ -35,8 +35,34 @@ def plot_comparison(actual, estimated, title, output_path):
     plt.xlabel('Actual Salary (USD)')
     plt.ylabel('Estimated Salary (USD)')
     plt.title(title)
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
     plt.savefig(output_path)
     plt.close()
+
+
+def to_annual(row):
+    salary = row['salary_in_usd']
+    if pd.isna(salary):
+        return None
+    unit = str(row.get('WAGE_UNIT_OF_PAY', '')).lower()
+    if 'hour' in unit:
+        return salary * 2080
+    if 'week' in unit:
+        return salary * 52
+    if 'month' in unit:
+        return salary * 12
+    return salary
+
+
+def process_h1b_salary(df):
+    
+    #This function will convert various pay units (hourly, weekly, monthly) into a consistent annual salary.
+    
+    df['salary_in_usd'] = pd.to_numeric(df['WAGE_RATE_OF_PAY_FROM'], errors='coerce')
+    df['salary_in_usd'] = df.apply(to_annual, axis=1)
+    return df
+
+
 
 def main():
     # File paths
@@ -51,6 +77,9 @@ def main():
     if salaries_df is None or h1b_df is None:
         logging.error("One or more datasets could not be loaded. Exiting.")
         return
+
+    # Process H1B salary data
+    h1b_df = process_h1b_salary(h1b_df)
 
     # Load AI/ML job titles
     if not os.path.exists(ai_ml_titles_file):
@@ -110,7 +139,7 @@ def main():
             ai_ml_df[actual_salary_column],
             ai_ml_df[estimated_salary_column],
             f'{name} AI/ML: Actual vs Estimated',
-            f'data/summaries&archives/statistical_analysis_plots/{name.lower()}_ai_ml_comparison.png'
+            f'data/statistical_analysis_plots/{name.lower()}_ai_ml_comparison.png'
         )
 
 if __name__ == '__main__':

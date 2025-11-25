@@ -36,19 +36,19 @@ HOME_4GPU_CONFIG = LLMResourceConfig(
 
 # Configuration for university HPC with H200/B200 GPUs (multi-GPU cluster)
 HPC_CONFIG = LLMResourceConfig(
-    gpu_memory_utilization=0.95,  # Higher utilization for cluster efficiency
-    max_model_len=512,  # Limited to ~250 expected tokens (input + output) for efficiency
-    max_num_seqs=2048,  # Higher concurrency for batch processing
-    max_num_batched_tokens=524288,  # Larger batch size for throughput
-    block_size=16,  # Larger block size for better performance
+    gpu_memory_utilization=0.92,        # small headroom vs 0.95
+    max_model_len=512,                  # enough for your ~100-token prompts + outputs
+    max_num_seqs=4096,                  # high concurrency, real limiter is KV
+    max_num_batched_tokens=1_048_576,   # 2^20, fits under ~1.36M KV tokens
+    block_size=16,
     tensor_parallel_size=1,
     dtype="bfloat16",
-    trust_remote_code=True,  # Allow custom models
-    disable_log_stats=True,  # Disable verbose logging
-    max_parallel_loading_workers=8,  # More workers for faster loading
-    enable_prefix_caching=True,  # Enable prefix caching
-    enforce_eager=False,  # Use default execution mode
-    use_transformers=False,  # Use vLLM backend
+    trust_remote_code=True,
+    disable_log_stats=True,
+    max_parallel_loading_workers=16,
+    enable_prefix_caching=True,
+    enforce_eager=False,
+    use_transformers=False,
 )
 
 # Default sampling configuration for both setups
