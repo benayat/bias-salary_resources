@@ -99,9 +99,9 @@ def main():
         h1b_df.at[idx, 'estimated_salary_in_usd'] = est
 
     # Save to CSV
-    output_path = 'data/h1b-lca-disclosure-data-2020-2024/llm_estimated_salaries.csv'
+    output_path = f'data/h1b-lca-disclosure-data-2020-2024/llm_estimated_salaries{args.model.split("/")[-1]}.csv'
     if is_debug_mode:
-        output_path = 'data/h1b-lca-disclosure-data-2020-2024/llm_estimated_salaries_debug.csv'
+        output_path = 'data/h1b-lca-disclosure-data-2020-2024/llm_estimated_salaries_debug{args.model.split("/")[-1]}.csv'
     h1b_df.to_csv(output_path, index=False)
 
     llm.delete_client()
