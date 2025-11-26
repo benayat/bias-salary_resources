@@ -2,7 +2,19 @@ import pandas as pd
 
 DATA_PATH = 'data/salaries-for-data-science-jobs/salaries.csv'
 
+
 df = pd.read_csv(DATA_PATH)
+
+print(f"Total records loaded: {df.shape[0]}")
+print(df['salary_in_usd'].describe())
+print(df['job_title'].nunique())
+df['job_title'].unique().tolist()
+
+unique_titles = df['job_title'].dropna().unique().tolist()
+with open('data/salaries-for-data-science-jobs/unique_job_titles.txt', 'w', encoding='utf-8') as f:
+    for title in unique_titles:
+        f.write(f"{title}\n")
+
 
 # Create dataframe with median salary per job title
 median_salary_df = (

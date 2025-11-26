@@ -34,6 +34,23 @@ SALARY_USER_PROMPT = """Estimate the yearly salary in USD for this data science 
 
 Return only the integer amount, nothing else."""
 
+def normalize_codes(df: pd.DataFrame) -> pd.DataFrame:
+    exp_map = {"EN": "Entry-level", "MI": "Mid-level", "SE": "Senior-level", "EX": "Executive"}
+    emp_map = {"FT": "Full-time", "PT": "Part-time", "CT": "Contract", "FL": "Freelance"}
+    remote_map = {0: "On-site", 50: "Hybrid", 100: "Fully remote"}
+    size_map = {"S": "Small", "M": "Medium", "L": "Large"}
+
+    if "experience_level" in df.columns:
+        df["experience_level"] = df["experience_level"].replace(exp_map)
+    if "employment_type" in df.columns:
+        df["employment_type"] = df["employment_type"].replace(emp_map)
+    if "remote_ratio" in df.columns:
+        df["remote_ratio"] = df["remote_ratio"].replace(remote_map)
+    if "company_size" in df.columns:
+        df["company_size"] = df["company_size"].replace(size_map)
+
+    return df
+
 def main():
     global MODEL_NAME
     parser = argparse.ArgumentParser(description="Estimate salaries for data science jobs using LLM")
@@ -58,6 +75,7 @@ def main():
     MODEL_NAME = args.model
     CHUNK_SIZE=args.chunk_size
     salaries_df = pd.read_csv('data/salaries-for-data-science-jobs/salaries.csv')
+    salaries_df = normalize_codes(salaries_df)
     # Apply debug mode if enabled
     if is_debug_mode:
         salaries_df = salaries_df.head(10)
