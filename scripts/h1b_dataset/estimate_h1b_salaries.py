@@ -32,7 +32,7 @@ def main():
     parser.add_argument("--model", default=MODEL_NAME, help="LLM model name")
     parser.add_argument("--debug", action="store_true", help="Enable debug mode (process first 10 rows)")
     parser.add_argument("--llm-config", choices=["home", "home_4gpu", "hpc"], default="home", help="Choose LLM configuration")
-    parser.add_argument("--chunk-size", type=int, default=30000, help="Chunk size for processing prompts")
+    parser.add_argument("--chunk-size", type=int, default=100000, help="Chunk size for processing prompts")
     args = parser.parse_args()
 
     is_debug_mode = args.debug
