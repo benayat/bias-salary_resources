@@ -1,0 +1,423 @@
+job_title,AI_job
+Head of Data,False
+Data Scientist,False
+Engineer,False
+AI Product Lead,True
+AI Engineer,True
+Business Intelligence Engineer,False
+Manager,False
+Computer Vision Engineer,True
+Data Management,False
+Product Manager,False
+Data Engineer,False
+Machine Learning Engineer,True
+Software Engineer,False
+Data Analyst,False
+Research Scientist,False
+Developer,False
+Associate,False
+Computational Scientist,False
+Analyst,False
+AI Scientist,True
+DataOps Engineer,False
+Prompt Engineer,True
+Data Governance Engineer,False
+Analytics Engineer,False
+AI Governance Specialist,True
+Backend Engineer,False
+DevOps Engineer,False
+Systems Engineer,False
+Tech Lead,False
+Solutions Engineer,False
+Product Analyst,False
+Researcher,False
+Executive,False
+Director,False
+Consultant,False
+Solutions Architect,False
+Data Reporting Specialist,False
+BI Developer,False
+Data Manager,False
+Machine Learning Scientist,True
+Data Governance,False
+Applied Scientist,False
+Data Architect,False
+Statistical Programmer,False
+Data Specialist,False
+Technical Architect,False
+Cloud Engineer,False
+Business Intelligence Analyst,False
+Architect,False
+Automation Engineer,False
+Engineering Manager,False
+Site Reliability Engineer,False
+Data Strategist,False
+Cloud Database Administrator,False
+Data Product Manager,False
+MLOps Engineer,True
+Platform Engineer,False
+Data Management Analyst,False
+Principal Engineer,False
+Full Stack Engineer,False
+Principal Scientist,False
+Business Intelligence Specialist,False
+Staff Engineer,False
+Full Stack Developer,False
+Security Researcher,False
+AI Solutions Consultant,True
+AI Developer,True
+Data Modeler,False
+Data Analysis,False
+Technical Writer,False
+Account Executive,False
+Research Engineer,False
+Solution Architect,False
+QA Engineer,False
+Economist,False
+Quantitative Analyst,False
+Quantitative Developer,False
+Analytics Manager,False
+Backend Developer,False
+Data Governance Lead,False
+Data Governance Analyst,False
+AI Specialist,True
+Lead Engineer,False
+Database Administrator,False
+Software Developer,False
+System Engineer,False
+Software Development Engineer,False
+Data Developer,False
+Data Lead,False
+Software Architect,False
+Analytics Lead,False
+Statistician,False
+Forward Deployed Engineer,False
+Algorithm Developer,True
+Integration Specialist,False
+Actuary,False
+Member of Technical Staff,False
+Technical Project Manager,False
+Head of AI,True
+Power BI Developer,False
+Product Designer,False
+Data Infrastructure Engineer,False
+Technical Lead,False
+Postdoctoral Fellow,False
+ETL Developer,False
+Data Operations Analyst,False
+Data Integration Engineer,False
+AI Product Owner,True
+Python Developer,False
+Business Analyst,False
+Data Governance Specialist,False
+Data Product Owner,False
+Machine Learning Architect,True
+Post Doctoral Fellow,False
+Technical Support Engineer,False
+ML Scientist,True
+Cloud Database Engineer,False
+Data Platform Engineer,False
+Data Management Specialist,False
+Computational Biologist,False
+Business Intelligence,False
+Sales Engineer,False
+Director of Data,False
+Research Associate,False
+Solution Engineer,False
+Data Analytics Manager,False
+Data Analytics Specialist,False
+Power BI,False
+Apprentice,False
+BI Engineer,False
+Analytics Specialist,False
+Principal Statistical Programmer,False
+Data Operations Specialist,False
+Product Owner,False
+Commercial Counsel,False
+Quantitative Researcher,False
+Data Quality Analyst,False
+Research Fellow,False
+Software Development Director,False
+Data Integration Lead,False
+Data Governance Manager,False
+AI Architect,True
+AI Researcher,True
+Business Intelligence Developer,False
+Data Quality Specialist,False
+AI Solutions Lead,True
+BI Analyst,False
+Business Development Representative,False
+Bioinformatician,False
+Artificial Intelligence Engineer,True
+Data Visualization Designer,False
+Data Operations Engineer,False
+Research Specialist,False
+Head of Machine Learning,True
+Decision Scientist,False
+Data Management Lead,False
+Solution Specialist,False
+Data Operations,False
+Lead Data Analysis,False
+Data Archivist,False
+Director of Artificial Intelligence,True
+Data Quality Engineer,False
+Data Operations Manager,False
+Machine Learning Developer,True
+Principal Researcher,False
+AI Product Specialist,True
+Insight Analyst,False
+Data Team Lead,False
+Data Operations Lead,False
+Machine Learning Researcher,True
+Data Quality Lead,False
+Research Assistant,False
+SAS Developer,False
+Business Intelligence Lead,False
+Application Developer,False
+AI Solution Director,True
+Cdd,False
+Postdoctoral Researcher,False
+Technical Recruiter,False
+Data Visualization Developer,False
+Psychometrician,False
+Content Writer,False
+Data Visualization Expert,False
+Data Analytics Lead,False
+Data and Reporting Professional,False
+Data Visualization Specialist,False
+Advanced Analytics Manager,False
+Power BI Specialist,False
+AI Lead,True
+Encounter Data Management Professional,False
+Data Analist,False
+Java Developer,False
+Trainee,False
+Head of Marketing,False
+Data Integrity Specialist,False
+Data Steward,False
+Research Professional,False
+Director of Machine Learning,True
+Data Strategy Lead,False
+Technical Consultant,False
+Data Management Officer,False
+Director of Product Management,False
+Postdoctoral Scholar,False
+Product Specialist,False
+Bioinformatics Scientist,False
+Data Visualization Engineer,False
+AIRS Solutions Specialist,False
+Machine Learning Lead,True
+Quantitative Trader,False
+Databricks Engineer,False
+Data Integrator,False
+Data Management Professional,False
+Quantitative Risk Analyst,False
+AI Data Scientist,True
+QA Tutor Reviewer,False
+Technical Specialist,False
+Machine Learning Specialist,True
+Data Management Technician,False
+Power BI Expert,False
+Data Integration Specialist,False
+Director of Engineering,False
+DevOps Lead,False
+Data & Analytics Specialist,False
+Conversational AI Designer,True
+Clinical Aide,False
+Web Developer,False
+Data Visualization Lead,False
+Systems Administrator,False
+Postdoctoral Research Fellow,False
+Data Management Associate,False
+Fraud Data Analyst,False
+Admin & Data Analyst,False
+Data Engineer 4,False
+AI Governance Lead,True
+IT Enterprise Data Architect,False
+Copywriter,False
+Marketing Science Partner,False
+Sales Development Representative,False
+Data Product Lead,False
+Data Operator,False
+Data Reporter,False
+Bear Robotics,False
+Creative Technologist,False
+Big Data Developer,False
+Tableau Developer,False
+Bioinformatics Specialist,False
+AI Content Writer,True
+AI Research Scientist,True
+Data & Analytics Analyst,False
+Power BI Administrator,False
+Data Consultant,False
+Research Analyst,False
+Cheminformatics Scientist,False
+Data Governance Consultant,False
+Technical Support Specialist,False
+Cientista de Dados,False
+AI Tech Lead,True
+System Administrator,False
+AI Strategist,True
+AI Solutions Specialist,True
+Enterprise Account Executive,False
+Advanced Data Analyst,False
+AI Engineering Lead,True
+Quant Trader,False
+Head of Applied AI,True
+Salesforce Administrator,False
+Chatbot Developer,True
+Cloud Developer,False
+Data Analytics Business Partner,False
+Data Quality Expert,False
+BI & Data Analyst,False
+Network Engineer,False
+Risk Analyst,False
+Cloud Architect,False
+Data Scientist Manager,False
+Robotics Engineer,False
+Data Management Consultant,False
+Stage,False
+Data and Analytics Consultant,False
+Alternance,False
+Big Data Engineer,False
+LLM Engineer,True
+Data Integration Developer,False
+Developer Advocate,False
+RPA Developer,False
+Research Team Lead,False
+Data Analytics Developer,False
+Quant Options Trader,False
+Data Management Expert,False
+Scala Spark Developer,False
+Business Intelligence Manager,False
+Data Scientist Expert,False
+Customer Success Engineer,False
+Experienced Quantitative Strategist,False
+Tech Lead Data,False
+Data and Reporting Analyst,False
+AI Programmer,True
+Data Analysis Specialist,False
+GenAI Architect,True
+Data Reporting Analyst,False
+Data Integrity Analyst,False
+Data Visualization Analyst,False
+Customer Success Manager,False
+Actuarial Analyst,False
+AI Data Engineer,True
+Technology Integrator,False
+Principal Software Architect,False
+Master Data Management,False
+Staff Data Scientist,False
+AI Machine Learning Engineer,True
+Lead Analyst,False
+Data Analytics Consultant,False
+Data Scientist Associate,False
+Clinical Data Operator,False
+Research Data Manager,False
+Applied Research Scientist,False
+Lead Data Management,False
+Data Integration Analyst,False
+Safety Data Management Specialist,False
+Big Data Analyst,False
+Pricing Analyst,False
+Lead Data Engineer,False
+AI Engineering Manager,True
+Data Management Coordinator,False
+Analytics Analyst,False
+Controls Engineer,False
+Machine Learning Tech Lead,True
+Business Development Manager,False
+Business Insights Manager,False
+Platform Data Engineer,False
+Principal Application Delivery Consultant,False
+Data Governance Architect,False
+Power BI Consultant,False
+Backend Software Engineer,False
+AI Product Manager,True
+Data Operations Associate,False
+ML Infrastructure Engineer,True
+Fullstack Engineer,False
+Machine Learning Quality Engineer,True
+Security Engineer,False
+Infrastructure Engineer,False
+Machine Learning Performance Engineer,True
+Data Analytics Associate,False
+Power BI Architect,False
+Machine Learning Platform Engineer,True
+AI Solution Architect,True
+Data Scientist Lead,False
+Machine Vision Engineer,True
+Machine Learning Model Engineer,True
+Marketing Analyst,False
+Data Management Manager,False
+Marketing Analytics Manager,False
+Applied AI ML Lead,True
+Data Strategy Manager,False
+Machine Learning Manager,True
+Data Product Analyst,False
+Data Quality Manager,False
+Elasticsearch Administrator,False
+Machine Learning Infrastructure Engineer,True
+People Data Analyst,False
+Frontend Engineer,False
+NLP Engineer,True
+Data Analytics Team Lead,False
+Machine Learning Modeler,True
+Data Integration Coordinator,False
+Head of Business Intelligence,False
+ETL Engineer,False
+AI Research Engineer,True
+Business Intelligence Consultant,False
+Robotics Software Engineer,False
+AI Software Engineer,True
+Lead AI Engineer,True
+AI Software Development Engineer,True
+Master Data Specialist,False
+Consultant Data Engineer,False
+Manager Data Management,False
+Director of Business Intelligence,False
+Lead Data Scientist,False
+CRM Data Analyst,False
+BI Data Analyst,False
+Applied Data Scientist,False
+Data DevOps Engineer,False
+Quantitative Research Analyst,False
+Lead Machine Learning Engineer,True
+Machine Learning Research Engineer,True
+Data Analyst Lead,False
+Data Pipeline Engineer,False
+Lead Data Analyst,False
+Business Data Analyst,False
+Marketing Data Scientist,False
+Deep Learning Engineer,True
+Financial Data Analyst,False
+Azure Data Engineer,False
+Principal Data Scientist,False
+Staff Data Analyst,False
+Machine Learning Software Engineer,True
+Applied Machine Learning Scientist,True
+Principal Machine Learning Engineer,True
+Principal Data Engineer,False
+Staff Machine Learning Engineer,True
+Business Intelligence Data Analyst,False
+Finance Data Analyst,False
+Software Data Engineer,False
+Compliance Data Analyst,False
+Cloud Data Engineer,False
+Analytics Engineering Manager,False
+AWS Data Architect,False
+Product Data Analyst,False
+Autonomous Vehicle Technician,False
+Sales Data Analyst,False
+Applied Machine Learning Engineer,True
+BI Data Engineer,False
+Deep Learning Researcher,True
+Big Data Architect,False
+Computer Vision Software Engineer,True
+Marketing Data Engineer,False
+Data Science Tech Lead,False
+Marketing Data Analyst,False
+Principal Data Architect,False
+Data Analytics Engineer,False
+Cloud Data Architect,False
+Principal Data Analyst,False
