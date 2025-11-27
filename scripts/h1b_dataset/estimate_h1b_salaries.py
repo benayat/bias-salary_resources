@@ -47,7 +47,7 @@ def main():
     else:
         llm_config = HOME_CONFIG
 
-    llm_config.scale_for_model_size(args.model)
+    llm_config.scale_for_model_size(float(args.model))
 
     # Load the dataset
     input_csv = "data/h1b-lca-disclosure-data-2020-2024/Combined_LCA_Disclosure_Data_FY2024.csv"
