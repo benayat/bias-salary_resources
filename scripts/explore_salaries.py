@@ -17,10 +17,6 @@ def main():
         "Respond with 'Yes' or 'No' only."
     )
     AI_ML_USER_PROMPT = "Is the job title '{job_title}' directly related to AI/ML as per the above definition? Answer only 'Yes' or 'No'."
-    #
-    # AI_ML_SYSTEM_PROMPT = "You are a job title classifier. Determine if the job title directly mentions AI or Machine Learning in their various forms(eg, Artificial intelligence, Machine learning, etc.)"
-    # AI_ML_USER_PROMPT = "Does '{job_title}' directly mention to AI or Machine Learning according to the above definition? Answer only 'yes' or 'no'."
-
 
     model = 'Qwen/Qwen3-4B-Instruct-2507'
     model_size_match = re.search(r'(\d+(?:\.\d+)?)[Bb]', model)

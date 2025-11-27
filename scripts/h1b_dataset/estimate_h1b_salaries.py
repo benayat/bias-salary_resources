@@ -15,98 +15,121 @@ You must return ONLY a single integer (the annual USD salary).
 """
 
 SALARY_USER_PROMPT = """Estimate the yearly salary in USD for this H1B job application based on the following features:
-- Job Title: {job_title}
-- SOC Code: {soc_code}
-- SOC Title: {soc_title}
-- Wage Rate of Pay From: {wage_rate_of_pay_from}
-- Wage Rate of Pay To: {wage_rate_of_pay_to}
-- Wage Unit of Pay: {wage_unit_of_pay}
-- Prevailing Wage: {prevailing_wage}
-- Prevailing Wage Unit of Pay: {pw_unit_of_pay}
-- Worksite City: {worksite_city}
-- Worksite State: {worksite_state}
+- job_title: {job_title}
+- soc_code: {soc_code}
+- soc_title: {soc_title}
+- full_time_position: {full_time_position}
+- total_worker_positions: {total_worker_positions}
+- worksite_city: {worksite_city}
+- worksite_state: {worksite_state}
+- naics_code: {naics_code}
 
 Return only the integer amount, nothing else."""
 
+
 def main():
     parser = argparse.ArgumentParser(description="Estimate salaries for H1B job applications using LLM")
-    parser.add_argument('--model', default=MODEL_NAME, help='LLM model name')
+    parser.add_argument("--model", default=MODEL_NAME, help="LLM model name")
     parser.add_argument("--debug", action="store_true", help="Enable debug mode (process first 10 rows)")
-    parser.add_argument("--llm-config", choices=['home', 'home_4gpu', 'hpc'], default='home', help="Choose LLM configuration")
-    parser.add_argument('--chunk-size', type=int, default=30000, help='Chunk size for processing prompts')
+    parser.add_argument("--llm-config", choices=["home", "home_4gpu", "hpc"], default="home", help="Choose LLM configuration")
+    parser.add_argument("--chunk-size", type=int, default=30000, help="Chunk size for processing prompts")
     args = parser.parse_args()
+
     is_debug_mode = args.debug
     chunk_size = args.chunk_size
 
     # Update LLM configuration based on CLI arguments
-    if args.llm_config == 'home_4gpu':
+    if args.llm_config == "home_4gpu":
         llm_config = HOME_4GPU_CONFIG
-    elif args.llm_config == 'hpc':
+    elif args.llm_config == "hpc":
         llm_config = HPC_CONFIG
     else:
         llm_config = HOME_CONFIG
 
     # Load the dataset
-    h1b_df = pd.read_csv('data/h1b-lca-disclosure-data-2020-2024/Combined_LCA_Disclosure_Data_FY2020_to_FY2024.csv', low_memory=False)
+    input_csv = "data/h1b-lca-disclosure-data-2020-2024/Combined_LCA_Disclosure_Data_FY2024.csv"
+    h1b_df = pd.read_csv(input_csv, low_memory=False)
+
+    # Keep only columns we need + keep everything else (you can drop if you want)
+    required_cols = [
+        "JOB_TITLE",
+        "SOC_CODE",
+        "SOC_TITLE",
+        "FULL_TIME_POSITION",
+        "TOTAL_WORKER_POSITIONS",
+        "WORKSITE_CITY",
+        "WORKSITE_STATE",
+        "NAICS_CODE",
+    ]
+    missing = [c for c in required_cols if c not in h1b_df.columns]
+    if missing:
+        raise KeyError(f"Missing required columns in {input_csv}: {missing}")
+
     if is_debug_mode:
-        h1b_df = h1b_df.head(10)
+        h1b_df = h1b_df.head(10).copy()
 
     llm = LLMClient(model_name=args.model, config=llm_config)
     sampling_params = SamplingConfig(temperature=0.0, top_p=1.0, max_tokens=10)
 
-    def chunk_list(lst, chunk_size):
-        for i in range(0, len(lst), chunk_size):
-            yield lst[i:i + chunk_size]
+    def chunk_list(lst, size):
+        for i in range(0, len(lst), size):
+            yield lst[i : i + size]
 
     # Prepare prompts
     prompts = []
     row_indices = []
     for idx, row in h1b_df.iterrows():
         user_content = SALARY_USER_PROMPT.format(
-            job_title=row['JOB_TITLE'],
-            soc_code=row['SOC_CODE'],
-            soc_title=row['SOC_TITLE'],
-            wage_rate_of_pay_from=row['WAGE_RATE_OF_PAY_FROM'],
-            wage_rate_of_pay_to=row['WAGE_RATE_OF_PAY_TO'],
-            wage_unit_of_pay=row['WAGE_UNIT_OF_PAY'],
-            prevailing_wage=row['PREVAILING_WAGE'],
-            pw_unit_of_pay=row['PW_UNIT_OF_PAY'],
-            worksite_city=row['WORKSITE_CITY'],
-            worksite_state=row['WORKSITE_STATE']
+            job_title=row.get("JOB_TITLE", ""),
+            soc_code=row.get("SOC_CODE", ""),
+            soc_title=row.get("SOC_TITLE", ""),
+            full_time_position=row.get("FULL_TIME_POSITION", ""),
+            total_worker_positions=row.get("TOTAL_WORKER_POSITIONS", ""),
+            worksite_city=row.get("WORKSITE_CITY", ""),
+            worksite_state=row.get("WORKSITE_STATE", ""),
+            naics_code=row.get("NAICS_CODE", ""),
         )
-        messages = [
-            {"role": "system", "content": SALARY_SYSTEM_PROMPT},
-            {"role": "user", "content": user_content}
-        ]
-        prompts.append({"messages": messages})
+        prompts.append(
+            {
+                "messages": [
+                    {"role": "system", "content": SALARY_SYSTEM_PROMPT},
+                    {"role": "user", "content": user_content},
+                ]
+            }
+        )
         row_indices.append(idx)
 
+    # Run in chunks
     estimated_salaries = []
     for chunk_prompts, chunk_indices in zip(chunk_list(prompts, chunk_size), chunk_list(row_indices, chunk_size)):
-        results = llm.run_batch(chunk_prompts, sampling_params, output_field='output')
-        for idx, result in zip(chunk_indices, results):
-            output = result['output'].strip()
-            # Extract digits
-            digits = ''.join(c for c in output if c.isdigit())
+        results = llm.run_batch(chunk_prompts, sampling_params, output_field="output")
+        for row_idx, result in zip(chunk_indices, results):
+            output = str(result.get("output", "")).strip()
+            digits = "".join(c for c in output if c.isdigit())
             try:
-                estimated_salary = int(digits)
+                est = int(digits)
             except ValueError:
-                estimated_salary = 0  # or some default
-            estimated_salaries.append((idx, estimated_salary))
+                est = 0  # default for invalid outputs
+            estimated_salaries.append((row_idx, est))
 
-    # Update the dataframe
-    for idx, est in estimated_salaries:
-        h1b_df.at[idx, 'estimated_salary_in_usd'] = est
+    # Write predictions back
+    h1b_df["estimated_salary_in_usd"] = np.nan
+    for row_idx, est in estimated_salaries:
+        h1b_df.at[row_idx, "estimated_salary_in_usd"] = est
 
-    # Save to CSV
-    output_path = f'data/h1b-lca-disclosure-data-2020-2024/llm_estimated_salaries{args.model.split("/")[-1]}.csv'
+    # Save
+    model_tag = args.model.split("/")[-1]
+    out_dir = "data/h1b-lca-disclosure-data-2020-2024"
     if is_debug_mode:
-        output_path = f'data/h1b-lca-disclosure-data-2020-2024/llm_estimated_salaries_debug{args.model.split("/")[-1]}.csv'
+        output_path = f"{out_dir}/llm_estimated_salaries_debug{model_tag}.csv"
+    else:
+        output_path = f"{out_dir}/llm_estimated_salaries{model_tag}.csv"
+
     h1b_df.to_csv(output_path, index=False)
 
     llm.delete_client()
+    print(f"Salary estimation complete. Saved: {output_path}")
 
-    print("Salary estimation complete.")
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
