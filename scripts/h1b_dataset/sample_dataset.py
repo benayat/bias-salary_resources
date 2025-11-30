@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """
-SOC-diverse matched-pairs sampler (one-shot: original -> ~200 rows), WITH CASE_STATUS filtering.
+SOC-diverse matched-pairs sampler (one-shot: original -> ~200 rows), WITH CASE_STATUS filtering
+AND wage-unit filtering (keep yearly only).
 
 Core idea:
 - Filter: keep only rows where CASE_STATUS == "Certified" (configurable flags).
+- Filter: keep only rows where (PW_UNIT_OF_PAY == "Year") and (WAGE_UNIT_OF_PAY == "Year") (configurable).
 - AI label comes ONLY from a provided AI title list (txt or csv with AI_job==True).
 - Build matched pairs within SOC_CODE: for each selected AI row, select one non-AI row from SAME SOC_CODE.
 - To avoid collapsing into a few mega SOCs:
@@ -14,16 +16,6 @@ Output:
 - ROW_ID (unique id 0..N-1 from the ORIGINAL file row order)
 - IS_AI, PAIR_ID, MATCH_LEVEL
 - plus all original columns
-
-Example:
-  uv run scripts/h1b_dataset/sample_dataset.py \
-    --input data/.../Combined_LCA_Disclosure_Data_FY2024.csv \
-    --ai-titles data/.../ai_ml_job_titles.csv \
-    --output data/.../h1b_2024_sampled.csv \
-    --target-total 200 \
-    --seed 42 \
-    --max-pairs-per-soc 5 \
-    --ai-soc-weight-mode inverse_sqrt
 """
 
 from __future__ import annotations
@@ -99,6 +91,12 @@ def pick_one(rng: np.random.Generator, arr: np.ndarray) -> int:
     return int(arr[int(rng.integers(0, len(arr)))])  # one element
 
 
+def unit_is_year(series: pd.Series, year_value: str) -> pd.Series:
+    # Case-insensitive, strip whitespace
+    y = str(year_value).strip().lower()
+    return series.astype(str).str.strip().str.lower().eq(y)
+
+
 # -----------------------------
 # Main sampler
 # -----------------------------
@@ -115,9 +113,19 @@ def main() -> None:
     ap.add_argument("--naics-col", default="NAICS_CODE")
     ap.add_argument("--ft-col", default="FULL_TIME_POSITION")
 
-    # NEW: CASE_STATUS filter
+    # CASE_STATUS filter
     ap.add_argument("--status-col", default="CASE_STATUS")
     ap.add_argument("--status-value", default="Certified")
+
+    # NEW: yearly wage filters (prevailing wage + offered wage)
+    ap.add_argument("--pw-unit-col", default="PW_UNIT_OF_PAY", help="Prevailing wage unit column.")
+    ap.add_argument("--wage-unit-col", default="WAGE_UNIT_OF_PAY", help="Offered wage unit column.")
+    ap.add_argument("--year-unit-value", default="Year", help="Value meaning annual pay (case-insensitive).")
+    ap.add_argument(
+        "--allow-missing-unit-cols",
+        action="store_true",
+        help="If set, missing unit columns are ignored (otherwise raises).",
+    )
 
     ap.add_argument("--target-total", type=int, default=200, help="Total rows in output (will use target_total//2 pairs).")
     ap.add_argument("--seed", type=int, default=0)
@@ -161,20 +169,41 @@ def main() -> None:
     if "ROW_ID" not in df_raw.columns:
         df_raw.insert(0, "ROW_ID", np.arange(len(df_raw), dtype=np.int64))
 
-    # Required columns (status-col too, since we're filtering)
+    # Required columns
     for c in (args.job_title_col, args.soc_col, args.status_col):
         if c not in df_raw.columns:
             raise KeyError(f"Missing required column '{c}' in input.")
 
-    n_before_status = len(df_raw)
+    n_initial = len(df_raw)
+
+    # CASE_STATUS filter
     df_raw = df_raw[df_raw[args.status_col].astype(str) == str(args.status_value)]
     n_after_status = len(df_raw)
+
+    # Yearly wage unit filters (PW + WAGE), to avoid non-annual unit leakage
+    unit_cols = [args.pw_unit_col, args.wage_unit_col]
+    for col in unit_cols:
+        if not col:
+            continue
+        if col not in df_raw.columns:
+            if args.allow_missing_unit_cols:
+                print(f"[WARN] Unit column missing, skipping yearly filter for: {col}")
+                continue
+            raise KeyError(f"Missing required unit column '{col}' (use --allow-missing-unit-cols to ignore).")
+
+        before = len(df_raw)
+        df_raw = df_raw[unit_is_year(df_raw[col], args.year_unit_value)]
+        after = len(df_raw)
+        print(f"Rows after {col} == {args.year_unit_value!r} (case-insensitive): {after:,} (dropped {before - after:,})")
+
+    n_after_units = len(df_raw)
 
     # Reset index for safe positional indexing later, but keep original ROW_ID values
     df = df_raw.reset_index(drop=True)
 
-    print(f"Input rows: {n_before_status:,}")
+    print(f"Input rows: {n_initial:,}")
     print(f"Rows after {args.status_col} == {args.status_value!r}: {n_after_status:,}")
+    print(f"Rows after yearly-unit filters: {n_after_units:,}")
 
     # Normalize SOC + label AI by exact title list match (normalized)
     df[args.soc_col] = df[args.soc_col].astype(str)
@@ -209,7 +238,6 @@ def main() -> None:
         raise SystemExit("No SOC_CODE has both AI and Other rows under current constraints.")
 
     # Precompute per-SOC AI indices + per-SOC Other indices
-    soc_ok_set = set(soc_ok)
     ai_idx = ai_idx_all[np.isin(soc_arr[ai_idx_all], soc_ok)]
     other_idx = other_idx_all[np.isin(soc_arr[other_idx_all], soc_ok)]
 
