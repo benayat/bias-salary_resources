@@ -723,7 +723,7 @@ Database Administrators - Kbgfjg222819-2,False
 DEVELOPER III - SOFTWARE ENGINEERING,False
 System Development Engineer I,False
 Lead-Technology,False
-"Algorithm Developer, Quantitative Analysis",True
+"Algorithm Developer, Quantitative Analysis",False
 "Manager, Machine Learning Science",True
 Group Product Manager,False
 "Senior Director, Product",False
@@ -805,7 +805,7 @@ Offensive Security Engineer,False
 "Staff Systems Specialist, Security",False
 Systems Analyst,False
 Post Doctoral Scientist,False
-Principal Software Engineer - Data Scientist,True
+Principal Software Engineer - Data Scientist,False
 Development Architect,False
 Solutions Consultant,False
 "MTS 2, Information Security Engineer",False
@@ -2833,7 +2833,7 @@ Principal Consultant - KBGFJG102767-3,False
 Accountants and Auditors - Kbgfjg226528-2,False
 "Senior Automation Engineer, Firmware",False
 Data Warehousing Consultant,False
-Sr. Manager Data Science,False
+Sr. Manager Data Science,True
 DevOps Engineer III,False
 DataStage Engineer,False
 Senior Vice President; Senior Technology Manager,False
@@ -3696,7 +3696,7 @@ IT SOX Audit Manager,False
 Lead-IT Operations,False
 "Vice President, Sr. Manager of Software Engineering",False
 Sr. Scientist,False
-Senior Principal Data Science,False
+Senior Principal Data Science,True
 PROJECT MANAGEMENT SPECIALIST,False
 "Director, Full Stack Engineering",False
 Principal Software Engineer (Order to Cash) Oracle Technolog,False
@@ -4398,7 +4398,7 @@ Windows Server Engineer,False
 "Engineer II - Technical Services, Building Products",False
 "Senior Developer, TIBCO",False
 Computational Biologist I,False
-Head of Autonomy,True
+Head of Autonomy,False
 Business Analyst - Operations,False
 IT Analyst - Business Applications,False
 Senior IT Developer,False
@@ -4653,7 +4653,7 @@ ARCHITECT II - ENTERPRISE SOLUTIONS,False
 Application Manager,False
 GEO-TECHNICAL ENGINEER,False
 Engineering Director,False
-Algorithm Architecture Lead,True
+Algorithm Architecture Lead,False
 Backend Senior Software Engineer,False
 Associate Vice President - Global Insights,False
 "Senior Analyst, Data Science and Analytics",False
@@ -5330,10 +5330,10 @@ Senior Geotechnical Engineer,False
 Associate Vice President – Alliance Management,False
 Field Engineer II,False
 BUSINESS ANALYST I,False
-Product Manager- Commerce Recommendation,True
+Product Manager- Commerce Recommendation,False
 Lead Pega Consultant,False
 Senior Hardware Applications Engineer,False
-"SENIOR MANAGER, APPLIED SCIENCE",True
+"SENIOR MANAGER, APPLIED SCIENCE",False
 "Sr Mgr Engineering and Operations, Data & Analytics IT",False
 AI and Machine Learning Engineer III,True
 Electronic Systems Product Engineer,False
@@ -5487,7 +5487,7 @@ Database Administrators - Kbgfjg222997-2,False
 CSIS Testing Analyst,False
 Assistant Professor of Medicine,False
 Deputy Director,False
-Software Engineer - Autonomy,True
+Software Engineer - Autonomy,False
 Information Security Analysts - KBGFJG47694-18,False
 Business Intelligence Developer,False
 System Design Engineer,False
@@ -5743,7 +5743,7 @@ Software and Controls Engineer,False
 Agile Coach,False
 LEAD II- SOFTWARE ENGINEERING,False
 Research Associate (MRI Biophysicist),False
-"Sr. Software Engineer, SIL, Autonomy",True
+"Sr. Software Engineer, SIL, Autonomy",False
 "Senior Product Manager, Marketing",False
 Solution Delivery Manager,False
 Actuarial Assistant II,False
@@ -5976,7 +5976,7 @@ Principal Project Engineer,False
 Client Tech Support Consultant III,False
 Vice President; Software Engineer II,False
 Instructor in Investigation,False
-Model/Analysis/Validation Officer,True
+Model/Analysis/Validation Officer,False
 MECHANICAL ENGINEER,False
 IT Specialist,False
 "Director, IT Engineering",False
@@ -6364,7 +6364,7 @@ Accountants and Auditors - Kbgfjg224294-2,False
 Investment Analyst,False
 Princ Engr-Sys Architecture,False
 Aircraft Mechanic,False
-Senior Systems Engineer (Autonomy),True
+Senior Systems Engineer (Autonomy),False
 Development Manager Senior,False
 Lead Product Analyst,False
 "Lead, Product Design",False
@@ -7164,7 +7164,7 @@ Junior GIS Developer,False
 VLSI Lead L1,False
 AM Quantitative Analyst II,False
 Periodontist,False
-"Sr. Software Engineer, Behaviors, Autonomy",True
+"Sr. Software Engineer, Behaviors, Autonomy",False
 Credit Risk Analyst,False
 Infrastructure Analyst,False
 "Director of Product Management, Out of Park Experience",False
@@ -7445,7 +7445,7 @@ Ass't Professor,False
 Senior Field Service Supervisor,False
 "Senior Machine Learning Engineer, Lead Ads",True
 Researcher 6,False
-"ADS INNOVATION, AUTOMATION & EMERGING TECHNOLOGIES ARCHITECT",True
+"ADS INNOVATION, AUTOMATION & EMERGING TECHNOLOGIES ARCHITECT",False
 "VP, Communications Planning",False
 Application Support Devops Engineer,False
 Sr. Integrations Support Engineer,False
@@ -7499,7 +7499,7 @@ Staff MD (Pathologist),False
 Product Manager Senior,False
 Senior IT Implementation Consultant II,False
 Therapeutic Training and Support,False
-"AVP, Model Validation",True
+"AVP, Model Validation",False
 Sr Chemical Process Engineer,False
 "Engineer, Technology Quality Assurance",False
 Programmer/Analyst,False
@@ -8138,7 +8138,7 @@ Clinical Data Manager,False
 Medical Laboratory Scientist/Medical Technologist,False
 Lead Apigee Engineer,False
 Security Advisory Services Manager,False
-Model N Consultant,True
+Model N Consultant,False
 Senior DevOps Engineer (Software),False
 Senior IT Business Analyst,False
 Oracle Financial System Analyst,False
@@ -8297,7 +8297,7 @@ Managing Director; Sr Investment Banker II,False
 Sales Operations Analyst 3,False
 JUNIOR COMPUTER SYSTEMS ENGINEER 1,False
 Manager Regulatory Compliance Audits,False
-Senior Manager Modeling,True
+Senior Manager Modeling,False
 Senior Genetic Counselor,False
 Senior Data Product Manager,False
 Test Engineering Manager,False
@@ -8414,7 +8414,7 @@ Customer Delivery Architect,False
 Business Architecture Associate Manager,False
 Marketing Science Lead (3),False
 Silicon System Validation Engineer,False
-Sr Manager - Data Science,False
+Sr Manager - Data Science,True
 "Technical Lead, Software Development",False
 Principal RF Development & Assurance Engineer,False
 IT Developer/Engineer IV,False
@@ -8825,7 +8825,7 @@ Assistant Member,False
 Computer and Information Systems Managers - KBGFJG34301-14,False
 Senior Specialist - IT Systems Engineering,False
 FX Technology Product Owner,False
-Manager of Database Marketing (Data Scientist),True
+Manager of Database Marketing (Data Scientist),False
 Accountants and Auditors - KBGFJG263320-1,False
 Legal Assistant,False
 "Global Markets – US Lead,Quantitative Execution & Data Model",False
@@ -8974,7 +8974,7 @@ Assistant Researcher,False
 "Staff Engineer, Mixed Signal Design Engineering",False
 ANALOG LAYOUT ENGINEER,False
 Clinical Assistant Professor/Assistant Program Director,False
-"Sr Manager, Data Science",False
+"Sr Manager, Data Science",True
 Lead Data Engineer - KBGFJG166583-2,False
 DATABASE AND EBS ADMINISTRATOR II,False
 Principal Solution Architect,False
@@ -9119,7 +9119,7 @@ Senior IT Analyst,False
 Sr. System Analyst,False
 Chemistry Lecturer & Lab Coordinator,False
 PEGA Developer,False
-Model-Based Design Systems Architect,True
+Model-Based Design Systems Architect,False
 Site Reliability Engineer – Career,False
 Senior Cloud Engineer - KBGFJG119076-2,False
 Neurosurgeon,False
@@ -11321,7 +11321,7 @@ Senior Principal Data Engineer,False
 "Associate, Quantitative Analyst",False
 Principle Firmware Engineer,False
 Clinician I,False
-Senior Systems Administrator - Gen,False
+Senior Systems Administrator - Gen,True
 Embryologist 2,False
 Solutions Developer,False
 Research Data Scientist I,False
@@ -12899,7 +12899,7 @@ Software Engineer - Java,False
 ML Engineer,True
 Ecommerce Project Manager,False
 Solutions Architect/Lead Developer,False
-Perception Software Engineer,True
+Perception Software Engineer,False
 LEAD INTERNAL COMMUNICATIONS SPECIALIST,False
 Vice President- Regulatory & Sourcing,False
 "Software Engineer 3, Middleware",False
@@ -12991,7 +12991,7 @@ EMBEDDED DESIGN ENGINEER,False
 Practice Management Specialist,False
 Guest Relations Manager,False
 DATA WAREHOUSE SPECIALIST,False
-Quantitative Analytics Manager - Model Risk,False
+Quantitative Analytics Manager - Model Risk,True
 Internal Medicine Hospitalist,False
 Principal Data Modeler,False
 Software Developer – Full Stack Front End,False
@@ -13248,7 +13248,7 @@ Sr Information Systems Software Application Engineer,False
 Director of Data Engineering/Architect,False
 Research Staff 4 Physics,False
 Environmental Engineer,False
-"Director, Semantic Applications Research",True
+"Director, Semantic Applications Research",False
 "Faculty, Chinese Seminary Old Testament",False
 Software Developer (Oracle C2M),False
 "Senior Recruitment Consultant, US - KBGFJG262717-1",False
@@ -13268,7 +13268,7 @@ SW Support Manager,False
 Director of UX Design,False
 Sr. Supply Chain Planner/Analyst,False
 SQA Analyst,False
-"Backend Engineer, Lark Innovation",False
+"Backend Engineer, Lark Innovation",True
 Research Associate Professor,False
 Physical Medicine and Rehabilitation Physician,False
 "IT Director, Order Management",False
@@ -13878,7 +13878,7 @@ Mgr Engineer - KBGFJG51616-6,False
 Patent Agent (Biologics),False
 SENIOR PRINCIPAL ENGINEER,False
 Marketing Analytics Lead,False
-Site Reliability Engineer - AML,True
+Site Reliability Engineer - AML,False
 Macro & Modeling Specialist,False
 Managed Service Change Analyst Senior Specialist,False
 Lead CPQ Engineer,False
@@ -14390,7 +14390,7 @@ Genomics Technical Associate,False
 Consulting Database Administrator,False
 IS Data Engineer,False
 Financial Risk Specialists - Kbgfjg178592-4,False
-"Lead, Data Science",False
+"Lead, Data Science",True
 Chinese Immersion Teacher,False
 "Principal Staff Software Engineer, Machine Learning",True
 Release Train Engineer,False
@@ -14437,7 +14437,7 @@ IS Data Warehouse Architect III,False
 Sr. Firmware Engineer,False
 Data Reporting Analyst Associate,False
 Senior Software Engineer Infrastructure System Lab,False
-"Staff Software Engineer, Middleware Autonomy",True
+"Staff Software Engineer, Middleware Autonomy",False
 Simulation Specialist,False
 SAP Security Manager,False
 "Director, Database Administration",False
@@ -14472,7 +14472,7 @@ Operations and Customer Quality Engineer,False
 Principal Information Management Analyst,False
 Product Manager/Computer Scientist,False
 Senior Merchandising Analyst,False
-"Corporate Counsel, Alexa",True
+"Corporate Counsel, Alexa",False
 Solution Architect [00058214],False
 Cajero/a,False
 Product Manager 2,False
@@ -15001,7 +15001,7 @@ Software Quality Assurance Engineer And Tester,False
 "Director, Digital Product Management",False
 "Manager, Demand Planning",False
 Solution Architect & Engineer,False
-"Autonomy Systems Engineer, Fault Detection & Response",True
+"Autonomy Systems Engineer, Fault Detection & Response",False
 MANAGER - PLANNING & FORECASTING,False
 "Director, Business Analysis, Reference Data",False
 Digital Software Eng Lead Analyst,False
@@ -15041,7 +15041,7 @@ Expert Manager,False
 Software QA Automation Engineer,False
 Senior Java Backend Software Engineer,False
 Senior Programmer,False
-Senior Manager Data Science,False
+Senior Manager Data Science,True
 Software Development Engineer II,False
 Assistant Professor of Electrical and Computer Engineering,False
 Sr. Manager – Digital Integration & Quality Assurance,False
@@ -15727,7 +15727,7 @@ Staff Hardware Engineer TLM,False
 Software Developers - KBGFJG178799-5,False
 Quality Engineering Arch Manager,False
 Sustainability Manager,False
-AUTONOMY SR. ENGINEER,True
+AUTONOMY SR. ENGINEER,False
 Applications Development Technology Lead Analyst,False
 Director - Core Leverage,False
 COMMERCIAL GROWTH AND STRATEGY SPECIALIST,False
@@ -15869,7 +15869,7 @@ Vice President Technology,False
 Member of Communications Staff,False
 Civil/Structural Engineering Supervisor,False
 Purchasing Strategist,False
-Senior Full Stack Data Scientist,True
+Senior Full Stack Data Scientist,False
 Salesforce Engineer - KBGFJG259120-2,False
 "Professional 5, Information Technology",False
 PRODUCTION MANAGER,False
@@ -15880,7 +15880,7 @@ SENIOR R&D GEOSCIENCES ENGINEER,False
 "Manager, Global Labelling Delivery",False
 Engagement Manager,False
 Associate (Attorney),False
-"Staff Engineer, Data Science",True
+"Staff Engineer, Data Science",False
 "Manager, Interiors",False
 Senior Physical Design Engineer,False
 Director of Community Engagement,False
@@ -16364,7 +16364,7 @@ ENTERPRISE APPLICATIONS DEVELOPER-I,False
 "Research Investigator, Translational Sciences",False
 Principal Front End Engineer,False
 "Associate, Data Visualization",False
-Product Marketing Manager - Lark,False
+Product Marketing Manager - Lark,True
 Business Intelligence Analyst Lead,False
 "Manager, IT Service Management",False
 "Scientist I, Technical Development",False
@@ -16671,7 +16671,7 @@ Engineering Product Manager III,False
 Graphic Designer,False
 Software Development Supervisor,False
 Sr. Appian Developer,False
-Feature System Engineer,True
+Feature System Engineer,False
 Senior GTM Data Analyst,False
 Accountants and Auditors - KBGFJG144743-7,False
 Electrical Engineer 3 - Grounding Analyst,False
@@ -16688,7 +16688,7 @@ MERCHANDISE AND DESIGN MANAGER,False
 Clinical Genomics Analyst,False
 Research Engineering/ Scientist Associate IV,False
 "Registered Nurse, Intermediate Care and Critical Care",False
-Autonomy Data Infrastructure Engineer,True
+Autonomy Data Infrastructure Engineer,False
 Project Director,False
 Salesforce  Developer,False
 Associate Director for Engineering and Commissioning,False
@@ -16744,7 +16744,7 @@ Senior Solutions Design Analyst,False
 Clinical Assistant Professor Pediatrics (Clinician Educator),False
 "Director, Commercial - North America",False
 BIM Engineer,False
-Machine Development Engineer,True
+Machine Development Engineer,False
 Associate Director of Healthcare Economics,False
 Business Analyst (Management Consultant),False
 Salesforce Developer Senior (Platform Senior Developer),False
@@ -17170,7 +17170,7 @@ Application Development / Maintenance [00057312],False
 Java Cloud Developer,False
 Systems Engineering Product Specialist,False
 "Vice President, Architecture",False
-"Backend Engineer, Lark Innovation",False
+"Backend Engineer, Lark Innovation",True
 Sr. Researcher,False
 Mainframe Systems Programmer and Anchor,False
 Sr. ServiceNow Developer,False
@@ -17235,7 +17235,7 @@ Digital Sculptor,False
 Systems Analyst/Systems Engineer,False
 Service Technician,False
 "Manager, Technical Support",False
-Senior Modeler,True
+Senior Modeler,False
 Resource Coordinator Pathology,False
 Lead Quality Automation Engineer,False
 Sr. Estimator,False
@@ -17337,7 +17337,7 @@ Financial and Investment Analysts - KBGFJG218759-2,False
 "Exec. Dir. Intellectual Prop. Corporate, Global Business",False
 AWS DevOps Engineer II,False
 "Vice President, Cloud Engineering",False
-Software Engineer- E-Commerce Recommendation Infrastructure,True
+Software Engineer- E-Commerce Recommendation Infrastructure,False
 Research Technologist I,False
 IT Technology Manager,False
 Creative Systems Engineer,False
@@ -17429,7 +17429,7 @@ Senior IT Engineer - Web Applications,False
 Project Scientist I,False
 Middleware Systems Engineer (SRE),False
 Database Administrator - Level V,False
-Manager Data Science,True
+Manager Data Science,False
 Lead Supplier Quality Engineer,False
 Quality Control Chemist,False
 "Sr Manager, Information Technology",False
@@ -17486,7 +17486,7 @@ Head Grower,False
 "Director, Operational Finance",False
 Manager Engineering Manager -Software,False
 "Sales Representative III, Technical 67",False
-"Engineering Manager, Data Science and Intelligence",True
+"Engineering Manager, Data Science and Intelligence",False
 Mechatronics Engineer,False
 "SVP, International Growth",False
 Senior Solutions Architect - Tanzu Insights,False
@@ -17784,7 +17784,7 @@ Systems Engineer - NetIQ,False
 DATA ARCHITECT / MODELER,False
 CHIEF LEGAL OFFICER AND GENERAL COUNSEL,False
 Application Development / Maintenance [00058750],False
-"Engineer (Autonomy - Planning, Controls & DBW)",True
+"Engineer (Autonomy - Planning, Controls & DBW)",False
 Database Administrators - KBGFJG178893-6,False
 SOFTWARE (CLOUD) ENGINEER,False
 Senior Data Warehouse Engineer,False
@@ -17884,7 +17884,7 @@ Sr. Software Development Engineer in Test (SDET),False
 "Principal Business Analyst, ERP OPM and Supply Chain",False
 Senior Supply Planner,False
 Product Specialist Manager,False
-Director Data Science,False
+Director Data Science,True
 Business Analysis Center of Excellence Manager,False
 Revenue Management Manager,False
 Product Marketing Associate,False
@@ -18045,7 +18045,7 @@ Assistant VP of IT- Infrastructure,False
 Simulation Engineer - Data Sciences,False
 Senior Business Execution Consultant (017040.002102),False
 React UI Developer,False
-Senior Engineer - ADAS Software Algorithms,True
+Senior Engineer - ADAS Software Algorithms,False
 Bilingual Mental Health Provider/Lecturer,False
 Technology Practice Principal,False
 "Financial Analyst, Special Situations",False
@@ -18063,7 +18063,7 @@ Regional Automation Engineer,False
 Sr. .NET Developer,False
 Sr ETL Data Engineer,False
 "Team Manager II, Software Development",False
-SIU INTELLIGENCE ANALYST,True
+SIU INTELLIGENCE ANALYST,False
 Senior Research Project Director in Orthopaedics,False
 "Manager, End User Computing",False
 Software Developers - KBGFJG136791-8,False
@@ -18219,7 +18219,7 @@ Strategic Sourcing Technical Lead - Optics,False
 "Tax, IF Senior Manager",False
 Audio Designer,False
 "Manager, Fleet Solutions",False
-Modeling Specialist,True
+Modeling Specialist,False
 Sr. Launch Manager,False
 Machine Learning Engineer,True
 Technical Project Manager - Tire Intelligence Integration,False
@@ -18592,7 +18592,7 @@ Maintenance Manager - KBGFJG71384-17,False
 "Manager, Business Systems Engineering",False
 Process Validation Engineer,False
 IT Systems Mangement Analyst,False
-Feature Function Engineer,True
+Feature Function Engineer,False
 Chief Engineer,False
 Asia Pacific User (Customer) Support Specialist,False
 "AVP, Software Engineering Tester",False
@@ -19040,7 +19040,7 @@ Research Associate Specialist,False
 Data Warehouse Technical Analyst II,False
 Senior SQL Database Administrator / Cloud DBA,False
 Research Biostatistician,False
-Chief Executive Officer - Betty Bot,False
+Chief Executive Officer - Betty Bot,True
 Industrial Engineers - KBGFJG69683-13,False
 Senior Data Manager,False
 Frontend Developer,False
@@ -19149,7 +19149,7 @@ Plant Vehicle Team Product Engineer,False
 Electronic Systems Technical Specialist,False
 Director of Solutions Engineering,False
 "Engineer 2, BI Development & Reporting",False
-Scientist  LM DPD,False
+Scientist  LM DPD,True
 Principal Software Quality Engineer,False
 Executive Consultant,False
 Assistant Professor of Urology,False
@@ -19219,7 +19219,7 @@ Sr. Manager Supplier Industrialization Engineer,False
 EMarkets VP,False
 SOFTWARE QUALITY ASSURANCE ANALYST AND TESTER,False
 Quality Assurance Professional,False
-"Sr Mgr, Data Science",False
+"Sr Mgr, Data Science",True
 Principal Calibration Engineer,False
 Senior Staff Accountant,False
 Lead IT Security Services Consultant,False
@@ -19376,7 +19376,7 @@ Pharmacist Manager (Supervisory),False
 "SR. MANAGER, PARTNER INTEGRATIONS",False
 Senior Software Development Engineer (027),False
 Senior Product Designer I,False
-Senior Principal Data Science Product Manager,False
+Senior Principal Data Science Product Manager,True
 International Business Development Analyst,False
 Application Development / Maintenance [00056045],False
 "Project Administrator, Ambulatory Services",False
@@ -20069,7 +20069,7 @@ Quality Control Manager,False
 NA & Communications Market Salesforce Lead Architect,False
 Curam QA Lead,False
 Product Engineer Powertrain,False
-"Associate Director, US Predictive Customer Engagement",True
+"Associate Director, US Predictive Customer Engagement",False
 TECHNICAL DELIVERY MANAGER,False
 Financial Consultant,False
 Microsoft 365 Suite & Power Platform Technology Specialist,False
@@ -20147,7 +20147,7 @@ Software Developers - KBGFJG252343-2,False
 RF Design Engineer II,False
 "Director, Global Testing Services",False
 Non-Profit Administrator,False
-AI Technician/ Embryo Coordinator,False
+AI Technician/ Embryo Coordinator,True
 Finance Fellow,False
 Chief Operating Officer (COO),False
 "Senior Software Engineer II, Platform Silicon Bringup",False
@@ -20216,7 +20216,7 @@ Senior HR Generalist,False
 "Principal MTS, Architect",False
 "Manager 1, IT Development",False
 AMBULATORY ASSOCIATE CHIEF MEDICAL OFFICER,False
-"Robotics Engineer, Autonomous Aerial Vehicles",False
+"Robotics Engineer, Autonomous Aerial Vehicles",True
 Supply Chain Sr. Manager  20516.375.10,False
 Infrastructure Technical Business Development II,False
 Principal Silicon Validation Engineer,False
@@ -20521,7 +20521,7 @@ Sales Compensation Sr. Systems Analyst,False
 React Js Developer,False
 COMPLIANCE OFFICER,False
 MOBILE ARCHITECT,False
-BNEF- Intelligent Mobility Associate,True
+BNEF- Intelligent Mobility Associate,False
 Specialist IS Business System Analyst 20516.757.16,False
 Director of Rehab/Physical Therapist,False
 Vessel Engineering Group Lead,False
@@ -20841,7 +20841,7 @@ Information Systems Manager I,False
 Associate Manager - Experience Design,False
 RPA Developer Automation Anywhere,False
 "Vice President, Senior Lead Site Reliability Engin",False
-Senior Director of Autonomy,True
+Senior Director of Autonomy,False
 Human Resources Specialists,False
 SENIOR BUSINESS OPERATIONS SPECIALIST,False
 "Research Associate, Biology",False
@@ -20910,7 +20910,7 @@ Lead Game Analyst,False
 Junior SQL Developer,False
 VP of Enterprise Customer Success,False
 Automation Engineer (Test Lead),False
-Navigation and Autonomy Software Engineer,True
+Navigation and Autonomy Software Engineer,False
 Medical Technologist,False
 Operational Insights Manager,False
 Sr Manager – Business Data (Business Configuration),False
@@ -20929,7 +20929,7 @@ Devops / ELK Stack Engineer,False
 Director Strategic Planning and Operations 20516.624.14,False
 "Team Lead, Enterprise Services",False
 Platform Engineering [00055954],False
-"Data Engineer, Translational Data Science",False
+"Data Engineer, Translational Data Science",True
 Research Data Architect,False
 Quality Assurance Consultant L3,False
 Food Scientist II,False
@@ -20984,7 +20984,7 @@ Data Engineer- USDS,False
 UAT Analyst,False
 "Research Scientist, Senior",False
 Functional Analyst (SME),False
-"VP, Data Science",False
+"VP, Data Science",True
 Quantitative Analytics and Data Science Specialist 001242,False
 Lead Compliance Engineer,False
 GMP Process Engineer III,False
@@ -23473,7 +23473,7 @@ SOFTWARE ENGINEER (Web Developer),False
 Physical Assets Data Product Manager,False
 Platform Spec,False
 "VP, Digital & IT, Business Solutions",False
-"Vice President, Model Risk Management II",True
+"Vice President, Model Risk Management II",False
 Senior Staff Data Scientist,False
 Senior Manager Security Engineering,False
 Solutions Architect-IT  Financial Operations,False
@@ -23681,7 +23681,7 @@ Machine Learning Intern,True
 QA Coordinator,False
 "Associate Director, PV Operations, Combination Product Lead",False
 Senior SFDC Functional Analyst,False
-Software Engineer - Research Engineering,True
+Software Engineer - Research Engineering,False
 Cost Analyst,False
 Athletic Coach I,False
 Controls Applications Engineer,False
@@ -23761,7 +23761,7 @@ Nuclear Engineer,False
 Assistant Estimator,False
 Engineer Sr II,False
 Senior Guidewire Developer,False
-Research Asst. Professor & Dir. of the RL Juliano SBCF,True
+Research Asst. Professor & Dir. of the RL Juliano SBCF,False
 GBS Financial Systems Governance Manager,False
 Sr Software Dev Engineer,False
 Sr. Manager Risk Modeling & Analysis,False
@@ -24013,7 +24013,7 @@ Java/Full Stack Developer,False
 "Associate, Product Owner",False
 Software Developer (Pega Developer),False
 VP Technology - Software Development,False
-"Staff Software Engineer, Embedded, Autonomy",True
+"Staff Software Engineer, Embedded, Autonomy",False
 Project/Process Advisor,False
 Sr Technical Program Manager Identity and Access Management,False
 Information Security Analysts - KBGFJG101912-8,False
@@ -24234,7 +24234,7 @@ Mechanical Engineer / Designer I,False
 "Senior Consultant, Sales & Distribution",False
 Director of Rehabilitation,False
 Redwood Scheduler Developer,False
-"Staff Technical Program Manager, Autonomy",True
+"Staff Technical Program Manager, Autonomy",False
 Oracle Database Administrator - Tier 3,False
 Veterinarian (Intern),False
 "Associate Director, Service Delivery Management",False
@@ -24848,7 +24848,7 @@ Newell Scholar Lecturer in Music,False
 Assistant Professor – Geology and Environmental Sciences,False
 Java Full stack Developer,False
 Culinologist,False
-"Systems Engineering Analyst, Autonomous Vehicles & Driving",False
+"Systems Engineering Analyst, Autonomous Vehicles & Driving",True
 Center of Teaching & Learning Director,False
 Pega Solutions Architect,False
 "Manager, RF Software Engineering",False
@@ -25659,7 +25659,7 @@ PRODUCT MANAGER I,False
 "Sr Engineer, Systems Design",False
 Director of Finance and Investments,False
 "Senior Full Stack Software Engineer, Confluence Integrations",False
-Data Scientist (Applied Scientist),False
+Data Scientist (Applied Scientist),True
 Penetration Tester,False
 "Senior Software Engineer, Mobile Apps",False
 Quality Assurance/Tester,False
@@ -25779,7 +25779,7 @@ Principal Embedded Software Developer,False
 Solution Manager,False
 Power Systems Engineer,False
 "Supervisor, Systems Safety Engineering",False
-"Architect, Data Science",True
+"Architect, Data Science",False
 Business Optimization Analyst,False
 Lead I - Software Engineering,False
 "VP, Delivery Lead",False
@@ -26441,7 +26441,7 @@ Manager – Customer Success,False
 Architectural Staff Level I,False
 "Global Planning Manager, Supply Chain",False
 "Sr Engineer I, Data",False
-Algorithms Platform Engineer V,True
+Algorithms Platform Engineer V,False
 Vice President - Investments,False
 Fundamental Equity Analyst - Energy,False
 Bioinformatics Software Engineer IV,False
@@ -26630,7 +26630,7 @@ ETL/BI Developer,False
 Sr. ML Engineer,True
 Software Engineer¿¿,False
 "Milhouse Engineering & Construction, Inc.",False
-PRODUCT MANAGER (FOUNDATIONAL PRODUCTS),False
+PRODUCT MANAGER (FOUNDATIONAL PRODUCTS),True
 Industrial Production Managers,False
 FINANCIAL ANALYST II,False
 Sr Engineer DFT Engineering,False
@@ -26668,7 +26668,7 @@ Digital & IT Analyst - Configuration & Product Building Deve,False
 Lead BI Business Analyst,False
 SENIOR APPLICATION DEVELOPER,False
 Active Directory Engineer,False
-Product Manager - TikTok Commerce Recommendation,False
+Product Manager - TikTok Commerce Recommendation,True
 INTENSIVIST,False
 IT TECHNICAL PROJECT MANAGER,False
 "Senior Technician, Cell Manufacturing",False
@@ -26721,7 +26721,7 @@ Warehouse Management Functional Process Leader,False
 Assistant Professor of Cancer Research,False
 Growth Marketing Manager,False
 "Software Developer, System Software Application",False
-"Sr Product Manager, Risk Model Products",False
+"Sr Product Manager, Risk Model Products",True
 Education and Enablement Lead - TCMS,False
 Data Scientist II (Finance),False
 Advanced Cardiothoracic Registered Nurse CN4 S2,False
@@ -27084,7 +27084,7 @@ Sport Video Production Manager,False
 Team Lead Software Development Engineer,False
 NAFTA (USMCA) Legal Counsel,False
 Supply Optimization Manager,False
-"Senior Engineer (Autonomy, Planning, Controls & DBW)",True
+"Senior Engineer (Autonomy, Planning, Controls & DBW)",False
 Computer Analyst,False
 "Team Lead, Digital Solutions",False
 Athletic Trainer - Fitness Coordinator,False
@@ -27367,7 +27367,7 @@ High School ESL Teacher,False
 Information Technology Administrator,False
 Market and Legal Consultant,False
 "Director, Transaction Advisory Services",False
-STAFF ROBOTICS ENGINEER,True
+STAFF ROBOTICS ENGINEER,False
 "Senior Principal Scientist, FRD",False
 Data & Operation Analyst,False
 Oracle Data Business Analyst,False
@@ -27993,7 +27993,7 @@ Product Specialist I,False
 Afterschool Enrichment Math Teacher (00050861),False
 Quant Investment Analyst,False
 "Technology Consultant, Solutions Architect",False
-"Associate, Automated Trading Strategist",True
+"Associate, Automated Trading Strategist",False
 Sr Bioinformatics Research Scientist,False
 Manager [00058392],False
 "Associate Director, Strategic Partnerships",False
@@ -28142,7 +28142,7 @@ APPLIED AI ML ASSOCIATE SENIOR,True
 "ASSOCIATE, SOFTWARE ENGINEERING",False
 "VICE PRESIDENT, SENIOR AUDITOR",False
 "Sr. Manager, Data Quality",False
-"ASSOCIATE, QUANTITATIVE MODELING",False
+"ASSOCIATE, QUANTITATIVE MODELING",True
 "VICE PRESIDENT, SOFTWARE ENGINEER",False
 Health Intelligence Analyst,False
 "Senior Engineer, MS&T",False
@@ -28258,7 +28258,7 @@ Business Analyst 4,False
 OMS Lead Developer,False
 Software Solutions Architect,False
 Sr Engineer III,False
-Staff Data Scientist - KBGFJG117064-4,False
+Staff Data Scientist - KBGFJG117064-4,True
 Delivery Manager 3,False
 Operations & Logistics Specialist,False
 Sr. Application Support Engineer,False
@@ -28591,7 +28591,7 @@ Director of Project Accounting,False
 Senior Sensor Research Engineer I,False
 Foreign Law Clerk,False
 iOS Mobile Developer,False
-Lead Threat Data Scientist USDS,False
+Lead Threat Data Scientist USDS,True
 Visiting Assistant Professor of Neuroscience,False
 Senior Product Manager - Ratings & Reviews,False
 Quantitative Lead,False
@@ -29069,7 +29069,7 @@ Enterprise Applications Developer - ABAP,False
 Sr. CAD & EDA Engineer,False
 Clinical Faculty Instructor,False
 Assurance Manager,False
-Senior Network Engineer-Genesys,False
+Senior Network Engineer-Genesys,True
 Independent Test & Verification System Test Engineer,False
 Technical Development And Support Engineer,False
 Material Analyst,False
@@ -29301,7 +29301,7 @@ SENIOR PRODUCT ANALYST,False
 BIM VDC Assistant Project Manager,False
 Director - ESG & Sustainability,False
 Software Engineer - MTS IV,False
-"Technical Specialist, Robotics Perception",True
+"Technical Specialist, Robotics Perception",False
 Senior Engineer (AV Test Engineering - Test Track),False
 Biomedical Product Development Engineer,False
 Field Application Thermal Engineer,False
@@ -29636,7 +29636,7 @@ Epidemiology Programmer/Analyst,False
 Program Coordinator I P9,False
 "Data Analytics Mgr (Professional, HR SSC Workforce Mngt)",False
 Big Data Quality Assurance Engineer,False
-Model Based Digital Design Engineer,True
+Model Based Digital Design Engineer,False
 Assistant Professor of Research in Pathology & Lab Medicine,False
 Visiting/Assistant Professor,False
 Sr. Software Engineer – Mobile Apps,False
@@ -30613,7 +30613,7 @@ Database Administrators - KBGFJG159726-5,False
 UI Manager,False
 Head of Community,False
 Postdoctoral Associate - Mathematics,False
-Principal Engineer - Algorithm HTN,True
+Principal Engineer - Algorithm HTN,False
 PHYSICIAN - PGY2 - INTERNAL MEDICINE,False
 "Solutions Engineering, Sr. Manager",False
 Technical Specialist - Software HTN,False
@@ -30666,7 +30666,7 @@ Director of Recycling Operations,False
 SoC Design Engineering Manager,False
 Psychiatrist 1,False
 Supply Chain Systems Manager,False
-"Senior Software Engineer, Autonomy",True
+"Senior Software Engineer, Autonomy",False
 SAP BODS Data Load Consultant,False
 Multi-Solutions Architect,False
 "Senior Software Engineer, Payments",False
@@ -30755,7 +30755,7 @@ FICO Solutions Architect,False
 Resident/Fellow Physician (Pathology),False
 "Vice President, Software Engineering",False
 "ADAS System Test Engg Application, Verification & Validation",False
-APPLICATIONS ENGINEER (SCIENTIST),True
+APPLICATIONS ENGINEER (SCIENTIST),False
 Physician (Pulmonology/Sleep Medicine),False
 Technical Account Manager 3,False
 SENIOR SOFTWARE ENGINEER/.NET,False
@@ -30837,7 +30837,7 @@ Senior Project Coordinator,False
 Cloud & Collaboration Engineer,False
 Field Service Engineer II,False
 Foreign Language Teacher,False
-Feature Engineer,False
+Feature Engineer,True
 Insights Manager,False
 System-on-Chip Design Engineer,False
 Attending Physician (Department of Neurosurgery),False
@@ -31001,7 +31001,7 @@ Engineer 20516.3670.9,False
 Head of Enterprise Architecture and Digital,False
 "Director, Technology Management",False
 "Manager, IS Applications",False
-Sr Associate Data Scientist  20516.4352.4,False
+Sr Associate Data Scientist  20516.4352.4,True
 HCL Technical Architect,False
 Senior  Data Scientist,False
 AEM Product Development Manager,False
@@ -31018,7 +31018,7 @@ IT Manager COE Operations,False
 "Senior Engineer, Content & Catalog Systems",False
 ADAS Algorithm Engineer 2,True
 Enterprisewide Programmer/Analyst,False
-Sr. Associate Data Scientist 20516.3140.15,False
+Sr. Associate Data Scientist 20516.3140.15,True
 Sr Decision Scientist,False
 "Community Impact Manager, Zoom Cares",False
 "Solution Architect, Senior",False
@@ -31040,7 +31040,7 @@ Senior Application Operations Engineer,False
 PLM DIRECTOR,False
 Data Scientist  20516.3683.11,False
 Sr. Software Engineering Manager,False
-Sr Computational Research Scientist,True
+Sr Computational Research Scientist,False
 Civil Survey Engineer Manager,False
 Marketing Sr Mgr  20516.578.19,False
 "Vice President, Financial Analysis",False
@@ -31323,7 +31323,7 @@ Capital Markets Analyst Y2,False
 Software Test Automation Engineer III,False
 Graphic Designer - Kids,False
 Engineer – Data Science Sr.,False
-Senior Data Analyst - Healthcare Data Science,False
+Senior Data Analyst - Healthcare Data Science,True
 Head of Technical Service - Americas,False
 "Sr. Engineer, Data Science Software",False
 Sotware Developer,False
@@ -31451,7 +31451,7 @@ Montessori Teacher,False
 CHILDHOOD EDUCATION TEACHER,False
 Senior Demand Supply Planner,False
 "VP, Lead Platform Developer",False
-Product Anchor-PEGA,True
+Product Anchor-PEGA,False
 Sr. Programmer Analyst I,False
 Project Manager 8178551,False
 "Manager II, Regulatory Affairs",False
@@ -31749,7 +31749,7 @@ SAP FICO CONSULTANT II,False
 "Director, IT Applications",False
 Senior SAP Basis Engineer,False
 "Director, BMH Electrical & Instrumentation",False
-"Sr. Engineer (Autonomy-Localization, Calibration & Basemap)",True
+"Sr. Engineer (Autonomy-Localization, Calibration & Basemap)",False
 Associate Staff Scientist,False
 Marketing Associate,False
 "Director, Data Quality",False
@@ -32185,7 +32185,7 @@ Clinical Fellow Associate,False
 PUBLIC RELATIONS SPECIALIST,False
 AI Data Engineer,True
 "Analyst 3, Corporate Strategy",False
-"Associate Scientist, Automated Systems",True
+"Associate Scientist, Automated Systems",False
 Senior Manager of Research,False
 Adobe Business Analyst,False
 Speech and Language Disabilities (Kindergarten) Teacher,False
@@ -32307,7 +32307,7 @@ Security Engineer - Application/Product Security,False
 Director Forecasting - New Products,False
 "Solutions Architect, SAP Basis",False
 Full Stack Software Engineer (00065536),False
-"Senior Backend Software Engineer, AI Camera",True
+"Senior Backend Software Engineer, AI Camera",False
 Medical Resident (Neurology),False
 Lead Integration Engineer,False
 MIT Project Manager,False
@@ -32814,7 +32814,7 @@ CRICKET COACH,False
 Project Manager - Logistic Warehouse Fulfillment,False
 Two Way Bilingual Immersion Elementary Teacher,False
 "Managing Director, Head of Green & Sustainable Hub, Americas",False
-Advanced Foundational Product Owner,False
+Advanced Foundational Product Owner,True
 Accountants and Auditors - KBGFJG145955-4,False
 ENGINEER - CVD/DIFF DRAM,False
 OMS Software Engineer,False
@@ -33123,7 +33123,7 @@ Senior Voice Engineer,False
 Medical Resident (Family Medicine),False
 Sr. Software Product Manager,False
 Critical Care  Registered Nurse,False
-"Sr Mgr,Data Science",False
+"Sr Mgr,Data Science",True
 Backend Tester,False
 Psychiatrist (Child and Adolescent Psychiatry),False
 "Manager, MDM Operations",False
@@ -33215,7 +33215,7 @@ Assistant Professor of Nephrology,False
 "Sr. Director, Digital Workplace Services",False
 Sr Controls Programmer,False
 Infrastructure Services Architect,False
-Expert Scientist - Technical Performance & Modeling,True
+Expert Scientist - Technical Performance & Modeling,False
 "Associate Director, Medical Science Liason",False
 Elementary School Chinese Lead Teacher,False
 SPP FTR (Energy) Trader,False
@@ -33279,7 +33279,7 @@ QC AS&T Engineer II,False
 Medical Lab Scientist 2,False
 Human Resources IT Systems Manager,False
 Product Leader - BAM Home Improvement Lending,False
-Senior Engineer - Algorithm HTN,True
+Senior Engineer - Algorithm HTN,False
 Regional Solution Architect - Datacenter,False
 L.E. Dickson Instructor,False
 Senior Risk Expert,False
@@ -33375,7 +33375,7 @@ Revenue Recognition Analyst,False
 Graphic and Brand Designer,False
 PROJECT MANAGER/ESTIMATOR,False
 Head of Global Communications,False
-Lead Engineer - Model Based Controls,True
+Lead Engineer - Model Based Controls,False
 "AVP, Identity Governance Manager",False
 SAS PROGRAMMER,False
 Administrative manager,False
@@ -33523,7 +33523,7 @@ Mixed-Signal Behavioral Modeling Engineer,False
 Latin America supply chain liaison,False
 Program Geneticist,False
 Growth Manager,False
-Data Intelligence Engineer,False
+Data Intelligence Engineer,True
 IT Systems Administrator,False
 Postdoc - AI/ML for Studying Pathogen Surface Interactions,True
 Civil Engineer - Aviation,False
@@ -33832,7 +33832,7 @@ Process Dev Engineering Scientist,False
 "AVP, Full Stack Developer",False
 CONSULTANT DEVELOPER,False
 Software Engineer UI/UX [00063324],False
-Senior Designer - Gen,False
+Senior Designer - Gen,True
 Engineer Services RF 8139038,False
 "Senior Consultant, Marketing Analyst",False
 Senior Manager - Program & Project Management,False
@@ -34327,7 +34327,7 @@ STORAGE SYSTEMS ENGINEER,False
 Accountants and Auditors - KBGFJG100407-11,False
 Principal Engineer IT - Cloud Engineer,False
 "Analyst, Portfolio Construction/Risk",False
-Associate Genomics Algorithms Engineer,False
+Associate Genomics Algorithms Engineer,True
 PMTS Process Engineering,False
 J2EE Developer,False
 Assistant Fashion Designer,False
@@ -34756,7 +34756,7 @@ Genetic Clinical Counselor I,False
 "Manager, Systems Integration",False
 "Sr. Software Engineer, Data Ops, Autonomy",False
 Market research analyst,False
-Senior Staff Applied Scientist,True
+Senior Staff Applied Scientist,False
 Controls Engineer II,False
 Veterinary Research Specialist,False
 Senior Software Development Engineer (C2 - 11510430),False
@@ -34966,7 +34966,7 @@ Developer-Software,False
 Assistant Superintendent - KBGFJG279211-1,False
 Business Systems Analyst VI,False
 SOFTWARE (FULL SATCK) DEVELOPER/ENGINEER,False
-Member of Technical Staff (Research Scientist),True
+Member of Technical Staff (Research Scientist),False
 "Sr Manager, Pharmacovigilance and Medical Quality Compliance",False
 Sales Trader Analyst,False
 "Senior Integration Engineer, SAP Process Integration",False
@@ -35111,7 +35111,7 @@ Sr. Transmission Manager,False
 Senior Program Manager/Senior Scrum,False
 Senior Research Scientist - Basic Life,False
 Gene Editing Senior Research Scientist,False
-"Associate Manager, Data Science",False
+"Associate Manager, Data Science",True
 "Data Scientist, Logistics",False
 India Team Director,False
 Transition Manager,False
@@ -35293,7 +35293,7 @@ Urgent Care - Family Medicine Physician,False
 SR. PORTAL UI DEVELOPER,False
 Postdoctoral Asssociate,False
 Senior Software Integration Specialist,False
-"Project Manager, Algorithm",True
+"Project Manager, Algorithm",False
 House Staff Fellow Physician,False
 Medical House Staff - Resident,False
 "VP, Corporate Real Estate & ESG Analyst",False
@@ -35502,7 +35502,7 @@ World Language Teacher,False
 Senior Quantitative Engineer,False
 Senior Manager Sales Operations & Revenue Operations,False
 "Senior Product Manager, Cloud Networking",False
-Algorithmic Product Specialist,True
+Algorithmic Product Specialist,False
 Senior Sourcing Engineer,False
 Secondary Science and Math Teacher,False
 "SR MANAGER, ANALYTICS & REPORTING",False
@@ -36005,7 +36005,7 @@ Analytics and Optimization Strategist,False
 Solutions Designer,False
 GAME PRODUCER,False
 "System Engineer, Cloud Network Security II",False
-"Fellow - PhD, Research",True
+"Fellow - PhD, Research",False
 Professor of History,False
 Senior Analyst Sales Ops,False
 "Senior Principal Engineer, Software Engineering",False
@@ -37968,7 +37968,7 @@ Networking Specialist,False
 Structural Heart Fellow,False
 Staff Engineer 1 - Global Data & Integrations,False
 "Team Lead, Software Development QA",False
-Model Data Analyst,True
+Model Data Analyst,False
 Senior Associate - Global Market Insights,False
 Associate Researcher I,False
 Reliability Engineer Markets RTB,False
@@ -38154,7 +38154,7 @@ Critical Care Intensivist Physician,False
 Head of Business Customer Marketing - KBGFJG275403-1,False
 COMMERCIAL AND INDUSTRIAL DESIGNER,False
 TRAFFIC/ITS ENGINEER,False
-ASSOCIATE CHANNEL MANAGER - DATA SCIENCE,True
+ASSOCIATE CHANNEL MANAGER - DATA SCIENCE,False
 "Scientist, Big Data Engineering",False
 Engineer - Structures,False
 Operations Research Analysts - Kbgfjg220647-2,False
@@ -38328,7 +38328,7 @@ Mobile Engineer III,False
 Pega Software Engineer,False
 "Sr. Sol Archtct, D&T, SAP Cust. Dev Digital & Transformation",False
 Engineering Manager - Data Infrastructure,False
-Applied Scientist (118.3244.4),True
+Applied Scientist (118.3244.4),False
 Sr. Member Research Analyst,False
 Application Developer I,False
 Lead Integration Developer- Mulesoft,False
@@ -38558,7 +38558,7 @@ Electronic Systems Engineer-Software,False
 Building Systems Analyst,False
 VALIDATION ASSOCIATE,False
 Staff Software Development Engineer (C2-24421783),False
-Marketing and Sales Manager with AI Expertise,False
+Marketing and Sales Manager with AI Expertise,True
 Pega Lead Architect,False
 Technical Product Manager IV,False
 Customer Success Manager Senior Manager,False
@@ -39106,7 +39106,7 @@ Software Develper,False
 AMER University Recruiting Manager,False
 ORACLE MIDDLEWARE APPLICATION ENGINEER,False
 Staff IT Software Developer,False
-"VP, INTELLIGENT INTERNET APPLICATION SERVICE PLATFORM",True
+"VP, INTELLIGENT INTERNET APPLICATION SERVICE PLATFORM",False
 Machine Learning Engineer (118.3011.5),True
 Faculty Member- Learning Center,False
 Senior R&D Engineer - SVD,False
@@ -39412,7 +39412,7 @@ Regulatory Compliance Specialist,False
 IT Engineer Reliability,False
 Software Development Engineer (118.785.10),False
 Pediatric Otolaryngology Fellow,False
-"Senior Data Scientist, Credit Risk Modeling",False
+"Senior Data Scientist, Credit Risk Modeling",True
 "Senior Planner, Social",False
 Statistical Associate II,False
 Full Stack Engineering Manager,False
@@ -39426,7 +39426,7 @@ Software Development Engineer (118.3079.5),False
 "Analyst, Search Investment",False
 Accountants and Auditors - Kbgfjg167817-6,False
 AI and Machine Learning Engineer II,True
-Sr Data Scientist - Recommendations,False
+Sr Data Scientist - Recommendations,True
 Software Engineer Site Reliability,False
 "VICE PRESIDENT, QUANTITATIVE ENGINEERING",False
 Machine Learning Engineer 2,True
@@ -39451,7 +39451,7 @@ Mgr Strategic Revenue Mgmt,False
 Sr. Computer Vision Engineer,True
 "Associate Consultant, Strategy/Life Sciences",False
 "Senior Manager, Software Systems",False
-Software Engineering MTS TIP Autonomous Response Platform,False
+Software Engineering MTS TIP Autonomous Response Platform,True
 Assistant Professor (Anesthesiologist),False
 Senior Research Software Engineer,False
 Senior Verification Engineer - DRAM Design,False
@@ -39602,7 +39602,7 @@ Visiting Assistant Professor of Government,False
 Gastroenterology Fellow,False
 Grant Writer,False
 AVP; Technology Operations Specialist II,False
-"Senior Engineer (Autonomy – Planning, Controls & DBW)",True
+"Senior Engineer (Autonomy – Planning, Controls & DBW)",False
 SENIOR SERVICES STAFF CONSULTANT,False
 "Technical Specialist, Crash Analysis",False
 SOFTWARE RELEASE ENGINEER / SCRUM MASTER,False
@@ -39878,7 +39878,7 @@ CTM Associate,False
 Model Validation & Analytics Lead,True
 ASSISTANT PROFESSOR - INFORMATION SYSTEMS,False
 Delivery Manager I,False
-VP of Data Science,False
+VP of Data Science,True
 Senior Analyst II Software Engineering,False
 Lead Data Operations Engineer,False
 Product Associate,False
@@ -39978,7 +39978,7 @@ PGY-6 Resident,False
 Quality Assurance [00064812],False
 IT Network Project Lead Senior,False
 Accountants and Auditors - KBGFJG267807-1,False
-Program Manager-Model Assembly,True
+Program Manager-Model Assembly,False
 Staff Production Planner,False
 Foreign Attorney,False
 Global Execution Project Manager,False
@@ -40676,7 +40676,7 @@ Director Research & Product Development,False
 SOFTWARE DEVELOPMENT ENGINEER IN TEST,False
 Data Science Developer,False
 Staff Solutions Consultant,False
-Chief Technology Officer / Head of Data Science,True
+Chief Technology Officer / Head of Data Science,False
 Enterprise Programmer,False
 Coordinator and Assistant Teaching Professor of Hydrographic,False
 Sr. Hyperion Suite Developer,False
@@ -40877,7 +40877,7 @@ Software Quality Senior Engineer,False
 Accountants and Auditors - Kbgfjg167928-4,False
 Associate Software Test Engineer,False
 Principal Solutions Engineer – AE,False
-Senior Associate Data Scientist 20516.4380.3,False
+Senior Associate Data Scientist 20516.4380.3,True
 Senior Capacity Engineer,False
 Process Development Sr. Scientist 20516.3206.16,False
 "Senior Manager, Full Stack Engineering",False
@@ -40966,7 +40966,7 @@ Senior Systems Administrator / Engineer,False
 Manager of Demo Build and Engineering,False
 Audit & Assurance Analytics Specialist Manager,False
 Coater 2 Process Engineer - KBGFJG186659-4,False
-Sr Associate Data Scientist 20516.4392.3,False
+Sr Associate Data Scientist 20516.4392.3,True
 Family Medicine Primary Care Provider,False
 Senior Software Development Engineer in Test I,False
 Lead Software Engineer (017040.001344),False
@@ -41146,7 +41146,7 @@ Sr Software & Systems Engineer,False
 Photonics Engineer,False
 Data Analytics Engineer II,False
 Accountants and Auditors - KBGFJG273651-1,False
-Associate Data Scientist 20516.4405.5,False
+Associate Data Scientist 20516.4405.5,True
 Software Engineer I [00062242],False
 Database Management Specialist,False
 Accountants and Auditors - Kbgfjg252850-5,False
@@ -41483,7 +41483,7 @@ Senior UX Researcher,False
 Financial Analyst II [00064401],False
 Industrial Software Engineer,False
 Associate Professor of Radiation Oncologist,False
-Senior Credit Analyst/Senior Data Scientist,True
+Senior Credit Analyst/Senior Data Scientist,False
 Project Manager Senior-Professional Services,False
 Project Director/Principal Architect,False
 Special Education High School Teacher,False
@@ -41552,7 +41552,7 @@ Microsoft Configuration  Engineer,False
 Senior Field Research Analyst,False
 Software Dev. Lead for VPC Terraform & SDK Infrastructure,False
 Assistant Professor of Management Information Systems,False
-AVP; Consumer Behavior Modeler I,False
+AVP; Consumer Behavior Modeler I,True
 Product Analyst - QA,False
 Resident Physician in Medicine/Pediatrics,False
 "Manager, MS&A",False
@@ -42143,7 +42143,7 @@ Business Title ENG-DEG CORECOMP-PE-MODULE/ATE,False
 "Sr Scientist I, Cell Therapy",False
 Law Clerk,False
 Scientific Software Generalist,False
-"Manager, Prediction Integration",True
+"Manager, Prediction Integration",False
 Software Engineer [00062799],False
 "Manager, Safety Perception",False
 HIL SYSTEM ENGINEER(FUNCTION PERFORMANCE TEST ENGINEER),False
@@ -42369,7 +42369,7 @@ Senior Identity Access Management Security Engineer,False
 Systems Design Engineer III,False
 Engineering Manager - Data Engineer,False
 Senior IT Data Scientist,False
-Staff GPU Engineering,True
+Staff GPU Engineering,False
 Staff Analog Mixed Signal Design Engineer,False
 SOFTWARE DEVELOPER,False
 Global Solutions Associate,False
@@ -44649,7 +44649,7 @@ Sr. Lab Instructional Supervisor,False
 Cloud Engineer 4,False
 Junior Machine Learning Engineer,True
 Histotechnologist II,False
-Presto Intelligent Edge Architect,True
+Presto Intelligent Edge Architect,False
 iOS Developer,False
 Data Scientist - KBGFJG230007-2,False
 Financial and Investment Analysts - Kbgfjg223095-2,False
@@ -45445,7 +45445,7 @@ Project Manager/ Licensed Project Engineer (P.E),False
 SR Software Engineer,False
 Associate Research Analyst,False
 ACADEMIC COUNSELOR,False
-Chief Data Science and Innovation Officer,False
+Chief Data Science and Innovation Officer,True
 Motor Engineer II,False
 Associate  (Management Consultant),False
 Safety CAE Integration Engineer – Battery,False
@@ -45752,7 +45752,7 @@ Director; Investment Banker IV,False
 GENERAL DENTIST,False
 Operations Leadership Resident,False
 Operations Research Analysts - KBGFJG271563-1,False
-Staff Autopilot Software Engineer,True
+Staff Autopilot Software Engineer,False
 Transportation Engineer II,False
 Principal Chemist,False
 Metrology Engineer,False
@@ -45799,7 +45799,7 @@ Human Resources Specialists - Kbgfjg181033-6,False
 "Product Manager, Growth Marketing",False
 Accountants and Auditors - Kbgfjg180485-6,False
 "Senior Associate, Product Manager",False
-Automated Driving Performance Simulation Engineer,True
+Automated Driving Performance Simulation Engineer,False
 Rheumatology Physician,False
 Devops Engineer IV,False
 Senior Regulatory Affairs Associate,False
@@ -45969,7 +45969,7 @@ Renewals Manager,False
 Tibco BW Developer,False
 PTP Systems Engineer,False
 Marketing & PR Manager,False
-"Staff Software Engineer, Data Science",True
+"Staff Software Engineer, Data Science",False
 UX/UI Developer,False
 "Principal Analyst, SAP",False
 SAP S/4 Functional Engineer,False
@@ -46527,7 +46527,7 @@ Language Faculty Member (Sabbatical Coverage),False
 Sr. Cloud Developer,False
 AI/ML SCIENTIST,True
 Senior Manager - Data and Analytics,False
-Sr Engr Cslt-Data Science,False
+Sr Engr Cslt-Data Science,True
 Financial and Investment Analysts - KBGFJG274141-1,False
 "Sr. Analyst, Application Support",False
 Ast. Prf.-Culturally & Linguistically Diverse Edu.Ten.Track,False
@@ -46620,7 +46620,7 @@ Accountants and Auditors - Kbgfjg131945-9,False
 Global Trade Operations Team Lead,False
 Field Application Scientist,False
 Management Analyst - Kbgfjg219219-3,False
-Sr. Autopilot Software Engineer,True
+Sr. Autopilot Software Engineer,False
 Manufacturing Engineer Lead,False
 .NET Developer III,False
 Sr. Quality Manager,False
@@ -46875,7 +46875,7 @@ Senior Consultant - GRC,False
 SR. BI DEVELOPER,False
 Sr. Software Engineer - Motor Controls,False
 Director of Restoration,False
-"Senior Engineer, Motion Planning (Autonomy)",True
+"Senior Engineer, Motion Planning (Autonomy)",False
 Program Management Director,False
 Visiting Clinical Assistant Professor,False
 "Associate Professor, Department of Computer Science",False
@@ -47136,7 +47136,7 @@ Quality & Patient Safety Analyst II,False
 "Attending Physician, Assistant Professor",False
 Lead Developer/Arch - Policy & Billing,False
 Engineer II - Cloud,False
-Staff Data Scientist (Customer Care),False
+Staff Data Scientist (Customer Care),True
 Accountants and Auditors - Kbgfjg222153-2,False
 SAP Implementation Specialist,False
 Microsoft CRM Dynamics Architect,False
@@ -47319,7 +47319,7 @@ Senior Clinical Genomic Variant Analyst,False
 Dermatologist/Medical Director,False
 Sr Appl/Sys Sales Engineer,False
 Technical Customer Solutions Manager II,False
-"Associate, Model Risk Program Associate",True
+"Associate, Model Risk Program Associate",False
 Data Engineer/Cassandra Lead,False
 "Manager III, Technical Infrastructure Program Manager",False
 HR Information Systems Specialist,False
@@ -47808,7 +47808,7 @@ Research Technician/Graduate Student,False
 Data Analytics Analyst,False
 "Manager, Airport Analytics and Reporting",False
 Head of High School,False
-"Associate, Model Risk",True
+"Associate, Model Risk",False
 "Principal Developer, Technology Services",False
 "Executive, Data Technology",False
 Behavioral Economics Lead,False
@@ -47870,7 +47870,7 @@ QC Specialist I,False
 Staff Research Associate IV,False
 SMART TECHNOLOGY & PERFORMANCE MANAGER,False
 Upper School Chinese Teacher,False
-Sr Manager Data Science,False
+Sr Manager Data Science,True
 Scientist II.,False
 Senior Technical Program Manager MuleSoft,False
 "Senior Consultant, IT Telecom Engineering",False
@@ -48442,7 +48442,7 @@ Tax Managing Director,False
 "Designer, Civil Transit & Rail",False
 Inside System Engineer,False
 Emerging Tech Lead,False
-Modeling Center Researcher,True
+Modeling Center Researcher,False
 Cloud Engineer Specialist,False
 Data Base Administrators - Kbgfjg223698-2,False
 Accountants and Auditors - Kbgfjg218719-2,False
@@ -49723,7 +49723,7 @@ Staff Video Systems / HW Architecture Engineer,False
 Senior Engineer - Cybersecurity,False
 Application Programmer II,False
 "Senior Engineer, Vehicle Controls",False
-Senior Intelligent Manufacturing Engineer,True
+Senior Intelligent Manufacturing Engineer,False
 Engineer - Installation & Hardware Support,False
 Consultant - BAG,False
 Consulting Senior – IT Audit,False
@@ -50050,7 +50050,7 @@ DevOps Engineer / Software Developer,False
 Software Programmer II,False
 Assistant Professor of Clinical Neurology,False
 North America Technical Support Manager,False
-Senior Credit Strategy Analyst/Senior Data Scientist,True
+Senior Credit Strategy Analyst/Senior Data Scientist,False
 "Engineering Specialist, Mechanical",False
 Expert Support Engineer,False
 Management Analysts - Kbgfjg227448-2,False
@@ -50881,7 +50881,7 @@ Business Intelligence Analyst IV,False
 Emergency Department Physician,False
 "TSE, Automation",False
 Senior Quantitative Associate Specialist (017040.000565),False
-"Full Stack Software Engineer, Lark",False
+"Full Stack Software Engineer, Lark",True
 Sr Principal Technical Platform Manager,False
 Career Instructor,False
 Senior Manager BI Data Architect,False
@@ -50957,7 +50957,7 @@ Senior Quantitative Portfolio Analyst,False
 "Staff Engineer, Performance",False
 Principal Lithium Engineer,False
 Vice President  Software Engineering,False
-Model Risk Management Associate Director,True
+Model Risk Management Associate Director,False
 HIGH SCHOOL BUSINESS EDUCATION TEACHER,False
 Portfolio Investment Director,False
 Operations Analytics Director,False
@@ -51255,7 +51255,7 @@ CENTER DIRECTOR,False
 "Associate Director, Infrastructure Engineer 000118",False
 "Associate Director, Global Standards",False
 Instructor/Medical Oncology Physician,False
-Intelligent Factory Project Lead – Advanced Engineering,True
+Intelligent Factory Project Lead – Advanced Engineering,False
 PeopleSoft Specialist,False
 SENIOR FACTORY AUTOMATION FIELD SERVICE ENGINEER,False
 Lead Electrical Design Engineer,False
@@ -51628,7 +51628,7 @@ Senior Sofware Engineer,False
 Senior Software Engineer/Developer,False
 IT Application Architect - Payment,False
 Director Of Software Development,False
-MOG/AIE Patient Access Strategy,False
+MOG/AIE Patient Access Strategy,True
 CTA Submissions Specialist,False
 "Director, Strategic Analytics",False
 "SC Associate, Application Development",False
@@ -51850,7 +51850,7 @@ Application Analyst II-Analytics and Integration,False
 Database Administrators - Kbgfjg223260-2,False
 Accountants and Auditors - KBGFJG132329-10,False
 Product Designer III,False
-Perception Research Scientist,True
+Perception Research Scientist,False
 Database Administrators - Kbgfjg183465-4,False
 Operations Hoisting and Projects Engineer,False
 R&D Engineer Software 7,False
@@ -51980,7 +51980,7 @@ Product Quality Engineer (Quality Engineer II),False
 "MANUFACTURING ENGINEER, LEAD",False
 Outsourcing Delivery Analyst,False
 Application Developer Lead - KBGFJG152793-4,False
-"TikTok Shop – Product Management Lead, Buyer Intelligence",False
+"TikTok Shop – Product Management Lead, Buyer Intelligence",True
 Enterprise Solutions Consultant,False
 Sr. ETRM Developer,False
 Financial Quantitative Analysts - KBGFJG100926-8,False
@@ -51989,7 +51989,7 @@ Construction Quality Control Manager,False
 radiologist,False
 Autosar Vehicle Software Architect,False
 OpenShift Engineer,False
-ELEMENTARY ESL TEACHER/MLP SPECIALIST,False
+ELEMENTARY ESL TEACHER/MLP SPECIALIST,True
 Database Administrators - Kbgfjg221824-2,False
 Database Administrators - Kbgfjg228512-4,False
 Machinists,False
@@ -52100,7 +52100,7 @@ Expert IT Business Systems,False
 Partner Engineering Manager,False
 Supply Chain Planning Manager - KBGFJG268002-1,False
 "Director, Process Development",False
-Data Scientist - Models & Analytics - Measurement,False
+Data Scientist - Models & Analytics - Measurement,True
 VP- Procurement Technology & Operations,False
 DEVELOPMENT & RESEARCH ENGINEERING SPECIALIST,False
 Accountants and Auditors - KBGFJG264688-1,False
@@ -52204,7 +52204,7 @@ Manager Business Development,False
 Plans Examiner,False
 "Technical Lead Manager, Software Engineering",False
 Staff Software QA Engineer,False
-Senior Data Analyst (Data Science Engineer),False
+Senior Data Analyst (Data Science Engineer),True
 "Manager 1, Software Development & Engineering",False
 Sr. Material Analyst,False
 Vice President - Implementation Specialist,False
@@ -52573,7 +52573,7 @@ Research Associate II,False
 Advanced Mfg Engineer Sr Adv,False
 Transportation Planner 6,False
 Sr. iOS DEVELOPER,False
-Autonomous Engineer,True
+Autonomous Engineer,False
 Researcher - Intelligent Machine ToolGroup,True
 Assistant Professor of Criminology,False
 Geotechnical Assistant Project Manager,False
@@ -52919,7 +52919,7 @@ Deal Accountant,False
 "Manager, Product Engineering Launch",False
 Data Delivery Specialist,False
 Digital Analytics Manager,False
-"Lead, Engagement Marketing Data Science",True
+"Lead, Engagement Marketing Data Science",False
 IT Project Manager - SAP,False
 Genomic Development Specialist,False
 Elementary School Teacher,False
@@ -52937,7 +52937,7 @@ Manager Software & Data Engineering,False
 IT Application Development Engineering II,False
 "Senior Backend Software Engineer, Loki Platform",False
 Global Visual Merchandise Manager,False
-"AVP, Model Risk Management",True
+"AVP, Model Risk Management",False
 SOLUTIONS/SYSTEMS ARCHITECT,False
 Advanced Practice Registered Nurse – Research,False
 Oracle Technical Project Manager,False
@@ -53174,7 +53174,7 @@ Sr. Product Design Engineer - KBGFJG183461-6,False
 Engineering Product Design Lead,False
 Lead System Analyst,False
 Database Administrators - KBGFJG206271-7,False
-"Vice President, Data Science",False
+"Vice President, Data Science",True
 SAP Basis Engineer,False
 Information Systems Security Analyst,False
 "Partnerships Manager, Foundations",False
@@ -53369,7 +53369,7 @@ Chief Transformational Officer,False
 Sr. User Engagement Consultant,False
 Software Engineer-Advanced,False
 Senior Specialty Software Engineer,False
-"Sr. Engineer, Feature Owner - ADAS Driving Features",True
+"Sr. Engineer, Feature Owner - ADAS Driving Features",False
 "Technical Mentor, Software Development",False
 "Senior Product Manager, Marketplace",False
 Staff Electrical Engineer,False
@@ -53418,7 +53418,7 @@ Financial Model Developer Senior,False
 "Manager, RC&P WebUX",False
 Sr. Vehicle Development Engineer,False
 PostDoctoral Associate (Materials Scientist),False
-Senior Vision Software Engineer,True
+Senior Vision Software Engineer,False
 Packaging Engineering Director,False
 Genomics Professional,False
 "Res. Assoc./Vaccine Trial Spec., Maternal Child Health Area",False
@@ -53952,7 +53952,7 @@ Clinical Assistant Professor of Mathematics,False
 WAR COURSE ACADEMIC ADVISOR,False
 Systems Specialist II - JDE,False
 "Manager, Application Security Engineer",False
-"Principal Engineer, Algorithm",True
+"Principal Engineer, Algorithm",False
 "Principal Scientist, Statistical Programming",False
 "Vice President, Systems Engineer",False
 Accountants and Auditors - KBGFJG265823-1,False
@@ -54038,7 +54038,7 @@ Software Development Engineer (Software Quality Engineer),False
 House Officer I,False
 Web Developer(Drupal),False
 Accountants and Auditors - KBGFJG189738-5,False
-Sr. Staff Autopilot Software Engineer,True
+Sr. Staff Autopilot Software Engineer,False
 Advanced Technical Product Owner,False
 Staff Engineer - Quality,False
 "Manager, Applications Engineering",False
@@ -54170,7 +54170,7 @@ Plant Model Simulation Engineer,False
 Peoplesoft Developer,False
 CORPORATE STRATEGY SENIOR ASSOCIATE,False
 Business Systems SAP/Configuration Specialist,False
-ADAS Algorithm Test Engineer,True
+ADAS Algorithm Test Engineer,False
 Technical Functional Lead,False
 Hospitalist-Nocturnalist,False
 Analyst; Capital Mgmt - Sr Fin Analyst,False
@@ -54507,7 +54507,7 @@ SVT/PV Engineer Routing/IP 3,False
 Operations Research Analysts - Kbgfjg220558-4,False
 Lead IT Quality Assurance Analyst,False
 SAP Functional Consultant PP/MM,False
-"Senior Data Scientist, Credit Risk Modeling",False
+"Senior Data Scientist, Credit Risk Modeling",True
 "Manager, Application Dev",False
 Vice President - Customer Success (Global),False
 "Primary Care, Family Medicine Physician",False
@@ -54890,7 +54890,7 @@ Systems Software Program Manager,False
 Senior PHP/Java Developer,False
 "R&D, Head of Strategic Operations & Planning",False
 Senior Platform Architect,False
-"MANAGER III, APPLIED SCIENCE",True
+"MANAGER III, APPLIED SCIENCE",False
 Oracle Integration Lead,False
 Infrared Optics Engineer/Scientist,False
 Data Storage Administrator - Specialist,False
@@ -55269,7 +55269,7 @@ Amyloidos Scientific Fellow (Fellowship),False
 PRINCIPAL DATA ANALYST,False
 "Chief of Staff, Director and Fellow",False
 Software Development Engineer (118.396.3),False
-"Sr. Researcher, Video Analytics",True
+"Sr. Researcher, Video Analytics",False
 System Architect,False
 Supervisor/SAP Data & Analytics,False
 SAP BW Hana Consultant,False
@@ -55371,7 +55371,7 @@ Sr. Functionality Safety Engineer,False
 Customer Project Manager,False
 AQC Group Lead,False
 Manager-Analytics & Modeling,True
-"Manager, Data Science - Experimentation",False
+"Manager, Data Science - Experimentation",True
 Senior C / .NET Developer,False
 Investment Portfolio Lead,False
 OFSAA Reg Reporting Product Owner,False
@@ -57177,7 +57177,7 @@ Sr. Front-End/Full-Stack Software Engineer-Mapping,False
 Manager (Accounting),False
 "Senior Manager, Digital Tools",False
 "AVP, QA Leader, AMTF Infrastructure Product",False
-"VP, Credit Model Development",False
+"VP, Credit Model Development",True
 Deployment Strategist (11525.2901),False
 "IT Director, Network and Telecom Services",False
 "Manager, Product Mgmt",False
@@ -57582,7 +57582,7 @@ Bus & Technology Delivery Specialist,False
 Agriculture Engineer,False
 Agilist,False
 SAP TM CONSULTANT,False
-"Staff Engineer I, Research",True
+"Staff Engineer I, Research",False
 Software Development Engineer Manager,False
 Hospitalist Nocturnist (Internal Medicine),False
 Senior Field Medical Advisor,False
@@ -57763,7 +57763,7 @@ Sr. Software Project Engineer,False
 Clinical Business Faculty - Lecturer III,False
 "Associate Director, Software Engineer 076715.001205",False
 Test Automation QA Analyst,False
-Model Based Design Systems Architect,True
+Model Based Design Systems Architect,False
 Operations Research Analysts - Kbgfjg177541-4,False
 Sr. Manager - Strategic Accounts,False
 SENIOR FINANCIAL DATA ANALYST,False
@@ -58286,7 +58286,7 @@ Associate Clinical Professor of Medical Laboratory Sciences,False
 "Manager, Supply Planner",False
 "Senior Engineer, Infrastructure Cloud",False
 "Google Cloud, Customer Engineer",False
-Learning Technology Development & Support Specialist,True
+Learning Technology Development & Support Specialist,False
 "Director, Strategy & Planning",False
 Management and Budget Analyst-Logistics,False
 "Senior Engineer, Information Security",False
@@ -58444,7 +58444,7 @@ Accountants and Auditors - KBGFJG266195-1,False
 Operations Research Analysts - Kbgfjg219921-2,False
 Analyst - Trading,False
 Attending Neurologist,False
-Associate Data Science Analyst - Neuro-Informatics Lab,False
+Associate Data Science Analyst - Neuro-Informatics Lab,True
 Staff Infrastructure Software Engineer,False
 Director of Client Services,False
 Assistant Vice President; Capital Mgmt - Sr Fin Analyst,False
@@ -58893,7 +58893,7 @@ Lecturer in Computer Science,False
 "Senior Analyst, Procurement Operations",False
 AUTOMATED TESTING PROJECT MANAGER,False
 Oracle CC&B and Java Developer,False
-Feature Architect,True
+Feature Architect,False
 Signal and AI developer engineer and researcher,True
 Actuaries - Kbgfjg177459-3,False
 OpenShift Platform Engineer,False
@@ -59058,7 +59058,7 @@ Triage Engineer,False
 QA Lead Test Developer,False
 SOFTWARE DEVELOPER - UI,False
 Regulatory Affairs CMC Senior Manager,False
-Engineer (Autonomy DBW),True
+Engineer (Autonomy DBW),False
 Import Sales Associates,False
 QUALITY ASSURANCE & COMPLIANCE SPECIALIST,False
 BIG DATA DEVELOPER,False
@@ -59437,7 +59437,7 @@ Pharmacy Informaticist,False
 Computer Systems Validation Lead,False
 Application Software Developer.,False
 Permit Coordinator and Urban Planner,False
-"Sr. Software Engineer, Pose, Autonomy",True
+"Sr. Software Engineer, Pose, Autonomy",False
 Sr Pre-Sale Engineer A,False
 Technical Product Manager III,False
 Project Manager - Pharmacy Informatics,False
@@ -59499,7 +59499,7 @@ Enterprise Sales Director,False
 SAP Technical consultant,False
 C SHARP .NET ENGINEER,False
 Instructor of Cancer Bioinformatics in Medicine,False
-"Senior Manager, Model-Based Design Portfolio and Tools",True
+"Senior Manager, Model-Based Design Portfolio and Tools",False
 "SAP SYSTEMS CONSULTANT, ORDER TO CASH",False
 GEIR – Business Intelligence Analyst,False
 Computational Development and Applications Engineer,False
@@ -59528,7 +59528,7 @@ Battery Pack Validation Engineer,False
 Lead Specialty Software Engineer (017040.002255),False
 Front/Back End Full Stack Developer,False
 Staff Professional,False
-Data Scientist-Genomics,False
+Data Scientist-Genomics,True
 Senior Server Administrator,False
 "Assistant Vice President, Claims Analytics Data Engineer",False
 Software Developers - KBGFJG40683-11,False
@@ -59885,7 +59885,7 @@ Senior Scientist / Senior Engineer I,False
 "Business Analyst, Supply Chain",False
 "Technical Specialist, Systems Engineering",False
 Social Worker II,False
-"Manager, Product Data Science",True
+"Manager, Product Data Science",False
 Senior Associate Consultant – Cardiothoracic Surgeon,False
 Web developers/ Analyst,False
 Arts Education Program Coordinator,False
@@ -59917,7 +59917,7 @@ Enrichment Administrator,False
 Coordination Specialist,False
 Sr. Full Stack Software Developer,False
 AL Chief Project Engineer,False
-"Associate, Model Validation Specialist",True
+"Associate, Model Validation Specialist",False
 Assistant Vice President; Software Engineer II,False
 RN Charge Nurse & Nursing Project Manager,False
 Technical Product Owner / Technical Engineering Manager,False
@@ -60546,7 +60546,7 @@ Service Now Developer/Admin – Applications and Systems,False
 AWS Devops Engineer,False
 Vice President Lead Software Engineer,False
 Acting and Directing Teacher,False
-Management Analyst/Data Scientist,True
+Management Analyst/Data Scientist,False
 Senior Full Stack Software Engineer - Cloud,False
 QUANTITATIVE MODEL ANALYST,False
 "Associate, Investment Banking",False
@@ -60904,7 +60904,7 @@ Molecular Scientist,False
 Salesforce Technical Project Manager,False
 Q A Aanalyst,False
 Software Developer (UI Developer),False
-"Backend SW Engineer, TikTok LIVE – Foundation - Governance",False
+"Backend SW Engineer, TikTok LIVE – Foundation - Governance",True
 Accounting & payroll specialist,False
 Data Center Site Acquisition Manager,False
 Software Developer (Python Developer),False
@@ -60986,7 +60986,7 @@ Technical Support and Quality Engineer,False
 Budget and Cost Analyst,False
 Computer Programmer - Eagle Team,False
 Talent Acquisitiions Enablement Manager L2,False
-Decision Intelligence Developer,False
+Decision Intelligence Developer,True
 GT Senior Azure Integration Engineer,False
 Oracle Database Administrator (DBA),False
 Software Quality Assurance Engineer/Tester,False
@@ -61523,7 +61523,7 @@ Internal Medicine Residency – Postgraduate Physician Trainee,False
 "SENIOR SOFTWARE ENGINEER, DATA PROTECTION, & PRIVA",False
 "Staff, UX Designer",False
 Vice President of HR and Shared Services,False
-Head of Commercial Data Science,False
+Head of Commercial Data Science,True
 SENIOR MECHANICAL ENGINEER,False
 Sr Marketing Applied Scientist,True
 IT and Audit Manager,False
@@ -61532,7 +61532,7 @@ Advanced Feasibility Manufacturing Engineer,False
 "Associate Director, Support and Audio Technologies",False
 Infrastructure Solutions Lead I,False
 Technical Support Engineer Sr Staff,False
-Site Reliability Engineer- AML,True
+Site Reliability Engineer- AML,False
 Senior Principal Quality Engineer,False
 "Associate Director, Infrastructure Engineer",False
 LEAD DEVSECOPS ENGINEER,False
@@ -61691,7 +61691,7 @@ Operations Research Analysts - KBGFJG104215-16,False
 "Managing Director, Capital Markets (Financial Analyst)",False
 Media Prep Lead,False
 Sr. Equipment Engineer - Controls & Robotics C1 Assembly,False
-Head of Lending Data &Analytics - KBGFJG69793-9,False
+Head of Lending Data &Analytics - KBGFJG69793-9,True
 Sr. HRIS Consultant -Workday,False
 "Staff Engineer I, Back End Server",False
 Manager – HCM Applications,False
@@ -62221,7 +62221,7 @@ Sr Analyst I Software Engineering,False
 IT Internal Audit & SOX Manager,False
 "Mgr, Business Analysis",False
 "Senior UX Designer, HAI",False
-"Sr. Engineer, CV Engineering",True
+"Sr. Engineer, CV Engineering",False
 Project Specialist,False
 Agent and Business Manager,False
 Business Analytics Group Manager,False
@@ -62464,7 +62464,7 @@ Environmental Engineering I,False
 Senior Lead System Reliability Manager,False
 HW MAKE SUPPORT 8303438,False
 Business Project Program Manager,False
-COGNITIVE IMPLEMENTATION ENGINEER,True
+COGNITIVE IMPLEMENTATION ENGINEER,False
 BIM/VDC Analyst,False
 Senior Technical Escalation Specialist,False
 ELECTRONIC SYSTEMS ENGINEER - TOOLS,False
@@ -62494,7 +62494,7 @@ VOIP Engineer,False
 Architect Consultant,False
 "Manager, Tier2 Support",False
 Client Success Specialist,False
-Senior Project Data Science Engineer,False
+Senior Project Data Science Engineer,True
 Vice President Health Safety & Environmental Assurance,False
 Senior SW QA Engineer,False
 Software Developer -ERP / CRM,False
@@ -62639,7 +62639,7 @@ SR. ANALYST SUPPLY CHAIN TECHNOLOGY (DEVELOPER),False
 SENIOR EDI SPECIALIST,False
 BI Programmer Analyst,False
 Cisco Wireless Engineer,False
-Scene Perception Developer,True
+Scene Perception Developer,False
 "Senior Software Engineer, Remote Assistance, Fullstack",False
 Senior VMWare Engineer,False
 R&D Analytical Lead,False
@@ -63578,7 +63578,7 @@ Head of UX,False
 "Director, Enterprise Data & Governance",False
 "Manager, Technology Operations",False
 Sr. Regulatory Specialist,False
-Feature Systems Engineer,True
+Feature Systems Engineer,False
 "Principal Engineer, Project Engineering",False
 Implant Restorative Fellow,False
 SAP ISU Consultant,False
@@ -63883,7 +63883,7 @@ Technology Implementation Specialist,False
 Product Development Coordinator (Fashion Design),False
 "Manager, TMF Operations",False
 Database and Enterprise Analytics Administrator,False
-"Analyst II, Data Science",True
+"Analyst II, Data Science",False
 "Scientist I, R&D",False
 Posdoctoral Researcher in Computational Biomechanics,False
 Account VP,False
@@ -64000,7 +64000,7 @@ Senior Third Party Risk Auditor,False
 ONBOARDING DATA ANALYST,False
 Sr. Accounting Associate,False
 "Senior FP&A Manager, Margin Strategy",False
-"Backend SWE, TikTok LIVE – Foundation - Governance",False
+"Backend SWE, TikTok LIVE – Foundation - Governance",True
 WEB AND DIGITAL INTERFACE DESIGNER,False
 Technical Project Manager(BI),False
 Live Operations Lead,False
@@ -64151,7 +64151,7 @@ Integration Engineering Manager (Mulesoft),False
 Lead Robotics Engineer,False
 Aircraft Technologies Engineer,False
 Senior Backup Storage Engineer,False
-"Director, Risk Data Science and Engineering",False
+"Director, Risk Data Science and Engineering",True
 .NET CONSULTANT,False
 Senior Engineer Design (Engineering Project Team Leader),False
 DFx Manufacturing Engineer,False
@@ -64470,7 +64470,7 @@ MAINFRAME PROGRAMMER,False
 "Analyst, Construction Tech Solutions",False
 Principal EQS Consultant - US,False
 Senior Salesforce Business Analyst,False
-"Supervisor, SIL/HIL Core Models",True
+"Supervisor, SIL/HIL Core Models",False
 Quality Assurance Scientist II,False
 Risk Control Specialist,False
 QA Operations Specialist III,False
@@ -64608,7 +64608,7 @@ DevOps Expert,False
 International Supply Chain Manager,False
 Industrial Building Designer,False
 Product Owner - Oracle Software Applications Developer,False
-AML Testing & Model Validation Analyst,True
+AML Testing & Model Validation Analyst,False
 Software Integration Developer,False
 "Director, Information Security - KBGFJG166563-4",False
 Computer Database Administrator,False
@@ -64802,7 +64802,7 @@ Professional Services Manager III,False
 Deep Learning Researcher,True
 "Senior Associate, Natural Resources, Energy and Carbon-165-1",False
 "Program Manager, Customer Insights & Advocacy",False
-"Director, Emotions Analytics",True
+"Director, Emotions Analytics",False
 Sr. Engineer Test / Validation / Electrification,False
 Sr Business Systems & Quality Analyst,False
 SAP HCM Solutions Architect,False
@@ -64894,7 +64894,7 @@ BI OVA Analyst,False
 Design System Analyst,False
 Software Development Engineer (118.1845.7),False
 Legal Asisitant,False
-Intelligent AMHS Engineer,True
+Intelligent AMHS Engineer,False
 Machine Learning Engineer (118.1944.5),True
 Upgrades Project Manager,False
 Network & Computer System Administrator,False
@@ -65026,7 +65026,7 @@ Marketing & Business Development Specialist,False
 Director of Practice Group Marketing,False
 Senior Structural Project Engineer,False
 "Program Assistant, South Asia Center",False
-Learning Research and Design Specialist,True
+Learning Research and Design Specialist,False
 Classroom Teacher-Chemistry,False
 "Senior Analyst, Intelligent Automation",True
 Technical Product Marketing Owner,False
@@ -65214,7 +65214,7 @@ Big Data Developer/Engineer,False
 Application Programmer  (Senior Python Developer),False
 Software Engineer 1615.27541,False
 "VICE PRESIDENT, STRATEGIC ANALYTICS",False
-"Analyst, Automated Trading Strategies",True
+"Analyst, Automated Trading Strategies",False
 Senior .NET/C Sharp Software Engineer,False
 MLOps Specialist,True
 Senior Sales Analyst,False
@@ -65427,7 +65427,7 @@ Silicon Desing Engineer,False
 SAP DATA ANALYST,False
 Senior Legal Specialist II,False
 Programmer Analyst - EDI Analyst,False
-"Sr. Business Data Engineer, SMAI",False
+"Sr. Business Data Engineer, SMAI",True
 Conference Service Manager,False
 "Director, Client Relationship Group",False
 Lecturer in Chemistry,False
@@ -66004,7 +66004,7 @@ Senior Research Statistician Developer,False
 Lecturer (Dept of Management),False
 "ASSOCIATE DIRECTOR, ENGINEERING",False
 Sr Physical Designer Engineer,False
-Ai Software Tester,True
+Ai Software Tester,False
 Cloud Engineer and Computer Systems Administrators,False
 Sr. IoT Engineer,False
 HR and Training Specialist,False
@@ -66064,7 +66064,7 @@ Cloud Engineer/Developer,False
 PV Designer I,False
 Principal Consultant - Data Governance,False
 Application Support,False
-Project Manager/Senior Modeler,True
+Project Manager/Senior Modeler,False
 Agile Lead - KBGFJG291975-1,False
 Research Support (Research Support Staff),False
 Computer Systems Analyst Analyst,False
@@ -66573,7 +66573,7 @@ Program Director of MS-Data Analytics & BS-Data Science,False
 Data Science and Analytics Manager [00068079],False
 Inverter EMC Engineer,False
 SR. SOFTWARE ENGINEER - IOS,False
-Autonomous Networks and Software Researcher,True
+Autonomous Networks and Software Researcher,False
 Personal Financial Advisor,False
 Salesforce Copado Admin,False
 Google Cloud Analytics Engineer,False
@@ -67055,7 +67055,7 @@ Program Manager — Release Train Engineering,False
 ICU RN,False
 Textile Engineer III,False
 "Backend / API Engineer, Payments Platform",False
-Senior Data Scientist (Recommendations and Discover),False
+Senior Data Scientist (Recommendations and Discover),True
 Software Middleware Engineer,False
 Global DX Digital Cytopathology Clinical Pathologist,False
 QA Test Engineer I,False
@@ -67350,7 +67350,7 @@ Senior Engineering Management Specialist,False
 Assistant Project Manager L1,False
 Manager – BPKC Global Process,False
 Data Engineer/ Python Developer,False
-Dir-Analytics & Modeling,True
+Dir-Analytics & Modeling,False
 Manager Sales CBU,False
 DESIGNER TECHNICAL IV,False
 "Senior Consultant, Market Intelligence & Strategy",False
@@ -67464,7 +67464,7 @@ Associate Clinical Professor,False
 Senior Programming Analyst,False
 Senior Product Graphic Designer,False
 Lead Specialty Software Engineer (017040.001432),False
-Principal Engineer – Autonomy & Active Safety,True
+Principal Engineer – Autonomy & Active Safety,False
 LEAD HIL SYSTEM TEST ENGINEER,False
 Senior Specialist- Cloud & Infra Management,False
 Neurophysiologist,False
@@ -67655,7 +67655,7 @@ Sr. Staff Engineer - Embedded AI Applications,True
 Technology Sourcing & Procurement Specialist,False
 AI/ML Systems Engineer,True
 Innovation Advisor,False
-FELLOW RESEARCH,True
+FELLOW RESEARCH,False
 Principal Software Application Engineer,False
 Marine Engineering Specialist,False
 Data Governance Administrator,False
@@ -68063,7 +68063,7 @@ IT Manager II,False
 Sr Research Associate,False
 Automation Validation  Specialist,False
 Business/Operations Analyst,False
-Model/Analysis/Validation Manager,True
+Model/Analysis/Validation Manager,False
 Java Cloud Engineer,False
 C-Sharp Developer,False
 Avionics Senior Systems Engineer,False
@@ -68214,7 +68214,7 @@ Mechanical Engineering I,False
 "Assistant Professor, Computer Science",False
 Symphony Musician (Cello),False
 Academic Program Development and Integration Specialist,False
-"Senior Consultant, Intelligent Application",True
+"Senior Consultant, Intelligent Application",False
 "Assistant Professor, Architecture",False
 Head Coach and Trainer,False
 System Specialist 1,False
@@ -68735,7 +68735,7 @@ Business Analytics Lead Analyst,False
 "Analyst, Financial Crime Controls",False
 Business Intelligence analyst,False
 Finance & Strategy Analyst,False
-Senior Data Scientist - TikTok Global Search,False
+Senior Data Scientist - TikTok Global Search,True
 Software Engineering LMTS Secure Agility,False
 SAP SCM QM Consultant,False
 Co-founder and CTO,False
@@ -68963,7 +68963,7 @@ Lecturer of Engineering and Lab Manager,False
 "Distinguished Technologist, Cloud Developer",False
 "Senior Engineer, Test Engineering - Product Development",False
 "Manager, Quantitative Analytics",False
-Computer Systems Engineer-Autonomous Mobile Robots,False
+Computer Systems Engineer-Autonomous Mobile Robots,True
 Agricultural Solution Engineer,False
 Software Engineering & Development [00066172],False
 Foodservice Research Analyst,False
@@ -70020,7 +70020,7 @@ SDLC Management Analyst,False
 Senior Restaurant Manager,False
 "Finance Manager: Labor Analytics & Forecasting, Supply Chain",False
 MICROSOFT AZURE SYNAPSE DATABASE ADMINISTRATOR,False
-Model/Analysis/Validation Senior Manager,True
+Model/Analysis/Validation Senior Manager,False
 "Assistant Engineer, Water/Wastewater Treatment Sector Focus",False
 Quality Manager (Chemical Engineering),False
 SDET - Software Development Engineer in Test,False
@@ -70435,7 +70435,7 @@ LOGISTICS ANALYST,False
 "PRINCIPAL ARCHITECT - PRESALES, GLOBAL ACCOUNTS",False
 Dr. Anthony B. Pinn Postdoctoral Associate in African and Af,False
 "Principal IT Analyst, eCommerce",False
-Senior Model Risk Management Governance Analyst,True
+Senior Model Risk Management Governance Analyst,False
 Channel Sales Engineer,False
 MECHANICAL ENGINEERING TECHNOLOGIST,False
 JUDICIAL LAW CLERK,False
@@ -71548,7 +71548,7 @@ Assistant Professor/Pulmonology/Critical Care Physician,False
 "ANALYST, INVESTMENT BANKING",False
 "Vice President, Technology Control",False
 "VICE PRESIDENT, BUSINESS ANALYSIS",False
-"ASSOCIATE, MODELING ANALYTICS",True
+"ASSOCIATE, MODELING ANALYTICS",False
 QUANT ANALYTICS MANAGER,False
 "Vice President, Infrastructure Developer",False
 "Vice President, Senior AWS Engineer",False
@@ -72740,7 +72740,7 @@ Data Processing Engineer,False
 Assistant Law Clerk,False
 Sr. Manager - Business Development,False
 TikTok Shop - Live Productivity Operations Manager,False
-"Associate Director, US Strategic Decision Intelligence, MEL",False
+"Associate Director, US Strategic Decision Intelligence, MEL",True
 "Team Lead, Systems & Infrastructure",False
 New Product Testing Supervisor,False
 Procurement Transformation Manager,False
@@ -72755,7 +72755,7 @@ Instructor- Clinical,False
 "CAE Engineer, Crashworthiness and Occupant Protection",False
 Online Sr. Data Architect,False
 Systems Consultant [00067158],False
-"Associate, Portfolio Algo Engineer",True
+"Associate, Portfolio Algo Engineer",False
 Senior Lecturer/Senior Research Scholar,False
 "Software Engineer I, Engineering",False
 Diagnostic Imaging Physics Resident,False
@@ -73041,7 +73041,7 @@ RPA Architect,False
 BUSINESS EXCELLENCE ANALYST,False
 "Senior Engineer, Observability",False
 Tehnical Analyst,False
-Drone Software Engineer - Computer Vision and Robotics,True
+Drone Software Engineer - Computer Vision and Robotics,False
 Senior Strategic Business Planner,False
 Senior Consultant (MEP Estimator),False
 Software Engineeer Backend,False
@@ -73154,7 +73154,7 @@ Service Supply Chain Demand Planner,False
 Application Scientist - Synthetic Biology,False
 "Teacher, elementary (Grade 2)",False
 Manufacturing & Design Engineer,False
-"Sr. Manager, Application Science",True
+"Sr. Manager, Application Science",False
 Sr. Systems Test and Integration Engineer,False
 Account Engineer I,False
 Regulatory  Affairs Manager,False
@@ -73396,7 +73396,7 @@ Mathematics Teacher- LTS,False
 UX & UI Researcher,False
 Data Science Software Engineer,False
 Software Enineer,False
-Appeals Intelligence Analyst,False
+Appeals Intelligence Analyst,True
 Senior Manager Solution Architect,False
 "Principal Engineer, Architecture",False
 LEAD SRE,False
@@ -73709,7 +73709,7 @@ Senior System RAMS Engineer,False
 Software Frontend Engineer,False
 Developer (Physical Design Engineer)8337799,False
 Developer 8303426,False
-"Associate, Model Risk Program",True
+"Associate, Model Risk Program",False
 Digital Advanced Manufacturing Engineer,False
 Pediatric Stem Cell Transplantation & Cellular Therapy Fello,False
 Senior Transportation Analyst,False
@@ -73944,7 +73944,7 @@ Supply Chain Diversity Analyst,False
 Assistant Professor- Grain Crops Extension Agronomist,False
 Hardware Developer - EMC Engineer,False
 Technical Service Provider,False
-System Safety Engineer-Autonomous,True
+System Safety Engineer-Autonomous,False
 "Associate, Co-Investments",False
 Legal administrative / secretary,False
 SAP HR HCM Functional Consultant,False
@@ -73974,7 +73974,7 @@ SQL developer,False
 Business Analyst – Safety Region,False
 Principal Engineer - Inspection,False
 Assistant Professor and State Extension Specialist,False
-"Member of Technical Staff, Applied Research",True
+"Member of Technical Staff, Applied Research",False
 HVAC Installation Estimator,False
 Assistant Project Manager/Schedular,False
 "Tech Lead Machine Learning Ops Engineer, Global SRE",True
@@ -74095,7 +74095,7 @@ Sr. Associate - Systems,False
 "Refractive Account Manager, Wavelight",False
 "Lead, Enterprise Business Intelligence",False
 accountants and auditor,False
-Manager Modeling,True
+Manager Modeling,False
 Linux Operations Engineer II,False
 Senior Systems/Software Engineer,False
 Software Test Engineer I,False
@@ -74219,7 +74219,7 @@ Technical Staff Engineer - Software,False
 Communications Associate – ESS/ELA,False
 Associate (Corporate Banking Department),False
 Sr. Software Engineer IV,False
-Modeling Scientist - KBGFJG271305-1,True
+Modeling Scientist - KBGFJG271305-1,False
 AI LLM Technology Architecture Manager,True
 NVH Validation Engineer,False
 Civil Engineer IV - KBGFJG230669-5,False
@@ -74534,7 +74534,7 @@ TELECOM TECHNICAL PROJECT MANAGER,False
 Logistic Associate,False
 Clinical Project Leader/Local Study Manager,False
 NETWORK SYSTEM ANALYST,False
-"Manager: Perception, Planning, and Controls",True
+"Manager: Perception, Planning, and Controls",False
 KC CRM Administrator,False
 Principal Analysis and Modeling Risk Analyst,False
 Senior Marketing Analytics Partner,False
@@ -74586,7 +74586,7 @@ SENIOR SOFTWARE ENGINEER - MACHINE LEARNING,True
 Senior Site Reliability Engineer(SRE),False
 Discipline Lead Engineer CSA Americas,False
 "ASSISTANT VICE PRESIDENT, HR SOLUTIONS",False
-Principal Model Based Controls Engineer,True
+Principal Model Based Controls Engineer,False
 Front Line Support Engineer,False
 Senior Associate Level 2,False
 EXECUTIVE MANAGER,False
@@ -75151,7 +75151,7 @@ Firearms Examiner,False
 "Senior Staff Engineer, Research & Development",False
 Dual Language Social Studies Teacher,False
 Director of Children/Youth Ministry,False
-Advisor - HCP Data Science,True
+Advisor - HCP Data Science,False
 "Assistant Professor (neuroscience, tenure-line)",False
 VP of Global Marketing,False
 Community Health Worker,False
@@ -75516,7 +75516,7 @@ Food Safety and Quality Specialist,False
 Enterprise Data Analytics Specialist,False
 Lead IT CRM Analyst,False
 Fund Accounting Analyst,False
-Vision Engineer,True
+Vision Engineer,False
 Core Development Program,False
 VFX Artist - Technical Support,False
 JDE Business Analyst,False
@@ -75563,7 +75563,7 @@ PHYSICIAN ASSISTANT - NOCTURNAL HOSPITALIST,False
 "Manager, BioEngineering",False
 Research Field Specialist,False
 Engineer II - Validation,False
-Manager of Model Risk Management,True
+Manager of Model Risk Management,False
 "Sr. Engineer I, Drug Product Development",False
 Digital Product Manager II,False
 Quantitative Researcher-Trading,False
@@ -75657,7 +75657,7 @@ Engineer Associate II,False
 Sustaining Product Engineering Manager,False
 Advance Quality Engineer,False
 Analytics - Manager,False
-"Director, PSAS Decision Intelligence",True
+"Director, PSAS Decision Intelligence",False
 Legal Compliance Specialist,False
 Senior Software Engineer - Full Stack,False
 Engineering Planning/Scheduler,False
@@ -75730,7 +75730,7 @@ BIA Market Risk Analyst,False
 Senior Associate Applications Engineer,False
 SCRUM MASTER II,False
 Search marketing strategist,False
-"Algorithm Developer, Prism",True
+"Algorithm Developer, Prism",False
 Resident/Fellow Moonlighter,False
 Data Science and Business Intelligence Generalist III,False
 "Senior Software Engineer, TikTok Lead Ads",False
@@ -75856,7 +75856,7 @@ ASSOCIATE GRAPHICS ENGINEER,False
 Backend engineer,False
 Quantitative Trading Stretegist,False
 "ASSOCIATE ACCOUNT EXECUTIVE, GLOBAL PARTNERSHIPS",False
-ASSOCIATE AI ANIMATOR,True
+ASSOCIATE AI ANIMATOR,False
 LEAD QUEST DESIGNER,False
 "SYSTEMS ENGINEER, IAM",False
 SENIOR ARTIST II,False
@@ -76296,7 +76296,7 @@ Technical Sales Engineer/Manager,False
 Chemist I-QC  - MITALI THOLE,False
 Start-up Team Manager,False
 Senior Associate - Energy,False
-"Assoc.Scientist II, DigtlPathology/Computational Analyst",True
+"Assoc.Scientist II, DigtlPathology/Computational Analyst",False
 Enterprise Technical Architect,False
 Sr. Support Engineer II – WMS,False
 SR. APPLICATION ARCHITECT,False
@@ -76354,7 +76354,7 @@ Construction Project Manager,False
 Logistics and Imports Specialist,False
 Validation Specialist III,False
 "Director, Revenue Operations",False
-"Sr. Product Manager - Recommendations, Zoro",False
+"Sr. Product Manager - Recommendations, Zoro",True
 "Director, Value Creation",False
 Clinical Instructor - Dermatology,False
 Computer-Aided Design (CAD) Engineer,False
@@ -76573,7 +76573,7 @@ Staff Engineer I (Architect),False
 IT Development Project Delivery Lead,False
 Software Engineer - Medical Image Reconstruction,False
 INVESTMENT VICE PRESIDENT,False
-ATG Technical Fellow - Robotics,True
+ATG Technical Fellow - Robotics,False
 PYTHON-UI DEVELOPER,False
 Power Platform Architect,False
 Investment Analyst - KBGFJG234788-2,False
@@ -76839,7 +76839,7 @@ Engineer II-Device,False
 Sr Rates and OTC Products Analyst,False
 System Training & Commissioning Engineer,False
 SQL SERVER PLATFORM SPECIALIST,False
-"Sr. Software Systems Engineer, Autonomy",True
+"Sr. Software Systems Engineer, Autonomy",False
 Commercial Operations Associate,False
 IT Operations Lead,False
 SuccessFactors Consultant,False
@@ -76947,7 +76947,7 @@ Associate Traffic Engineer,False
 Research Scientist - GIS,False
 "SR. ANALYTICS MANAGER, CRM & CUSTOMER EXPERIENCE",False
 "Architect, AI Computing",True
-Associate Data Scientist 20516.4491.4,False
+Associate Data Scientist 20516.4491.4,True
 Relationship Manager Assistant,False
 Penetration Testing Engineer III,False
 Associate Actuary - KBGFJG266243-2,False
@@ -77310,7 +77310,7 @@ Legal Data Analyst,False
 Software Engineer -  MS Dynamics,False
 Associate - Energy Marketing & Trading,False
 Principal Application Engineer (Front End/ReactJS),False
-"Chief Architect, Model-Based Design",True
+"Chief Architect, Model-Based Design",False
 Engineer II - Front End,False
 CHIEF EXECUTIVE NORTH AMERICA,False
 Physician (Oncology),False
@@ -77372,7 +77372,7 @@ AI/ML Application Innovation Engineer,True
 Financial Model Development Prf A,False
 "Senior Analyst, Global Strategic Initiatives",False
 Computer Vision Research Engineer,True
-Software Engineer - E-commerce Recommendation Infrastructure,True
+Software Engineer - E-commerce Recommendation Infrastructure,False
 Regional Brand Pastry Specialist,False
 "Enterprise Account Executive, Geo Accts - Financial Services",False
 Tech: SAP FI-CO Functional Consultant,False
@@ -77456,7 +77456,7 @@ Vice President of Revenue Operations,False
 "Data Engineer, Career",False
 Junior Quantitative Developer,False
 Specialist - Sales - Account Management,False
-Senior Data Analyst/Modeler,False
+Senior Data Analyst/Modeler,True
 Program Specialist III,False
 SOFTWARE TESTING SPECIALIST,False
 Manager Director,False
@@ -77566,7 +77566,7 @@ INTERN ARCHITECT,False
 Tax Accountant/Auditor,False
 Senior DP VDC Engineer,False
 Lead Ecosystem Consultant,False
-Software Developer - Data Scientist,True
+Software Developer - Data Scientist,False
 Engineer II  - Digital Design,False
 Jr. Architect,False
 CAE Engineer - 081398.000029,False
@@ -77588,7 +77588,7 @@ NBS Researcher,False
 Emerging Professional I (Architectural Intern),False
 IT Business Analyst 1,False
 Hedge Fund Ops Full Stack Developer - Associate Mgr 00068468,False
-Model Based Controls Engineer,True
+Model Based Controls Engineer,False
 "Vice President, Banker",False
 Salesforce CRM Administrator,False
 "Physician (Pulmonary, Critical Care and Sleep Medicine)",False
@@ -77824,7 +77824,7 @@ IT Rotational Program Associate,False
 Seat Design Engineer,False
 Software Develop,False
 HR Business Partner - R&D Global E-Commerce,False
-AVP Mgr-Analytics & Modeling,True
+AVP Mgr-Analytics & Modeling,False
 Staff Vehicle Systems Engineer,False
 External Relations Specialist,False
 Knowledge Analyst - Growth and Innovation Analytics,False
@@ -78166,7 +78166,7 @@ Sr Product Management Analyst,False
 Sr. Demand and Data Analytic Specialist - KBGFJG162352-3,False
 Services Management Specialist,False
 "Strategist, Business Strategy",False
-Engineer Sr - Autonomy,True
+Engineer Sr - Autonomy,False
 Component Technical Expert,False
 "Product Designer, Interactive Design",False
 ASSOCIATE QA LEAD,False
@@ -78329,7 +78329,7 @@ MTS Sys/Test Validation Eng,False
 Valuation Manager,False
 Advanced Gastroenterologist,False
 Engineer I - Packaging,False
-Search Recommendation Lead,True
+Search Recommendation Lead,False
 Impact Data Analyst,False
 Financial Services Associate,False
 Cardiologist - Electrophysiologist,False
@@ -78467,7 +78467,7 @@ Legal Assistant and Fashion Market Analyst,False
 Data Integration Intermediate Analyst,False
 HedgeTek Senior Business Analyst,False
 AI LLM Technology Architecture Assoc Mgr,True
-Senior Data Scientist-Behavioral Modeling,False
+Senior Data Scientist-Behavioral Modeling,True
 "Analyst, Quantitative Modeling",False
 "Software Engineer, Games",False
 Market Reporter,False
@@ -78623,7 +78623,7 @@ Senior Service Parts Engineer,False
 HOSPITALITY BUSINESS ANALYST,False
 "Senior Strategic Operations Associate, Earner Experience",False
 BI Developer Senior,False
-"Associate Consultant, Data Science",False
+"Associate Consultant, Data Science",True
 "Director, Media Operations",False
 Product Engineering Manager – Full Stack,False
 Complete Streets VZ Project Coordinator,False
@@ -78776,7 +78776,7 @@ Junior Quantitative Model Analyst,False
 Audit Data Analytics Analyst,False
 Internal Audit Manager (IT),False
 Senior Software Engineer (017040.002236),False
-Foundations Manager,False
+Foundations Manager,True
 "Principal, Portfolio Talent",False
 Head of Portfolio Management Trading Technology,False
 Supplier Development and Quality Engineer,False
@@ -79184,7 +79184,7 @@ Salesforce Business Analyst - Project Manager,False
 Junior Structural Engineer,False
 Automotive Penetration Tester I,False
 Financial Engineer [00065500],False
-Model Developer - Structured Finance,True
+Model Developer - Structured Finance,False
 Offshore Pipelines Engineer I - KBGFJG272781-1,False
 Lead Staff Software Engineer,False
 Solutions Specialist Level 1,False
@@ -79266,7 +79266,7 @@ Data Analyst-List,False
 Political Scientist,False
 Demand Planning and Inventory Analyst,False
 Associate Engagement Consultant [00065434],False
-Senior Model Based Controls Engineer,True
+Senior Model Based Controls Engineer,False
 "Senior Engineer, Application Engineering",False
 Financial Auditing Specialist,False
 "Senior Manager, Technology Management - Software Engineering",False
@@ -79531,7 +79531,7 @@ Software developer engineer,False
 Modem Technologies Engineer,False
 Senior Clinical Trial Manager 20516.3072.8,False
 "Engineer, AI Perception Algorithm",True
-"Applied Scientist I, Audio",True
+"Applied Scientist I, Audio",False
 AO/Senior Pricing Analyst,False
 Sr. Manager IT/SAP,False
 Program Manufacturing Chief Engineer (MCE- Program),False
@@ -79882,7 +79882,7 @@ Sr. Airborne Platform Network Engineer,False
 Researcher IV-Electrical Engineering,False
 "Lead, Analytical Engineering - Cell Therapies Manufacturing",False
 Associate Enterprise Risk Specialist,False
-Sales Engineer- Machine Modifications and Field Support,True
+Sales Engineer- Machine Modifications and Field Support,False
 Oracle Supply Chain Lead,False
 "Financial Analyst, Enterprise Strategy",False
 "Global Supply Manager, Silicon",False
@@ -80348,7 +80348,7 @@ AI TECHNOLOGY COMPLIANCE ANALYST,True
 Product Applications Manager,False
 "Associate, Clinical Solutions",False
 "Regional VP, Investment Analytics",False
-Associate Director Data Science,False
+Associate Director Data Science,True
 Anti-Money Laundering Associate,False
 Staff Data Engineer IV,False
 Domestic Tax Analyst,False
@@ -80480,7 +80480,7 @@ Senior Principle Consultant,False
 "Specialist, Traffic Operations",False
 IT Analyst Programmer II,False
 "Principal Engineer, Cost & Sustainability, SW & Licensing",False
-Trading Analytic Model Dev Sr,False
+Trading Analytic Model Dev Sr,True
 MACHINE LEARNING ENGINEER (6),True
 "Senior Engagement Manager, DP",False
 Sr. Director Industrial Engineering and Operational Excellen,False
@@ -80557,7 +80557,7 @@ Reference Data Analyst,False
 Facilities Engineer,False
 Sr. Application Support  Engineer,False
 Financial Planning & Analysis Lead,False
-Manager III-PM Data Sciences,True
+Manager III-PM Data Sciences,False
 Staff Cloud Engineer,False
 Senior Systems Engineer (Electronics),False
 APP DEV & SUPPORT ENGINEER,False
@@ -81052,7 +81052,7 @@ Secondary Teacher – Science,False
 Sr. Software Engineer- Java,False
 Catalog Analyst Manager,False
 FinCrime Tech Support Analyst,False
-"Manager, Application Scientists",True
+"Manager, Application Scientists",False
 Industrial Material Specialist,False
 "Director, IB Operations - Service Delivery Manager",False
 "Director, Manufacturing Engineering",False
@@ -81493,7 +81493,7 @@ Postdoctoral Fellow AI Medical Imaging,True
 SR Manager -EMERGING COMMERCIAL PLATFORMS,False
 Tier 2 Production Support Developer,False
 "Senior Engineer, Firmware Verification Engineering",False
-New Model Process Engineer,True
+New Model Process Engineer,False
 Senior Deep Learning Scientist - Medical Image Analysis,True
 Associate IT Solutions Architect,False
 Associate Staff Physician (Neurosurgery),False
@@ -81557,7 +81557,7 @@ Applications Scientist - HPLC,False
 SENIOR CORPORATE ASSOCIATE,False
 Academic Financial Specialist Senior,False
 SENIOR ENGINEER - APP MACHINE LEARNING,True
-Machine Health Data Analyst,True
+Machine Health Data Analyst,False
 Elementary & Middle School Spanish Teacher,False
 Regional Product Specialist: Americas(North America & LATAM),False
 "Staff, Environmental Engineer",False
@@ -81581,7 +81581,7 @@ Multimedia Artist,False
 Assistant Professor/Dept. of Epidemiology & Biostatistics,False
 Systems Architect Engineer,False
 System Engineer – Services,False
-"Postdoctoral Research Fellow, Social and Computational",True
+"Postdoctoral Research Fellow, Social and Computational",False
 Radio Editor,False
 Principal Technology Architect,False
 ASSOCIATE DATA LOSS PREVENTION ENGINEER II,False
@@ -81811,13 +81811,13 @@ Senior Thermal Controls Engineer,False
 IT Advisory Senior Consultant,False
 Senior Director of Cloud Engineering,False
 Associate Director of Clinical Operations,False
-"Senior Business and Data Analyst, Data Intelligence",False
+"Senior Business and Data Analyst, Data Intelligence",True
 Quality Automation Engineer – Career,False
 "Scientist, Statistical Programming",False
 Senior Interactive Designer,False
 Survey Calculations Coordinator,False
 Itinerant Newcomer ELA-S Teacher,False
-Solution Intelligence Analyst II,False
+Solution Intelligence Analyst II,True
 SENIOR DEVOPS SOFTWARE DEVELOPER,False
 "Physician, Radiation Oncology",False
 Lead Packing Engineer,False
@@ -81916,7 +81916,7 @@ PRODUCT LIFECYCLE MANAGEMENT CONSULTANT,False
 Sr. Business/Service Designer,False
 Project Controls Manager/Aviation,False
 "ENTRY-LEVEL ENVIRONMENTAL, HEALTH AND SAFETY ENGINEER",False
-Graduate Engineer/Data Scientist,True
+Graduate Engineer/Data Scientist,False
 QA/DevOps Manager,False
 "Senior Data Scientist, Business Analytics",False
 management analyst,False
@@ -82033,7 +82033,7 @@ Cloud Application Engineer,False
 Senior Organism Engineer 2,False
 Budegt Analyst,False
 Business Analyst - Conduit Business,False
-"Applications Engineer, Autonomy",True
+"Applications Engineer, Autonomy",False
 Business Solutions Analytics Engineer,False
 Senior Math Teacher (00063296),False
 Delivery Domain,False
@@ -82108,7 +82108,7 @@ IT Applications Developer II,False
 "Associate Director, Formulation and Chemistry",False
 Senior Quantitative Analytics Specialist (017040.000398),False
 Business Process Manager,False
-"Senior Scientist I, Engineering - Modeling Specialist",True
+"Senior Scientist I, Engineering - Modeling Specialist",False
 Information System Specialist,False
 GTIS Observability,False
 Principal Power Systems Engineer,False
@@ -82791,7 +82791,7 @@ Senior Apps Database Administer,False
 Model Risk Officer I,True
 SALES & BUSINESS DATA SPECIALIST,False
 Vice President II,False
-"Manager, Data Science - SVB Capital",False
+"Manager, Data Science - SVB Capital",True
 CF-Valuations Senior Associate,False
 Guidewire Developer,False
 Quality Assurance - Food Scientist,False
@@ -82928,7 +82928,7 @@ Master Scheduler/Planner,False
 Junior Project Designer,False
 Principal Storage Solutions Engineer,False
 Engineer I - Sustainability,False
-"Technical Program Manager, Autonomy",True
+"Technical Program Manager, Autonomy",False
 Engineer [00065417],False
 Solution Consulting - Lead Consultant,False
 Orchid Specialist,False
@@ -83346,7 +83346,7 @@ Behavioral Health Manager,False
 Research Scientist in Multimodal Graduate,False
 Internal IT Audit Director,False
 "AVP Tech, Software Engineer",False
-Intelligent Manufacturing Engineer,True
+Intelligent Manufacturing Engineer,False
 Principal Business Analytics Developer,False
 Teamcenter Implementation Engineer,False
 OTS Consultant,False
@@ -83400,7 +83400,7 @@ Registered Dietician,False
 Extreme Server Administrator,False
 Business Strategy Analyst II,False
 Network Manager,False
-Systems Analyst Robotic Algorithms and Control,True
+Systems Analyst Robotic Algorithms and Control,False
 BUSINESS/DATA  ANALYST,False
 Senior Quantity Surveyor,False
 "Senior Associate, Data Analytics Engineering",False
@@ -83805,7 +83805,7 @@ Postdoctoral Research Fellow,False
 "ERP Lead, Technical Analyst (Oracle Cloud)",False
 IT Consultant (PeopleSoft Developer),False
 Associate Solution Consultant - KBGFJG227591-2,False
-"Manager, Statistical Modeling",False
+"Manager, Statistical Modeling",True
 "Senior Vice President, M&A and Transaction Advisory",False
 Sr. Engagement Manager (Pharmaceutical Analytics),False
 Fire Fighting Pilot,False
@@ -84049,7 +84049,7 @@ Senior Data engineer,False
 Electrical-Communications Engineer,False
 Graduate Transportation Planner,False
 NETWORK AND COMPUTER SYSTEM ADMINISTRATOR,False
-SR. PERCEPTION ENGINEER,True
+SR. PERCEPTION ENGINEER,False
 Application Architect  - KBGFJG21569-5,False
 Research Health Economist,False
 "Senior Modeling & Simulation Engineer, Powertrain",False
@@ -84516,7 +84516,7 @@ Director - Investments,False
 "Consultant, Testing",False
 Oracle EBS Functional,False
 Statistical Programmer/Analyst I,False
-"Associate Director, Model Validator Quantitative Analyst",True
+"Associate Director, Model Validator Quantitative Analyst",False
 "Authorized Officer, Data Analytics and Automation Developer",False
 "Associate, HR Operations, Coach",False
 "Sr. Specialist, MDM Service and Delivery",False
@@ -84845,7 +84845,7 @@ Assistant Professor of Science Education,False
 Data Analytics Solution Architect,False
 Postdoctoral Research Associate in Epidemiology,False
 "Senior Associate, Blackstone Credit",False
-Assistant Professor of the Practice in DEEPS,False
+Assistant Professor of the Practice in DEEPS,True
 Senior Research Associate in MMI,False
 Software Developer/Solutions Engineer II,False
 Visiting Lecturer of Japanese Studies,False
@@ -84876,7 +84876,7 @@ CW Software Engineer,False
 "Quantitative Developer, Associate",False
 "Associate, Banker",False
 Teaching Professor in Economics,False
-Software Developers(Data Scientist),True
+Software Developers(Data Scientist),False
 Supervisor CAD,False
 Manager of Production and Resource Planning,False
 K-6 Elementary Teacher (First Grade),False
@@ -84909,7 +84909,7 @@ Teacher Autism-Severe Level I,False
 Managing Editor- Manager,False
 MATERIALS ENGINEER,False
 Associate Manager Business Analytics & Forecasting,False
-"Software Engineer II, Embedded,  Autonomy",True
+"Software Engineer II, Embedded,  Autonomy",False
 INFRASTRUCTURE ANALYST,False
 Design Instructor- AI Expert,True
 Team Leader - Testing,False
@@ -85715,7 +85715,7 @@ SR. MATERIALS/PLANNING SPECIALIST,False
 Accounting Associate – Fund Administration,False
 "AD, Principal Clinical Data Engineer",False
 Production Support Analyst II,False
-"Robotics Engineer, Perception I",True
+"Robotics Engineer, Perception I",False
 "Research Scientist, Computer Vision (4)",True
 Chemist,False
 Senior On Product Performance Engineer 1,False
@@ -85962,7 +85962,7 @@ Sr. SDET Engineer II,False
 Director of Financial Planning and Analytics,False
 Dynamics 365 Techno Functional Consultant,False
 Accountants and Auditors - KBGFJG45152-22,False
-"Manager, Predictive Patient Solutions",True
+"Manager, Predictive Patient Solutions",False
 "Engineering Design Leader, Mechanical",False
 "Associate, Regulatory Compliance",False
 Strategy & Growth Development Specialist,False
@@ -86549,7 +86549,7 @@ Senior Systems Architect,False
 Data and Analytics Development Lead,False
 Senior Assistant Actuary,False
 M365/EXCHANGE & ACTIVE DIRECTORY ADMINISTRATOR,False
-"Engineer (Autonomy – Planning, Controls & DBW)",True
+"Engineer (Autonomy – Planning, Controls & DBW)",False
 "ASSOCIATE CONSULTANT, STRUCTURAL ENGINEERING",False
 "Specialist, Analytic Scientist",False
 "Associate Director,  Engineer, Advisory Portfolio Management",False
@@ -86690,7 +86690,7 @@ Sr. Manager – Projects,False
 Sr. QA Specialist,False
 "Senior Scientist, R&D",False
 Staff Product Development Engineer,False
-"TECHNICAL LEAD, DATA SCIENCE",False
+"TECHNICAL LEAD, DATA SCIENCE",True
 Principal Clinical Evaluation Medical Writer,False
 DATABASE ADMINISTRATOR (ORACLE),False
 TEST SYSTEMS ENGINEER,False
@@ -87031,7 +87031,7 @@ Visiting Assistant Professor in Global Environmental Studies,False
 INVENTORY ANALYST,False
 MANAGER FINANCE,False
 URBAN DESIGNER/PLANNER,False
-Senior Technical Program Manager (Autonomy),True
+Senior Technical Program Manager (Autonomy),False
 R&D Technical Project Team Leader,False
 General and operation Manager,False
 Sr. Software EPQ,False
@@ -87322,7 +87322,7 @@ Application Support,False
 Research Track Instructor,False
 "Manager, Software Quality Assurance",False
 "Analyst, Sales Trading",False
-Autonomous Engineer,True
+Autonomous Engineer,False
 "Collateral Valuation and Risk Analyst, Associate",False
 Manager Agile Product Owner,False
 IT Sr. Scrum Master,False
@@ -88154,7 +88154,7 @@ Senior Physics Engineer,False
 Superintendent Engineer,False
 Validation Area Specialist,False
 Structures Engineer,False
-"Associate, Automated Trading Strategies",True
+"Associate, Automated Trading Strategies",False
 Energy Trader,False
 Senior Data Engineer (102),False
 Manager Product Marketing,False
@@ -88222,7 +88222,7 @@ Software Developer (Python ),False
 Senior Ranking Engineer,False
 Product Delivery Specialist,False
 Associate Professor of Practice,False
-"Vice President, Model Risk",True
+"Vice President, Model Risk",False
 Chemist Project Scientist / Engineer,False
 Lead/Specialist,False
 R&D Senior Manager Engineering,False
@@ -88282,7 +88282,7 @@ Press Officer,False
 Software Developers - KBGFJG164222-7,False
 Engineering/Math Lab Assistant,False
 Manager of Supply Chain - Warehouse Solutions,False
-"VP, Developer Intelligent Automation",True
+"VP, Developer Intelligent Automation",False
 "Manager, Data Scientist--Decision Science",False
 "Engineer I, Product Safety",False
 Google Cloud Sales Manager/Customer Engineer,False
@@ -88361,12 +88361,12 @@ Software Engineer/Developer II,False
 Wireless System Application Engineer,False
 Director of Scripture Studies,False
 SAILPOINT ENGINEER,False
-"Engineering Manager, UX Platform - Foundation",False
+"Engineering Manager, UX Platform - Foundation",True
 "Technical Community Engineer, TikTok AR Ecosystem",False
 "Functional Safety Engineer II, Energy",False
 Associate Life Actuarial Analyst,False
 "Analyst, Sales",False
-"Robotics Engineer, Perception and Planning",True
+"Robotics Engineer, Perception and Planning",False
 Software Networking Engineer,False
 Market Strategy Specialist,False
 Product Manager – ADAS and Autonomy,False
@@ -88527,7 +88527,7 @@ Research Museum Collection Manager,False
 Business Management,False
 Architectural Staff II,False
 Verification & Validation Engineer,False
-Sr. System/Algorithm Engineer,True
+Sr. System/Algorithm Engineer,False
 "Professional I, Network System Technical Support",False
 Die Process Engineer,False
 JUNIOR SOFTWARE DEVELOPER,False
@@ -88837,7 +88837,7 @@ Enterprise Platform Full Stack Developer,False
 Graduate Engineer II,False
 Associate,False
 ANALYST IT DATA MGMT SR-AAP,False
-Model/Analysis/Validation Officer,True
+Model/Analysis/Validation Officer,False
 IT Software Development Engineer I,False
 Staff NPI Program Manager,False
 "EMD, Quantitative Engineering",False
@@ -89306,7 +89306,7 @@ Digital Design Lead,False
 Senior MEMS Sensors Design Engineer,False
 "Associate, CIB Risk",False
 Functional consultant,False
-Associate Manager Data Science,False
+Associate Manager Data Science,True
 Field Application Engineering Senior Staff Engineer,False
 ELECTRONIC ENGINEER (PRODUCTION LEAD),False
 Customer Experience Designer,False
@@ -89616,7 +89616,7 @@ Vice President; Investment Banker II,False
 R&D Staff Cyber Identity and Biometrics,False
 Psychiatrist/Associate Medical Director,False
 Global Revenue Management Senior Analyst,False
-"Software Engineer - DLM, Online Infra",False
+"Software Engineer - DLM, Online Infra",True
 CLINICAL RESEARCH COORDINATOR II,False
 "Associate, Investor Relations",False
 "Software Engineer Manager I, Engineering",False
@@ -89630,7 +89630,7 @@ Battery Chief Engineer,False
 "Engineer, Metrology DRAM/EM",False
 Web Front-End Developer,False
 Project Manager – Civil Engineer,False
-Senior Model Risk Analyst,True
+Senior Model Risk Analyst,False
 Analyst e-Commerce,False
 Professor of User Experience Design,False
 ENVIRONMENT ARTIST,False
@@ -90129,7 +90129,7 @@ Business Process Design Manager,False
 L2 Data Engineer,False
 High School Chinese Teacher,False
 Database Engineer - Sr. Consultant level,False
-Model-Based Design Algorithm Staff Engineer,True
+Model-Based Design Algorithm Staff Engineer,False
 SUPPLIER DEVELOPMENT QUALITY ENGINEER II,False
 Systems and Infrastructure Engineer III,False
 Sr Fire Protection Engineer - KBGFJG283940-1,False
@@ -90299,7 +90299,7 @@ Functional Safety Engineer,False
 FINANCIAL ANALYST - REAL ESTATE STRUCTURED LOANS,False
 Quality Improvement Analyst,False
 "Technical Specialist, Upstream Sales",False
-"Modeling Engineer, Efficiency and Performance",True
+"Modeling Engineer, Efficiency and Performance",False
 Systems Analytics Pharmacy Analyst,False
 Pediatric Neonatologist,False
 SAP Development Lead-Hybris,False
@@ -91080,7 +91080,7 @@ Clinical Psychiatrist,False
 RIPS Design Release Engineer,False
 Software Development Engineer-Applications SAP BTP Engineer,False
 Sr Research Engineer/Development,False
-Director- GCS Vision Development,True
+Director- GCS Vision Development,False
 Numerical Chain and Development Manager,False
 FULL-STACK DEVELOPER I,False
 Algorithmic Trading Engineer - KBGFJG105024-4,False
@@ -91271,7 +91271,7 @@ INTERIOR DESIGNERS,False
 Scientist II - ICP - MS,False
 Master Data Administrator,False
 Solutions Development Program,False
-"Software Engineer II, Autonomy",True
+"Software Engineer II, Autonomy",False
 Analyst; Strategy Execution Lead II,False
 "Lead Product Manager, Processing Engineering",False
 "Test & Validation Engineering, Engineer",False
@@ -92516,7 +92516,7 @@ Sr. Scrum Leader I,False
 "Leader, Inventory Accounting",False
 Vehicle Systems Engineer (VSE) CATM BT1xL,False
 Licensing Manager,False
-"Software Engineer, Autonomy",True
+"Software Engineer, Autonomy",False
 "Android Engineer, TikTok Inc. Social",False
 Functional Business Analyst,False
 "Researcher/Engineer, Infrastructure",False
@@ -92665,7 +92665,7 @@ IT Manager I,False
 "Advisory Engineer, Quality",False
 Project Manager l,False
 IT and Application Support Analyst,False
-Solution Intelligence Senior Manager,False
+Solution Intelligence Senior Manager,True
 Systems Analyst Exec Advisor,False
 Assistant Professor of Mathematics and Data Science,False
 "AVP, Analytics - Cross Platform & Business Development",False
@@ -93043,7 +93043,7 @@ Senior Client Delivery Consultant,False
 "Engineer, Magnetics",False
 Supply Chain Planner II,False
 "Sr Analyst, Network Engineer",False
-"Senior Associate Data Scientist, DSLDP",False
+"Senior Associate Data Scientist, DSLDP",True
 Senior Account Support Engineer,False
 Sr. Integration Developer and Architect,False
 Assistant Professor of Basic Pharmaceutical & Toxicological,False
@@ -93779,7 +93779,7 @@ Clinical Fellow in Pediatric Child Neurology,False
 Sr. Data Governance Analyst,False
 Technical Leader - Strategy & Architecture - KBGFJG115002-5,False
 Sr BI Engineer,False
-Quantitative Researcher & Statistician (Applied Scientist),True
+Quantitative Researcher & Statistician (Applied Scientist),False
 Strategy & Planning Manager,False
 Expert Cloud Engineer,False
 Value Chain Manager - KBGFJG78667-4,False
@@ -93883,7 +93883,7 @@ Team Lead Software Engineer,False
 Senior Systems RAMS Engineer,False
 Media and Visual Arts Specialist,False
 Vice President (Senior Murex Business Analyst),False
-Model Based Tools and Process Engineer,True
+Model Based Tools and Process Engineer,False
 Salesforce Marketing Cloud Developer,False
 Technical Drafting,False
 CNC MECHANICAL MAINTENANCE ENGINEER,False
@@ -94130,7 +94130,7 @@ Project Manager (Localization & Translation),False
 PRINCIPAL ENGINEER SOFTWARE,False
 IAC Researcher (f/k/a Research Analyst),False
 Lead - Workload and Capacity Planning,False
-"Senior Scientist, Modeling",True
+"Senior Scientist, Modeling",False
 Physician (Neurology - Section Chief),False
 Visiting Assistant Professor of Music,False
 Staff Back-end Engineer II,False
@@ -94229,10 +94229,10 @@ Mulesoft Lead,False
 Sr. Staff Systems Development Engineer,False
 Lead Crash Safety Engineer,False
 "Associate Scientist II, BioProcess Development",False
-Data Analyst I - CAI,False
+Data Analyst I - CAI,True
 WiFi Engineer,False
 Solution Architect Manager,False
-Architecture Staff (AIT),True
+Architecture Staff (AIT),False
 Civil Engineering Professional Intermediate,False
 Software Project Leader,False
 Content Creation Specialist,False
@@ -94336,7 +94336,7 @@ Manager Senior Architecture,False
 DATA ENGINEER/ANALYST,False
 NIAR Processing Laboratory Manager,False
 Wilderness North America Retail Manager,False
-"ASSOCIATE CONSULTANT, DATA SCIENCE (TRAVEL DEMAND MODELER)",True
+"ASSOCIATE CONSULTANT, DATA SCIENCE (TRAVEL DEMAND MODELER)",False
 Trust Risk Analyst,False
 "Senior Planner, Mens Footwear, Global",False
 SENIOR AI/ROBOTICS ENGINEER,True
@@ -94798,7 +94798,7 @@ R&D Associate Staff Member,False
 Technologist – Clinical Laboratory,False
 ARTIST II,False
 Senior Manager – Cyber Risk,False
-"Data Scientist, Risk Data Mining - Anti Automation Solutions",False
+"Data Scientist, Risk Data Mining - Anti Automation Solutions",True
 "Senior Associate, Quantitative Research",False
 Jr. Cybersecurity Analyst,False
 Development Engineer E4,False
@@ -94969,7 +94969,7 @@ Senior Product Designer - Dashboards,False
 PRINCIPAL TECHNOLOGY CONSULTANT (RETAIL & FASHION SOLUTIONS),False
 Director and Internal Medicine and Endocrinologist Physician,False
 "Engineer III, Software Engineer",False
-Senior Engineer - Applied Science,True
+Senior Engineer - Applied Science,False
 Sr. Manufacturing Project Controls Engineer,False
 Manufacturing Reliability Engineer/Site Resource,False
 Customer Experience Customer Success Specialist,False
@@ -95015,7 +95015,7 @@ Senior Business Systems Analysts,False
 3D Polymers R&D Agent Integration Test Engineer,False
 "Associate Director, PMO",False
 "Specialist I, Integrated Systems Marketing",False
-"Sr. Modeling Engineer, Efficiency and Performance",True
+"Sr. Modeling Engineer, Efficiency and Performance",False
 IT QA & AUTOMATION MANAGER,False
 "Sr. Data Scientist, BI & Analytics",False
 "Sr. Associate, Analytics",False
@@ -95074,7 +95074,7 @@ Maintenance Manager II,False
 Commodity Business Manager,False
 Senior Advisory Solutions Consultant,False
 "Crash Structures, Engineer II",False
-Algorithm Software Developer,True
+Algorithm Software Developer,False
 "Administrative Faculty, Applied Behavior Analysis",False
 "Scientist II, Assay Development",False
 Director of the MIT Musium,False
@@ -95291,7 +95291,7 @@ Strategic Partnerships Director,False
 Software Product & Platform Engineering Manager,False
 "Strategy, Analytics & Pricing Manager",False
 "Corporate Vice President, Budget and Expense Management",False
-"Associate, Model Validation",True
+"Associate, Model Validation",False
 I&F Decision Sci Practitioner Assoc Dir,False
 Commissioning & Energy Engineer,False
 Sales Manager (Far East Region),False
@@ -95527,7 +95527,7 @@ Cloud/DevOps Manager,False
 BPM/Pega Tester,False
 Senior Engineer 20516.4559.2,False
 "Assistant Professor, Information and Decision Sciences",False
-Lead Mgr Data Science - KBGFJG29526-6,False
+Lead Mgr Data Science - KBGFJG29526-6,True
 "Director, TEDx Development",False
 Product Engineering Manager L1,False
 Director of Science Communication and Media Relations,False
@@ -95857,7 +95857,7 @@ Mechanical Process Engineer,False
 Elementary Drama Teacher,False
 Solar Project Coordinator,False
 VP of Preconstruction,False
-ASSOCIATE MODELER,True
+ASSOCIATE MODELER,False
 "Software Developer (Project Manager, V&V)",False
 Assistant Director of International Admissions,False
 Assistant Professor - Interior Design,False
@@ -96086,7 +96086,7 @@ Clinical Assistant Professor of Finance,False
 "Field Sales Consultant, Admin/Ops General",False
 Assistant Adjunct Professor,False
 Senior Investment Analyst,False
-"Software Engineer, Autonomy 2",True
+"Software Engineer, Autonomy 2",False
 Elementary Mathematics Teacher,False
 Digital Media Strategist,False
 Qualitative Research Manager,False
@@ -96177,7 +96177,7 @@ Senior Software Quality Assurance Tester,False
 Business Analyst L5,False
 EIP Security Engineer II,False
 "Director, Business Process Architecture",False
-Credit Strategy Analyst/Data Scientist,True
+Credit Strategy Analyst/Data Scientist,False
 Business Analyst L2,False
 Engineer MS&T,False
 Asst Prof of Engr in Coastal Resilience (Tenure Track),False
@@ -96811,7 +96811,7 @@ Sr. Data Delivery Manager,False
 Business Systems Functional Analyst,False
 "Director, Application Developer",False
 "Manager, DB Design and Analysis",False
-"Sr Engineer, Computational Photography & Computer Vision Res",True
+"Sr Engineer, Computational Photography & Computer Vision Res",False
 Principal Data Analyst,False
 WebLogic Application Server Admin,False
 SOFTWARE/SYSTEMS ENGINEER,False
@@ -96830,7 +96830,7 @@ Genesys Engineer,False
 "Staff Engineer, Control Systems - KBGFJG62191-9",False
 Director of Health System Strategy Clearway Health,False
 "Senior Consultant, Project Controls",False
-"Manager, Model Risk",True
+"Manager, Model Risk",False
 Medical Office Manager,False
 "Sr. Specialist, Treasury & ALM/VP, Treasury & ALM II",False
 Healthcare Performance Engineer,False
@@ -96840,7 +96840,7 @@ SUR Rapid Response Engineer Senior,False
 Practice Manager (Technical Manager),False
 STAFF ELECTRIAL ENGINEER,False
 Accountants and Auditors - KBGFJG23328-23,False
-"Data Scientist, Computer Vision OPF/GIS",True
+"Data Scientist, Computer Vision OPF/GIS",False
 "Director, Identifi Configuration",False
 Security Operations Specialist I,False
 "Consultant, Electrical Engineering",False
@@ -97003,7 +97003,7 @@ Presidential Postdoctoral Fellow - Chemistry,False
 "Senior Consultant, Product Architect",False
 Staff Software Lead,False
 "Associate, CIB A to A 2023 Rsch",False
-Architectural Staff (AIT),True
+Architectural Staff (AIT),False
 Data Engineer – Solar Performance,False
 ASIC Engineer,False
 BI/Report Developer,False
@@ -97267,7 +97267,7 @@ Preconstruction Project Manager,False
 "Sr. Engineer, IT Mobility Infrastructure",False
 Technical Development Engineer,False
 IT PeopleSoft Programmer/Analyst,False
-"Staff Engineer II, Research",True
+"Staff Engineer II, Research",False
 Industry & Function AI Value Strategy Manager,True
 Senior .NET Full-Stack Developer,False
 "Data Engineer, Marketing",False
@@ -97350,7 +97350,7 @@ Senior Community Manager,False
 Lead Advanced Analytics Program Manager,False
 Software Development Automation Engineer,False
 Application Developer Salesforce,False
-Senior Research Associate in DEEPS,False
+Senior Research Associate in DEEPS,True
 Lecturer in Mathematics,False
 Mechanical Engineer - Soft Trim NVH Specialist,False
 Quantitative Model Analyst - AML,False
@@ -97840,7 +97840,7 @@ Mechanical Engineer – Fluid Systems,False
 "Counseling Psychologist (Col. Mental Health Clinician, IS)",False
 Marketing & Operations Specialist,False
 Reconstructive Plastic Surgeon,False
-Analytics & Modeling Analyst,False
+Analytics & Modeling Analyst,True
 Automation Development Engineer (Mechanical),False
 JDE SYSTEMS ANALYST,False
 Program Manager for Case Management - Students of Concern,False
@@ -98379,7 +98379,7 @@ Associate Research Scientist/Scientific Project Manager,False
 Projects Senior Manager,False
 Senior Electronics Systems Engineer,False
 Senior IAM Analyst,False
-Global Product Manager - Machine,True
+Global Product Manager - Machine,False
 Senior Designer/Creative Content Creator,False
 Clinical Assistant Professor of Economics,False
 Group Manager – Global Sales and Strategy,False
@@ -99119,7 +99119,7 @@ Google Cloud Product Sales Account Manager,False
 Lead Software Engineer- TA Engineering,False
 "Senior Embedded Software Engineer, EV Charging",False
 "Associate, Credit Analyst",False
-Machine Network Specialist,True
+Machine Network Specialist,False
 "Legal Entity Architecture, Vice President",False
 Module Design Engineer,False
 ENT Manager ERP Business,False
@@ -99223,7 +99223,7 @@ Internist (Physician),False
 Sr. Program Coordinator,False
 Senior Software Test Engineer (Verification),False
 Clinical Instructor Psych & Behavioral Sciences(Clinc Educ),False
-Sr. Research Engineer - Biological Imaging & Computer Vision,True
+Sr. Research Engineer - Biological Imaging & Computer Vision,False
 "Assistant Professor, School of Engineering",False
 SMTS Software Systems Design Eng.,False
 Career Services Director,False
@@ -99414,7 +99414,7 @@ SAP SUCCESSFACTORS CONSULTANT,False
 Associate Professor M.S. Investigations,False
 "Assistant Professor, Theology",False
 "Supervisor, Manufacturing Quality",False
-Senior Engineer (Autonomy – Controls),True
+Senior Engineer (Autonomy – Controls),False
 "Clinical Dietitian, Acute Care",False
 Associate Data Engineer 20516.3908.10,False
 Software Product and Platform Engineering Manager,False
@@ -99736,7 +99736,7 @@ Staff Software Engineer - Data Services Platform,False
 "Sr. Specialist, Facilities & Engineering, Project Management",False
 Sr Domain Architect,False
 "Senior Engineer II, Platform, Investment",False
-Marketing Data Science Advisor,False
+Marketing Data Science Advisor,True
 Educational Resources Specialist,False
 Senior IT Applications Business Systems Analyst,False
 AVP Software Engineer,False
@@ -100149,7 +100149,7 @@ Principal Application Engineer DC/DC Power Supply,False
 Electrical Software Engineer,False
 VMware Administrator,False
 Greek Orthodox Priest,False
-"Principal Engineer, Algorithm",True
+"Principal Engineer, Algorithm",False
 "Customer Success Engineer, NGFW",False
 "Vice President, CRM Developer",False
 IT Conversion Project Manager,False
@@ -100196,7 +100196,7 @@ High School World Language Teacher,False
 INFORMATICA DEVELOPER / ETL DEVELOPER,False
 Program Manager - Vendor Capacity Planning,False
 IT Consultant (Data Engineer/Cloud Architect),False
-"Data Engineer, Workforce Model Optimization",False
+"Data Engineer, Workforce Model Optimization",True
 Senior Research Lab Tech,False
 Associate Director FCC Client Risk and Affiliate Risk Mgmt,False
 SOFTWARE (BIG DATA/CLOUD OPS) ENGINEER,False
@@ -100757,7 +100757,7 @@ Accountants and Auditors - KBGFJG316194-1,False
 "Senior Associate Scientist, Biology",False
 Chief Financial Officer (CFO),False
 Mathematical Modeling Analyst,False
-Head of Finance - GenMark,False
+Head of Finance - GenMark,True
 Sr Production Engineer,False
 Senior Manager - Inhouse Consulting,False
 Specialist II-IC Data Analytics and Visualization,False
@@ -101558,7 +101558,7 @@ Engineer III – Software,False
 Assistant Director of Academic Services and Administration,False
 "Senior Engineer, Product Development Engineering",False
 Senior Automated Driving Software Engineer,True
-Member of Technical Staff (Research Engineer),True
+Member of Technical Staff (Research Engineer),False
 SAP BW Software Developer,False
 Azure Databricks Developer / Analyst,False
 Software Engineer – SRE/DevOps,False
@@ -101700,14 +101700,14 @@ Senior Planning Manager,False
 Software Engineer III (Release Manager),False
 Senior Building Science Specialist,False
 "Manager, Supply Chain Capabilities, Master Data Management",False
-"Staff Software Engineer, Data, Autonomy",True
+"Staff Software Engineer, Data, Autonomy",False
 "Senior Analyst, Business Insights",False
 "Senior Site Reliability Engineer, Data Platform",False
 CNPA Pediatrician,False
 Vice President; Risk Management Sr Specialist,False
 Lead MuleSoft Developer,False
 Software Test Lead Engineer,False
-"Manager 1, Data Science",True
+"Manager 1, Data Science",False
 Application Testing Specialist,False
 "ASST PROF OF PRACTICE, ENVIRONMENTAL ENGINEERING",False
 Head of Clearing Risk,False
@@ -101747,7 +101747,7 @@ Elementary Music/Choir Teacher,False
 Analytical Chemist – Senior Scientist,False
 Principal Design For Test Engineer,False
 Grants and Contracts Coordinator,False
-Advanced Modeling & Analysis Engineer,False
+Advanced Modeling & Analysis Engineer,True
 Market Associate (WMC),False
 Creative Manager,False
 SOFTWARE DEVELOPER (PEGA SENIOR SYSTEM ARCHITECT),False
@@ -101866,7 +101866,7 @@ GME TRAINING PROGRAM ADMINISTRATOR,False
 Software Engineer Machine Learning,True
 Information Systems Software Application Engineer,False
 DevOps - SOFTWARE ENGINEER,False
-"PRINCIPAL, APPLIED SCIENTIST",True
+"PRINCIPAL, APPLIED SCIENTIST",False
 Senior Compliance Advisor,False
 Electrical Building Engineer,False
 Analytics Scientist Senior,False
@@ -102124,7 +102124,7 @@ Lead Cloud Ops Engineer,False
 INFORMATICA MDM DEVELOPER,False
 Viper Test Engineer,False
 Data Scientist Jr.,False
-"Analyst, Model Risk",True
+"Analyst, Model Risk",False
 Lead Solution Manager SAP,False
 Chief of Staff (Product Management),False
 Principal – Adv Bus Analytics,False
@@ -102694,7 +102694,7 @@ Data Modeler – Lead,False
 Research Associate (Astronomer),False
 Neurosurgery,False
 "Research Scientist, Analytical Development",False
-AUTONOMY PROJECT TEAM LEAD,True
+AUTONOMY PROJECT TEAM LEAD,False
 Middle and High School Math / Science Teacher,False
 "Senior Consultant, Strategy Consulting",False
 "Manager, ME General Assembly",False
@@ -103002,7 +103002,7 @@ IT Consultant (Software Systems Engineer),False
 Assistant Vice President; Product Owner - Tech Delivery,False
 Digital Content and Media Specialist,False
 Manager – Software Development,False
-Model/ Analysis/ Validation Senior Manager,True
+Model/ Analysis/ Validation Senior Manager,False
 "TikTok Shop - Network Planning, Inventory, and Topology",False
 Staff Platforms Engineer - Android,False
 Lead Quantitative Analyst,False
@@ -103259,7 +103259,7 @@ Annual Fund Manager,False
 Senior AI RAQA Specialist,True
 "Engineer 1, System Structure Design",False
 Assistant Professor of Practice of Computer Science,False
-Advanced Modeling and Analysis Engineer,False
+Advanced Modeling and Analysis Engineer,True
 Senior Quantitative Analytics Specialist (017040.001942),False
 Training Manager,False
 PDM Project Manager,False
@@ -103429,7 +103429,7 @@ Windchill Solution Architect,False
 AWS DATABASE IAC AUTOMATION DEVELOPER,False
 Vehicle Integration & Regulatory Engineering Supervisor,False
 "BUSINESS INTELLIGENCE, SENIOR ANALYST",False
-Data & Modeling Sciences – Senior Scientist,False
+Data & Modeling Sciences – Senior Scientist,True
 Dept. Supervisor,False
 Post Doctoral Fellow Chemistry,False
 Product Design Specialist II (UX/UI Designer),False
@@ -103796,7 +103796,7 @@ SOFTWARE DEVELOPER-APPLICATIONS,False
 System Specialist II,False
 Software Engineer - Planning,False
 LMTS Software Engineering,False
-Generative Protein Design Group Leader,False
+Generative Protein Design Group Leader,True
 Senior Fleet Support Engineer,False
 Behavioral Health Clinical Supervisor,False
 Staff Cloud Support Engineer - Priority Support,False
@@ -104183,7 +104183,7 @@ Computer network Support Specialist,False
 Sr. SAP Vistex Business Analyst,False
 "Associate Director, Structuring",False
 Senior Software Engineer - 1,False
-"AVP, Advanced Modeling",True
+"AVP, Advanced Modeling",False
 "Managing Principal, Business Consulting",False
 Lead Specialty Software Engineer (017040.001582),False
 INTENSIVE CARE UNIT NURSE SPECIALIST,False
@@ -104209,7 +104209,7 @@ R&D Thin Film Process Development Engineer,False
 Staff Accountant International Taxation,False
 Sr. Technical Expert,False
 Agent and Business Manager of Artists,False
-Director – Fan Engagement Data Science,False
+Director – Fan Engagement Data Science,True
 "Principal, Software Engineer 2",False
 Senior Software Engineer (017040.001571),False
 Functional Developer-OIPA,False
@@ -104268,7 +104268,7 @@ Orchestra Production Manager,False
 ServiceNow Platform Architect,False
 SITE MERCHANDISING AND OPERATIONS SPECIALIST,False
 FXPB Client Services Associate,False
-Algorithmic Quant Strategist - KBGFJG184249-6,True
+Algorithmic Quant Strategist - KBGFJG184249-6,False
 Nurse Administrative Manager-Emergency Department,False
 Engagement Manager (Economist),False
 MULESOFT INTEGRATION ARCHITECT,False
@@ -104455,7 +104455,7 @@ Product Development Leader (ASIC Developer) 8617775,False
 SENIOR LEAD TEST ENGINEER ANALYST,False
 Lead Market Research Analyst,False
 Assistant Professor of Electronic and Computer Engineering,False
-"Software Engineer II, Software Systems, Autonomy",True
+"Software Engineer II, Software Systems, Autonomy",False
 ¿¿Managing Principal,False
 "Sr Mgr, CXO Delivery",False
 Quant Developer (Market Risk),False
@@ -104560,7 +104560,7 @@ ASSISTANT PROFESSOR - CONSTRUCTION MANAGEMENT,False
 SOFTWARE (SYSTEM DEBUG) ENGINEER,False
 Assistant Librarian for Web Services,False
 "Senior Manager, Product Management – IT",False
-Sr. ALIP Platform Engineer,True
+Sr. ALIP Platform Engineer,False
 "Managing Senior Director, Key and Strategic Accounts",False
 "Analyst, BD Operations & Alliance Management",False
 Sr. Manager – Technical Delivery,False
@@ -104836,7 +104836,7 @@ Database Administrators - KBGFJG202038-7,False
 EDM Systems Engineering & Integration Manager,False
 "Platinion Principal, Cybersecurity",False
 Senior Manager Hardware Engineer,False
-"Senior Scientist I, Computational",True
+"Senior Scientist I, Computational",False
 Faculty-Professor,False
 "Associate Director, Gender Advocacy, Data for Health Program",False
 Enterprise Applications Manager,False
@@ -105173,7 +105173,7 @@ Instructional Technology Specialist,False
 "Senior Manager, Corporate Systems",False
 FTS Infrastructure Solutions – ICTO GBS Director,False
 Architect - SD,False
-Analytics and Modeling Manager,False
+Analytics and Modeling Manager,True
 Senior Engineer-  Workday,False
 "Associate Principal, Middleware Engineering",False
 "Director - Marketing, Spanish Speaking Countries and LATAM",False
@@ -105628,7 +105628,7 @@ SENIOR PARTNER SALES ENGINEER,False
 Data Scientist III-Data Science & Analytics,False
 Staff Technical Data Analyst,False
 Support Engineering - Manager,False
-"ALGORITHM DEVELOPER, QUANTITATIVE ANALYSIS - LEAD",True
+"ALGORITHM DEVELOPER, QUANTITATIVE ANALYSIS - LEAD",False
 "SAP Business Solutions Specialist, ABAP/EDI",False
 DBT Developer,False
 Intensive Care (ICU)/ Critical Care Nurse,False
@@ -106021,7 +106021,7 @@ Natural Gas Scheduler II,False
 Supervisor of Social Services,False
 Senior Financial & Strategy Analyst,False
 Laboratory Technician IV,False
-Conversation Scientist,True
+Conversation Scientist,False
 Engineering Technical Specialist,False
 "Sr. Director, Software Dev. & Eng. - Full Stack Development",False
 Research Fellow MD,False
@@ -106165,7 +106165,7 @@ Software Development Engineer V,False
 Medical Technologist - Lead,False
 Business Analysis & Rptg Spec BM&A Analyst,False
 Database & Middleware Technical Architect,False
-AIX Solutions Engineer,True
+AIX Solutions Engineer,False
 Assistant Professor - Dermatology,False
 Lead Specialty Software Engineer (017040.001555),False
 HLS Technologist,False
@@ -106200,7 +106200,7 @@ TECHNO FUNCTIONAL CONSULTANT L2,False
 PROGRAM ENGINEER,False
 "Associate, Development & Investment",False
 "Executive Director, Investment Director",False
-Autonomy Technology Strategist,True
+Autonomy Technology Strategist,False
 IT Application Manager,False
 UR Supervisor Corporate,False
 Accountants and Auditors - KBGFJG243307-5,False
@@ -106578,7 +106578,7 @@ Quality Assurance Engineering Manager,False
 Audit Project Manager,False
 Marketplace Operations Director,False
 Faculty Scientist,False
-SENIOR MANAGER DATA SCIENCE,False
+SENIOR MANAGER DATA SCIENCE,True
 Electrical Wiring Engineer 4,False
 "Associate Director, Quantitative Research Associate 2060",False
 Software Engineer / Test Lead,False
@@ -106814,7 +106814,7 @@ Network  System Engineer,False
 Purchasing Associate,False
 Sr. Network Design Architect,False
 Immigration Policy Research Assistant,False
-Predictive Analytics Specialist,False
+Predictive Analytics Specialist,True
 Client Delivery Executive II (CDE II),False
 Vice President of Research (IT Project Manager),False
 "Senior Managing Director, Portfolio Management & Operations",False
@@ -106889,7 +106889,7 @@ Enterprise Integrations Manager,False
 MANAGER OF SOFTWARE DEVELOPMENT,False
 Talent Intelligence Analyst,False
 "Director, MSTG",False
-Staff Development Engineer - Adobe Journey Optimizer (AJO),True
+Staff Development Engineer - Adobe Journey Optimizer (AJO),False
 "Assistant Vice President, Information Technology Services",False
 "Staff TLM, Degraded Driving",False
 Securities Law Clerk,False
@@ -106989,7 +106989,7 @@ Business Development/Marketing Specialist,False
 "Analytics Manager, Card Analytics",False
 IT Trainer (Software Development),False
 Head of Enterprise Team Formation & Product Operations Lead,False
-Algorithm Software Development Engineer,True
+Algorithm Software Development Engineer,False
 Director – Licensing,False
 IT Consultant (Lead Consultant-Microsoft),False
 Staff Customer Centric Engineer,False
@@ -107187,7 +107187,7 @@ Project Manager Supervisor,False
 SYSTEMS ENGINEER II,False
 Senior Engineering Manager- Software Development E,False
 Upper School English Teacher,False
-Director of Enrollment Intelligence and Analytics,False
+Director of Enrollment Intelligence and Analytics,True
 ECOMM SENIOR DATA SCIENTIST,False
 SENIOR PROFESSIONAL APPLICATION DESIGNER,False
 Telecommunications Architect,False
@@ -107264,7 +107264,7 @@ Reactive Programmer,False
 Principal Sys. Dev Engineer,False
 Software Engineer/PEGA Developer,False
 "Manager, Risk Analytics",False
-Research Scientist and Senior Director of Training,True
+Research Scientist and Senior Director of Training,False
 Digital Scholarship and Curation Specialist,False
 Senior Field Service Engineer 2,False
 "Quantitative Risk Researcher, Commodity Risk Analytics",False
@@ -108793,13 +108793,13 @@ Application Developer 3,False
 SAP Techno-Functional Lead,False
 Physician - Weight Loss Management,False
 "Manager, Risk Management 1",False
-Intelligent Factory Project Lead - Advanced Engineering,True
+Intelligent Factory Project Lead - Advanced Engineering,False
 MANAGER QUALITY ASSURANCE,False
 Technical Production Control - Advisor I,False
 Database Administrators - KBGFJG29387-14,False
 Process Manager,False
 Assistant Epidemiologist,False
-"Staff Component Software DRE, Self-Driving",True
+"Staff Component Software DRE, Self-Driving",False
 Sr. Account Supervisor,False
 Manufacturing Scientist 2,False
 "Director, Data Informatics",False
@@ -108956,7 +108956,7 @@ Clinical Support-Float RN,False
 "VP of Product, Engineering & Data",False
 Product Design Senior Manager,False
 Scientist - Formulation,False
-Engineer II – Data Science,True
+Engineer II – Data Science,False
 AMS Technical Lead,False
 IDAM Security Analyst,False
 Senior Data ML Engineer,True
@@ -109384,7 +109384,7 @@ SENIOR PROTECTION & CONTROLS ENGINEER,False
 Sr Finance Manager,False
 Staff Project Controls Manager,False
 "Sr. Manager, GTM Planning & Programs",False
-Feature Owner Engineer,True
+Feature Owner Engineer,False
 VALIDATION ENGINEER II,False
 Postdoctoral Research Scientist - HPC and AI,True
 Global Client Partner - Healthcare,False
@@ -109541,7 +109541,7 @@ Systems Engineering Practitioner,False
 System Modeling Engineer III,False
 "Sr Engineer, Mobile",False
 Accountants and Auditors - KBGFJG71301-15,False
-Tech Lead-Computer and Information Research Scientist,True
+Tech Lead-Computer and Information Research Scientist,False
 Pilot Plant QC Chemist I,False
 APPLICATION ENGINEER II,False
 "Analyst, Operations Strategic Alignment",False
@@ -109789,7 +109789,7 @@ MS SharePoint Developer,False
 IMPORT & PURCHASE SPECIALIST,False
 "Senior Staff Engineer,Mechanical Reliability-KBGFJG223549-2",False
 "Senior VP, Brand Strategy and Consumer Experience",False
-"VP, INTELLIGENCE",True
+"VP, INTELLIGENCE",False
 "DIRECTOR, DELIVERY MANAGEMENT",False
 Advanced Research Engineer Specialist,False
 Accounting Senior Functional Analyst,False
@@ -109894,7 +109894,7 @@ REGISTERED NURSE - SENIOR,False
 Professional System Engineer,False
 Lead Software Engineer- Frontend,False
 SR. TECHNICAL PROGRAM MANAGER-OFFERS,False
-Predictive Analyst Lead,False
+Predictive Analyst Lead,True
 "Technology Manager, Digital Office",False
 MTS Systems Engineer,False
 Senior Manager - Identity Systems,False
@@ -111502,7 +111502,7 @@ Java/Python Software Application Development Engineer,False
 "Associate Director, Business/Technology Analysis",False
 Lead SRE,False
 "Software Engineer II, Deploy",False
-Senior Manager/Staff Data Scientist,True
+Senior Manager/Staff Data Scientist,False
 Assistant Vice President; Analyst II - Tech Delivery,False
 CCLP NA Vehicle Sedans Technical Manager,False
 PEGA Decision Consultant,False
@@ -111929,7 +111929,7 @@ Process Engineer-Quality Assurance,False
 "Associate Director, Credit Analysis",False
 SAP FI CONSULTANT,False
 Staff Design Release Engineer - Seats,False
-Algorithm Engineer 2,True
+Algorithm Engineer 2,False
 HEAD OF REAL ESTATE,False
 Platform Audio Storytelling Associate,False
 "Associate, Blackstone Networks-Portfolio Operations",False
@@ -112062,7 +112062,7 @@ Associate Director for Specialized Data Strategy,False
 "ASSOCIATE DIRECTOR, BUSINESS INTELLIGENCE",False
 SCRUM MASTER - LEAD,False
 REGIONAL OPERATIONS MANAGER,False
-Marketing Data Science Fellow,False
+Marketing Data Science Fellow,True
 Senior User Researcher,False
 Sales Operation Lead,False
 "(Substance Education, Assessment, and Recovery) Prevention/E",False
@@ -112429,7 +112429,7 @@ Senior Manager - Lead Data & Integrations Architect,False
 Senior Cloud Applications Engineer,False
 CLINCIAL ASSISTANT PROFESSOR/TEAM LEAD,False
 Digital Development Manager,False
-MANAGER - DATA SCIENCE,True
+MANAGER - DATA SCIENCE,False
 "Senior Data Scientist, Ecommerce – USDS",False
 Accountants and Auditors - KBGFJG177615-6,False
 HIL Electrical Systems Engineer,False
@@ -112861,7 +112861,7 @@ Application Development,False
 Sr Business Strategist,False
 "Derivatives Trader, Director",False
 Qlik Sense Software Engineer,False
-Model/Analysis/Validation Sr Analyst,True
+Model/Analysis/Validation Sr Analyst,False
 Manufacturing Engineering Services Manager,False
 Reliability & FMEA Engineer,False
 Technical Program Manager- Controls and Sensors,False
@@ -113134,7 +113134,7 @@ Business Systems Analyst.Advisor,False
 Senior Lectuer - Kinesiology,False
 Software Engineering & Development [00067881],False
 "Principal Solution Analyst, Human Capital Management",False
-Test Engineer - Autonomous Vehicles,False
+Test Engineer - Autonomous Vehicles,True
 Accountants and Auditors - KBGFJG306109-1,False
 Senior Recruitment Lead,False
 "QA Validation Manager, Computer Systems",False
@@ -113259,7 +113259,7 @@ Banking Compliance Lead Developer,False
 Enterprise Data Operations Sr Analyst / Data Engineer,False
 Research Technician - Flow Cytometry,False
 Scientist CMS,False
-"Staff Applications Engineer, Speech",True
+"Staff Applications Engineer, Speech",False
 Lead System Engineering,False
 Senior Systems Analyst (Supply Chain),False
 Labelling Engineer,False
@@ -113299,7 +113299,7 @@ Assistant Professor of Otolaryngology-Head and Neck Surgery,False
 PROCESS OPTIMIZATION ENGINEER & OPERATIONS TRAINER,False
 "Design Release Engineer - Body, Adhesives, Structures, Isola",False
 "Associate Scientist, Parkinson's Disease",False
-"Sr. Manager, Data Science and Analytics, Autonomy",True
+"Sr. Manager, Data Science and Analytics, Autonomy",False
 Transit Planner,False
 Assistant Professor/Assistant Curator,False
 Data Scientist / Machine Learning Engineer,True
@@ -113333,7 +113333,7 @@ Senior Associate QA L2,False
 Cardiovascular Surgery Physician,False
 Assistant Professor - Practice,False
 Teacher/Social Worker,False
-Modeling and Sim Senior Software Engineer,True
+Modeling and Sim Senior Software Engineer,False
 Head of Apple Product Development,False
 Epic BI Developer II,False
 "Manager, Compliance Technology",False
@@ -113390,7 +113390,7 @@ Nurse Practitioner [00068856],False
 7th Grade Teacher,False
 Sr. Principal Mechanical Engineer,False
 Deputy Director of Learning & Engagement,False
-Senior Perception Engineer - Lidar,True
+Senior Perception Engineer - Lidar,False
 "Sr Dir, Digital Thread, Product & Engineering Systems",False
 "Scientist 1, BioAssay Services",False
 Java Developer/Software Developer,False
@@ -113683,7 +113683,7 @@ Sr. Product Manager - Cloud Security,False
 Financial Analyst in Chemical Technology Sector,False
 Asst Professor - Mathematics & Statistics,False
 Lead Software Engineer (017040.001466),False
-Director Speach technologies,True
+Director Speach technologies,False
 Sr. Software Engineer – Platform Services,False
 SENIOR SYSTEMS ANALYST 1,False
 Sr Data Scientist 20516.3294,False
@@ -114152,7 +114152,7 @@ Staff Silicon Generalist,False
 Oracle Apps Functional Consultant,False
 "Group Lead, Next-Gen Sequencing (NGS)",False
 CAE Modeling Lead,False
-Senior Engineer (Autonomy – Planning & Controls),True
+Senior Engineer (Autonomy – Planning & Controls),False
 Sr. Applications Support Engineer,False
 Global Advocacy and Consulting Manager,False
 "Senior Consultant, Business Analysis",False
@@ -114412,7 +114412,7 @@ Sr Product Manager - Data Platform (20637.3319.2),False
 DEVSECOPS/CLOUD INFRA ARCHITECT,False
 "Executive Director, Investment Grade Syndicate",False
 SW Developer – Application Developer,False
-TikTok Shop - Strategy Product Manager Anti-Fraud Solutions,True
+TikTok Shop - Strategy Product Manager Anti-Fraud Solutions,False
 "Sr. Manager, Vehicle Software",False
 R&D Senior Scientist,False
 "Assistant Vice President, BI Developer",False
@@ -114501,7 +114501,7 @@ Cytotechnologist Supervisor,False
 TikTok Shop - Anti-Fraud Operations Program Manager,False
 Restoration Project Coordinator,False
 Senior Engineer - Project Development,False
-"Associate Director,  Model Validator Quantitative Analyst",True
+"Associate Director,  Model Validator Quantitative Analyst",False
 Assistant Professor of Clinical Restorative Dentistry,False
 "Senior, Quality Engineer - SBB",False
 Application and Deployment Senior Engineer,False
@@ -114916,7 +114916,7 @@ Risk Analyst – Convertible Bonds,False
 IT Consultant (Qlikview Developer),False
 "Associate Scientist III, Mechanistic Cell Biology",False
 Senior Actuarial Associate - KBGFJG166467-1,False
-"Principal Software Engineer, Next Best Action",True
+"Principal Software Engineer, Next Best Action",False
 Technical Lead – ERP Data Integrations and Data Management,False
 Staff Enterprise Applications Developer,False
 "Sr. Scientist II, ERD",False
@@ -115538,14 +115538,14 @@ Business Systems Analyst IV - SAP S4HANA,False
 Research Assoc. Materials Science,False
 Special Education Teacher (Grades 7-12),False
 "Director, Global Go-to-Market",False
-"DevOps Engineer, LMTS",False
+"DevOps Engineer, LMTS",True
 "Associate Director,  Software Engineer",False
 Principal Client Service Protection Engineer,False
 "Assistant Professor of Communications, Digital Journalism",False
 Sr. IT Systems Analyst,False
 "Sr. Software Developer, Title Services",False
 Scientific Support Specialist,False
-Sr. Staff Image Scientist,True
+Sr. Staff Image Scientist,False
 SAP Basis Admin,False
 Assistant Vice President; Data Engineer III,False
 SW Function and Calibration Integrator,False
@@ -115690,7 +115690,7 @@ sYSTEM aRCHITECT - iii,False
 Facets System Analyst,False
 Salesforce.com Senior Developer,False
 Special Education Teachers,False
-Quantitative Analytics and Model Development Analyst,False
+Quantitative Analytics and Model Development Analyst,True
 "Associate, Market Risk",False
 Professor and Chair (Department of Nutrition),False
 Biostatistician / Instructor,False
@@ -116612,7 +116612,7 @@ Senior Software Engineer (017040.001452),False
 Visiting Professor of Biochemistry and Molecular Biology,False
 Reliability Test Manager,False
 Software Developer Engineer in Test (SDET),False
-Sr. Manager-Data Science,False
+Sr. Manager-Data Science,True
 BUSINESS (SYSTEM) ANALYST,False
 SR.DEVELOPER,False
 Sales and Product Analyst,False
@@ -116910,7 +116910,7 @@ Senior Innovation and Design Specialist I,False
 Sr Automation Engineer (20637.3324.2),False
 IT SERVICES / CUSTOMER SUPPORT ENGINEER,False
 DATA ANALYTICS LEAD (MANUFACTURING),False
-"Staff Software Engineer, Planning, Autonomy",True
+"Staff Software Engineer, Planning, Autonomy",False
 Development Engineer (Packaging),False
 Elementary Health Education Teacher,False
 "Associate Director-Affiliate Sales, Americas",False
@@ -117048,7 +117048,7 @@ Manager - Support Readiness,False
 School Based Therapist,False
 Product Developer Sr. Scientist I,False
 Neurodiagnostic Technologist,False
-IT Consultant(Data Scientist),True
+IT Consultant(Data Scientist),False
 Motion Platform Architect,False
 EMBEDDED SW MANUAL TESTER,False
 Adjunct Assistant Professor of Restorative Dentistry,False
@@ -117069,12 +117069,12 @@ Principal SAP Basis Administrator,False
 Technology Manager I - SE,False
 "Vice President, Credit Group",False
 Lead Account Solution Engineer,False
-Staff Application Scientist,True
+Staff Application Scientist,False
 Business Analyst- Product Management,False
 Applications Systems Analyst,False
 Registered Nurse - Care Manager,False
 "Senior Manager, Global Partnerships",False
-"ASSOCIATE, MODEL REVIEW",True
+"ASSOCIATE, MODEL REVIEW",False
 Middle school teacher,False
 Software Product Architect I,False
 "Associate, Regulatory Reporting – Trade Level",False
@@ -117302,7 +117302,7 @@ Associate I - DevOps Engineer,False
 Senior Streaming Software Engineer,False
 Sr. Software  Developer,False
 "Sr. Manager, Data Engineering Sr.",False
-Model Consultant,True
+Model Consultant,False
 Hardware/FPGA Engineer,False
 DIRECTOR OF OPERATIONS & QUALITY MANAGEMENT SYSTEM,False
 Software Developers - KBGFJG166334-5,False
@@ -117411,7 +117411,7 @@ Medical Science Fellow,False
 Security Consultant. Senior,False
 "Associate, Sustainable Energies - KBGFJG162173-1",False
 Director; Treasury Sales Officer II,False
-Senior Engineer (Autonomy),True
+Senior Engineer (Autonomy),False
 mechanical engineer,False
 SR. INDUSTRIAL ENGINEER,False
 RF Engineer Team Lead,False
@@ -117445,14 +117445,14 @@ Adjunct Research and Instruction Librarian,False
 SR. SOFTWARE APPLICATION DEVELOPER,False
 Accountants and Auditors - KBGFJG05825-19,False
 Area Coach Operation In Training,False
-"VP, Model Risk Reporting",True
+"VP, Model Risk Reporting",False
 "IT Manager ,Digital Integrations",False
 Senior Associate JC60 - Health and Safety Engineers,False
 Agile Program Coach,False
 Sr. Principal Firmware Engineer,False
 "Manager, SDTM Statistical Programming",False
 "Engineer III, Quality",False
-"Senior Vice President, Data Science",False
+"Senior Vice President, Data Science",True
 Staff Development Scientist Form Dvc Management,False
 Support & Release Engineer,False
 Financial accounting analyst,False
@@ -117633,7 +117633,7 @@ Senior Data Pipeline Engineer,False
 Faculty - Mass Media,False
 "Partner Product Manager, Platforms",False
 Principal Scientist (00069869),False
-"Lead Engineer, Autonomous",True
+"Lead Engineer, Autonomous",False
 "W&D Manager, 3PL & Customer Fulfillment",False
 Product Development R&D Engineer,False
 Scientist 20516.3109.10,False
@@ -118064,7 +118064,7 @@ R&D Associate Staff Member - Detector Scientist,False
 ELA-S ELEMENTARY TEACHER,False
 "Assistant Professor, Artificial Intelligence",True
 Sr. Bioinformatics Programmer,False
-Principal Automated Safety Driving Engineer,True
+Principal Automated Safety Driving Engineer,False
 Rates Trade Processing Java Developer,False
 "Release Ops Engineer, AV Performance Analysis",False
 Restaurant - Business Manager,False
@@ -118084,7 +118084,7 @@ Associate Professor of Theology,False
 "Principal, Credit Risk",False
 "Homologation Engineer, VIN & Label Compliance",False
 Senior Technical Compliance Manager,False
-"Lead Product Manager, Chat",False
+"Lead Product Manager, Chat",True
 "Engineering Applications Analyst (CAR, HPC)",False
 Sr. Staff Vehicle Safety Integration Manager,False
 Informatics Developer I,False
@@ -118105,7 +118105,7 @@ Perfusionist IV,False
 SECONDARY ELA-S LANGUAGE ARTS TEACHER,False
 Senior Autonomous Vehicle Safety Engineer,True
 Senior Commercial Growth Manager,False
-"Sr. Engineer, Team Lead (Autonomy-Planning, Controls & DBW)",True
+"Sr. Engineer, Team Lead (Autonomy-Planning, Controls & DBW)",False
 Infra Enterprise Services - KBGFJG291967-1,False
 Manager Research Project A,False
 "Senior Engineer (Cloud, Apps, Tools & Test)",False
@@ -118460,7 +118460,7 @@ Senior Performance Attribution Analyst,False
 VP of Partnerships - North America,False
 Senior Wireless Validation Engineer,False
 Regional Quality Engineer,False
-Learning & Collaboration Technology Architect,True
+Learning & Collaboration Technology Architect,False
 Senior Engineer - Customer Networks,False
 "Senior Java Developer, Back End",False
 Service and Facilities Director,False
@@ -118782,7 +118782,7 @@ Octane Software Engineer,False
 Lead Marketing Analyst,False
 Oracle Application DBA,False
 "Associate Principal, Site Reliability Engineering",False
-Trading Analytic Model Development Senior,False
+Trading Analytic Model Development Senior,True
 Dir - Global Technology,False
 Senior Data Engineer - AWS,False
 Computer Systems Engineer III,False
@@ -119269,7 +119269,7 @@ Senior Software Engineer (Java/API/Microservices),False
 Commercial Leadership program 20516.4093,False
 "Director, Engineer, EISL Foundational Components 002964",False
 Custom Investment Associate,False
-Automation Engineer Computer Vision,True
+Automation Engineer Computer Vision,False
 Engineer - Team Leader 4,False
 America USCB Director,False
 Civil Engineering Lead,False
@@ -119444,7 +119444,7 @@ Trade Desk Analyst,False
 "Senior Accountant, External Reporting",False
 Director of Data Engineering and Cloud,False
 Non-Tech Project/Program Mgmt (Business Systems Analyst),False
-Learning and Evaluation Specialist,True
+Learning and Evaluation Specialist,False
 "Sr. Engineer, Automotive SW Test and Validation",False
 FC Manager - Accounting & Finance Optimization,False
 "Program Manager, Research - Department of Neonatology",False
@@ -119497,7 +119497,7 @@ Senior Network Engineer I,False
 Staff Data Scientist I,False
 Software Developers - KBGFJG176904-9,False
 Senior Database Application Developer,False
-Head of Lending Data & Analytics - KBGFJG69793-9,False
+Head of Lending Data & Analytics - KBGFJG69793-9,True
 Senior Product Manager IT,False
 Lead HR Program Manager,False
 Senior Research Data Analyst/SAS Programmer,False
@@ -119653,7 +119653,7 @@ Senior Business Intelligence Analyst – Ecommerce,False
 Sales Specialist 5,False
 Hybrid System Validation Engineer,False
 PRECONSTRUCTION MANAGER I,False
-"Sr. Software Engineer, Autonomy",True
+"Sr. Software Engineer, Autonomy",False
 Accountants and Auditors - KBGFJG174021-4,False
 RFFE ASIC Design Engineer,False
 Senior Process Engineer - Formulation,False
@@ -119686,7 +119686,7 @@ Oracle CPQ consultant,False
 "Principal, System Engineer",False
 Informatica Developer (Software Developer),False
 Augmented Reality Game Designer,False
-"Customer Data Management, FoundationX",False
+"Customer Data Management, FoundationX",True
 Software Developers - KBGFJG95017-15,False
 SR. BUSINESS SYSTEM ANALYST,False
 Financial Risk Specialists - KBGFJG133983-14,False
@@ -119726,7 +119726,7 @@ Chair/Professor,False
 Director of Racquet Sports,False
 Computer and Information Systems Managers - KBGFJG80660-11,False
 Power and Performance Improvement Engineer,False
-"Sr Scientist, Process Analytical Technologies & Chemometrics",True
+"Sr Scientist, Process Analytical Technologies & Chemometrics",False
 MSAT Specialist III,False
 Business Intelligence Reports Developer,False
 Senior Field Applications Scientist,False
@@ -119989,7 +119989,7 @@ Assistant Professor of Surgery (Surgeon),False
 Postdoctoral Associate - Civil Engineering,False
 Software Developers - KBGFJG178647-5,False
 IAM Analyst - Principal,False
-"Data Solutions - Manager, Data Modeling & Data Science",True
+"Data Solutions - Manager, Data Modeling & Data Science",False
 Certifier I,False
 "Director, Engineering",False
 "Engineer II, Special Projects",False
@@ -120206,7 +120206,7 @@ Health Educator Dietitian,False
 Visiting Assistant Professor of Chinese History,False
 Sr Contact Center Tech Business Analyst,False
 Senior Director Renewable Energy and Carbon Advisory,False
-"Principal Software Engineer, Applied Science",True
+"Principal Software Engineer, Applied Science",False
 Inpatient Hospitalist,False
 Presidential Postdoctoral Associate,False
 "Senior Vice President, Power Markets Research",False

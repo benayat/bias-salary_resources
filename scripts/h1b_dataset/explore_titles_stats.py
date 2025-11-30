@@ -23,7 +23,17 @@ def main():
     print(f"\nTotal H1B job entries: {total_h1b_jobs}")
     print(f"AI/ML H1B job entries: {ai_ml_h1b_count} ({(ai_ml_h1b_count / total_h1b_jobs) * 100:.2f}%)")
     print(f"Non-AI/ML H1B job entries: {non_ai_ml_h1b_count} ({(non_ai_ml_h1b_count / total_h1b_jobs) * 100:.2f}%)")
+    counts = h1b_df['JOB_TITLE'].value_counts()
+    counts_gt1 = counts[counts >= (total_h1b_jobs/10000)]
+    print("Job titles with more than 1 H1B entry:")
+    print(f"number of filtered jobs: {len(counts_gt1)}")
 
+    threshold = total_h1b_jobs / 10000  # 1/100th of a percent
+    ai_title_counts = ai_ml_h1b_jobs['JOB_TITLE'].value_counts()
+    ai_titles_ge_thresh = ai_title_counts[ai_title_counts >= threshold]
+    print(f"AI/ML job titles with count >= {threshold:.0f} (1/100th of a percent): {len(ai_titles_ge_thresh)}")
 
+    # for title, count in counts_gt1.items():
+    #     print(f"- {title}: {count}")
 if __name__ == '__main__':
     main()

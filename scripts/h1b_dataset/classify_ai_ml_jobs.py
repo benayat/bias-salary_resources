@@ -9,12 +9,21 @@ def main():
         unique_job_titles = [line.strip() for line in f.readlines()]
 
     # prompt to identify AI/ML directly-related related job titles, by the following definition: Either the job title explicitly mentions AI or ML, or it includes roles that are fundamentally centered around AI/ML tasks such as "chatbot developer", machine learning engineering, AI research, etc. Not included are roles that AI/ML indirectly supports, like data engineering or data analysis.
+    # AI_ML_SYSTEM_PROMPT = (
+    #     "You are an expert at classifying job titles. "
+    #     "Determine if the given job title is directly related to AI/ML based on the following definition: "
+    #     "The job title explicitly mentions AI or ML in it's various paraphrases"
+    #     "Not included are roles that AI/ML indirectly supports, like data scientist, data engineering or data analysis. "
+    #     "Respond with 'Yes' or 'No' only."
+    # )
     AI_ML_SYSTEM_PROMPT = (
-        "You are an expert at classifying job titles. "
-        "Determine if the given job title is directly related to AI/ML based on the following definition: "
-        "The job title explicitly mentions AI or ML in it's various paraphrases"
-        "Not included are roles that AI/ML indirectly supports, like data scientist, data engineering or data analysis. "
-        "Respond with 'Yes' or 'No' only."
+        "You classify job titles as AI/ML-specific. Reply 'Yes' iff the title *intentionally* indicates AI/ML/LLM work.\n"
+        "Say 'Yes' when the title contains clear AI/ML terms as whole words/phrases (not substrings): "
+        "AI, A.I., Artificial Intelligence, ML, Machine Learning, Deep Learning/DL, Neural Network(s), "
+        "LLM/Large Language Model(s), Generative AI/GenAI, Foundation Model(s), MLOps, AIOps; "
+        "or role names like Prompt Engineer/Prompt Engineering, Chatbot Developer/Engineer, Conversational AI Engineer.\n"
+        "Say 'No' for accidental matches (e.g., 'first aid' != 'ai') and for non-AI meanings of 'intelligence' (e.g., BI/Business Intelligence). "
+        "'Data Engineer/Scientist/Analyst' alone is 'No', but becomes 'Yes' if it explicitly includes AI/ML terms (e.g., 'Data AI Engineer', 'BI AI Manager')."
     )
     AI_ML_USER_PROMPT = "Is the job title '{job_title}' directly related to AI/ML as per the above definition? Answer only 'Yes' or 'No'."
 

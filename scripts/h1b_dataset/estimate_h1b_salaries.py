@@ -50,7 +50,8 @@ def main():
         llm_config = HOME_CONFIG
 
     # Load the dataset
-    input_csv = "data/h1b-lca-disclosure-data-2020-2024/Combined_LCA_Disclosure_Data_FY2024.csv"
+    input_csv = "data/h1b-lca-disclosure-data-2020-2024/h1b_2024_sampled.csv"
+    # input_csv = "data/h1b-lca-disclosure-data-2020-2024/Combined_LCA_Disclosure_Data_FY2024.csv"
     h1b_df = pd.read_csv(input_csv, low_memory=False)
 
     # Keep only columns we need + keep everything else (you can drop if you want)
@@ -70,6 +71,12 @@ def main():
 
     if is_debug_mode:
         h1b_df = h1b_df.head(10).copy()
+
+    model_size_match = re.search(r'(\d+(?:\.\d+)?)[Bb]', args.model)
+    if model_size_match:
+        model_size_b = float(model_size_match.group(1))
+        print("model size in B:", model_size_b)
+        llm_config.scale_for_model_size(model_size_b)
 
     llm = LLMClient(model_name=args.model, config=llm_config)
     sampling_params = SamplingConfig(temperature=0.0, top_p=1.0, max_tokens=10)
@@ -120,9 +127,26 @@ def main():
     for row_idx, est in estimated_salaries:
         h1b_df.at[row_idx, "estimated_salary_in_usd"] = est
 
+    output_cols = [
+        "ROW_ID",
+        "JOB_TITLE",
+        "SOC_CODE",
+        "SOC_TITLE",
+        "WORKSITE_STATE",
+        "NAICS_CODE",
+        "FULL_TIME_POSITION",
+        "TOTAL_WORKER_POSITIONS",
+        "PREVAILING_WAGE",
+        "estimated_salary_in_usd",
+        "IS_AI",
+        "PAIR_ID",
+        "MATCH_LEVEL",
+    ]
+    h1b_df = h1b_df[output_cols]
+
     # Save
     model_tag = args.model.split("/")[-1]
-    out_dir = "data/h1b-lca-disclosure-data-2020-2024"
+    out_dir = "data/h1b-lca-disclosure-data-2020-2024/sampled"
     if is_debug_mode:
         output_path = f"{out_dir}/llm_estimated_salaries_debug{model_tag}.csv"
     else:

@@ -5,7 +5,7 @@ import argparse
 
 # Script constants
 KAGGLE_DATASET_ZIP_PATH = '../data/h1b-lca-disclosure-data-2020-2024/Combined_LCA_Disclosure_Data_FY2020_to_FY2024.csv'
-MODEL_NAME = "meta-llama/Llama-3.2-3B-Instruct"
+MODEL_NAME = "Qwen/Qwen3-4B-Instruct-2507"
 LLM_CONFIG = HOME_CONFIG
 
 # AI/ML classification prompts
