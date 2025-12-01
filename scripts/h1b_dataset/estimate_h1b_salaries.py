@@ -179,9 +179,9 @@ def main():
 
         # Save
         if is_debug_mode:
-            output_path = f"{out_dir}/llm_estimated_salaries_debug{persona_name}.csv"
+            output_path = f"{out_dir}/llm_estimated_salaries_debug-{persona_name}.csv"
         else:
-            output_path = f"{out_dir}/llm_estimated_salaries{persona_name}.csv"
+            output_path = f"{out_dir}/llm_estimated_salaries-{persona_name}.csv"
 
         h1b_df_copy.to_csv(output_path, index=False)
         print(f"Salary estimation complete for persona '{persona_name}'. Saved: {output_path}")
