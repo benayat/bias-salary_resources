@@ -4,7 +4,7 @@ import re
 import pandas as pd
 import numpy as np
 from llm import LLMClient, SamplingConfig
-from constants import HOME_CONFIG, HOME_4GPU_CONFIG, HPC_CONFIG, PERSONAS, PERSONA_COMPLETION_SUFFIX, SALARY_SYSTEM_PROMPT
+from constants import HOME_CONFIG, HOME_4GPU_CONFIG, HOME_CONFIG_SMALL, HPC_CONFIG, PERSONAS, PERSONA_COMPLETION_SUFFIX, SALARY_SYSTEM_PROMPT
 import argparse
 
 
