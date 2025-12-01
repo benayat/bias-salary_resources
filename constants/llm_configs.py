@@ -77,7 +77,7 @@ HPC_2H200_CONFIG = LLMResourceConfig(
     disable_log_stats=True,
     max_parallel_loading_workers=16,
     enable_prefix_caching=True,
-    enforce_eager=True,
+    enforce_eager=False,
     use_transformers=False,
 )
 
