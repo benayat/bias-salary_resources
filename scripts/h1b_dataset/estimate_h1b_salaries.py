@@ -35,7 +35,9 @@ Return only the integer amount, nothing else."""
 def main():
     parser = argparse.ArgumentParser(description="Estimate salaries for H1B job applications using LLM")
     parser.add_argument("--model", default=MODEL_NAME, help="LLM model name")
+    parser.add_argument("--client-type", choices=["vllm", "openai"], default="vllm", help="Type of LLM client to use")
     parser.add_argument("--debug", action="store_true", help="Enable debug mode (process first 10 rows)")
+    parser.add_argument("--openai-api-key", type=str, default="", help="OpenAI API key (if using OpenAI client)")
     parser.add_argument("--llm-config", choices=["home", "home_4gpu", "hpc"], default="home", help="Choose LLM configuration")
     parser.add_argument("--chunk-size", type=int, default=100000, help="Chunk size for processing prompts")
     parser.add_argument("--input-csv-file", type=str, default="data/h1b-lca-disclosure-data-2020-2024/h1b_2024_sampled.csv", help="Path to input CSV file")
@@ -89,8 +91,15 @@ def main():
             print("model size in B:", model_size_b)
             llm_config.scale_for_model_size(model_size_b)
 
-    llm = LLMClient(model_name=args.model, config=llm_config)
-    sampling_params = SamplingConfig(temperature=0.0, top_p=1.0, max_tokens=10)
+    if args.client_type == "openai":
+        from openai_llm.openai_client import OpenAIConfig, LLMClient as OpenAILLMClient
+        llm_config = OpenAIConfig(api_key=args.openai_api_key)
+        # llm_config = OpenAIConfig(api_key=os.getenv("OPENAI_API_KEY"))
+        llm = OpenAILLMClient(model_name=args.model, config=llm_config)
+        sampling_params = SamplingConfig(temperature=0.0, top_p=1.0, max_tokens=10)
+    else:
+        llm = LLMClient(model_name=args.model, config=llm_config)
+        sampling_params = SamplingConfig(temperature=0.0, top_p=1.0, max_tokens=10)
 
     def chunk_list(lst, size):
         for i in range(0, len(lst), size):
@@ -161,9 +170,9 @@ def main():
     out_dir = f"data/h1b-lca-disclosure-data-2020-2024/sampled_{derived_soc_weight_mode}"
     os.makedirs(out_dir, exist_ok=True)
     if is_debug_mode:
-        output_path = f"{out_dir}/llm_estimated_salaries_debug{model_tag}.csv"
+        output_path = f"{out_dir}/llm_estimated_salaries_debug{model_tag}-{args.persona_to_use}.csv"
     else:
-        output_path = f"{out_dir}/llm_estimated_salaries{model_tag}.csv"
+        output_path = f"{out_dir}/llm_estimated_salaries{model_tag}-{args.persona_to_use}.csv"
 
     h1b_df.to_csv(output_path, index=False)
 
