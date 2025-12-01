@@ -74,12 +74,12 @@ def main():
 
     if is_debug_mode:
         h1b_df = h1b_df.head(10).copy()
-
-    model_size_match = re.search(r'(\d+(?:\.\d+)?)[Bb]', args.model)
-    if model_size_match:
-        model_size_b = float(model_size_match.group(1))
-        print("model size in B:", model_size_b)
-        llm_config.scale_for_model_size(model_size_b)
+    if args.llm_config == "home":
+        model_size_match = re.search(r'(\d+(?:\.\d+)?)[Bb]', args.model)
+        if model_size_match:
+            model_size_b = float(model_size_match.group(1))
+            print("model size in B:", model_size_b)
+            llm_config.scale_for_model_size(model_size_b)
 
     llm = LLMClient(model_name=args.model, config=llm_config)
     sampling_params = SamplingConfig(temperature=0.0, top_p=1.0, max_tokens=10)
