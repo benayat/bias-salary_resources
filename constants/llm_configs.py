@@ -65,6 +65,22 @@ HPC_CONFIG = LLMResourceConfig(
     use_transformers=False,
 )
 
+HPC_2H200_CONFIG = LLMResourceConfig(
+    gpu_memory_utilization=0.92,        # small headroom vs 0.95
+    max_model_len=512,                  # enough for your ~100-token prompts + outputs
+    max_num_seqs=64,                  # high concurrency, real limiter is KV
+    max_num_batched_tokens=32768,   # 2^20, fits under ~1.36M KV tokens
+    block_size=16,
+    tensor_parallel_size=2,
+    dtype="auto",
+    trust_remote_code=True,
+    disable_log_stats=True,
+    max_parallel_loading_workers=16,
+    enable_prefix_caching=True,
+    enforce_eager=False,
+    use_transformers=False,
+)
+
 # Default sampled_inverse configuration for both setups
 DEFAULT_SAMPLING_CONFIG = SamplingConfig(
     temperature=0.0,  # Deterministic for estimation tasks
