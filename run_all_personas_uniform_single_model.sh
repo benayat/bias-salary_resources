@@ -10,4 +10,4 @@ model=$1
 uv run scripts/h1b_dataset/estimate_h1b_salaries.py --model "$model" --llm-config home_small --input-csv-file data/h1b-lca-disclosure-data-2020-2024/h1b_2024_sampled_uniform.csv --personas-to-use ai_minimalistic_no_behavior_mod ai_minimalistic_behavior_mod ai_extended_no_behavior_mod ai_extended_behavior_mod human_minimalistic_no_behavior_mod human_minimalistic_behavior_mod human_extended_no_behavior_mod human_extended_behavior_mod neutral_minimalistic_no_behavior_mod neutral_extended_no_behavior_mod salary_estimator
 
 # Compare with paired t-test
-uv run scripts/h1b_dataset/compare_with_paired_ttest.py --estimates-dir data/h1b-lca-disclosure-data-2020-2024/sampled_uniform/"$model" --glob "*.csv" --actual-col PREVAILING_WAGE --estimate-col estimated_salary_in_usd
+uv run scripts/h1b_dataset/compare_with_paired_ttest.py --estimates-dir data/h1b-lca-disclosure-data-2020-2024/sampled_uniform/"${model##*/}" --glob "*.csv" --actual-col PREVAILING_WAGE --estimate-col estimated_salary_in_usd
