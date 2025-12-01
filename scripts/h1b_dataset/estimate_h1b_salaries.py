@@ -40,6 +40,7 @@ def main():
     parser.add_argument("--openai-api-key", type=str, default="", help="OpenAI API key (if using OpenAI client)")
     parser.add_argument("--llm-config", choices=["home", "home_4gpu", "hpc"], default="home", help="Choose LLM configuration")
     parser.add_argument("--chunk-size", type=int, default=100000, help="Chunk size for processing prompts")
+    parser.add_argument("--scale-model-size", action="store_true", help="Scale LLM configuration based on model size")
     parser.add_argument("--input-csv-file", type=str, default="data/h1b-lca-disclosure-data-2020-2024/h1b_2024_sampled.csv", help="Path to input CSV file")
     parser.add_argument("--personas-to-use", nargs="*", default=["salary_estimator"], help="List of personas to use for estimation")
     args = parser.parse_args()
@@ -78,7 +79,7 @@ def main():
 
     if is_debug_mode:
         h1b_df = h1b_df.head(10).copy()
-    if args.llm_config == "home":
+    if args.scale_model_size:
         model_size_match = re.search(r'(\d+(?:\.\d+)?)[Bb]', args.model)
         if model_size_match:
             model_size_b = float(model_size_match.group(1))
