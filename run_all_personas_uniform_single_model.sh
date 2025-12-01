@@ -17,7 +17,7 @@ echo ""
 uv run scripts/h1b_dataset/sample_dataset.py \
     --input data/h1b-lca-disclosure-data-2020-2024/Combined_LCA_Disclosure_Data_FY2024.csv \
     --ai-titles data/h1b-lca-disclosure-data-2020-2024/ai_ml_job_titles.csv \
-    --output data/h1b-lca-disclosure-data-2020-2024/h1b_2024_sampled_${soc_weight}.csv \
+    --output data/h1b-lca-disclosure-data-2020-2024/h1b_2024_sampled-${soc_weight}.csv \
     --seed 42 \
     --target-total 200 \
     --max-pairs-per-soc 5 \
@@ -27,12 +27,12 @@ uv run scripts/h1b_dataset/sample_dataset.py \
 uv run scripts/h1b_dataset/estimate_h1b_salaries.py \
     --model "$model" \
     --llm-config home_small \
-    --input-csv-file data/h1b-lca-disclosure-data-2020-2024/h1b_2024_sampled_${soc_weight}.csv \
+    --input-csv-file data/h1b-lca-disclosure-data-2020-2024/h1b_2024_sampled-${soc_weight}.csv \
     --personas-to-use ai_minimalistic_no_behavior_mod ai_minimalistic_behavior_mod ai_extended_no_behavior_mod ai_extended_behavior_mod human_minimalistic_no_behavior_mod human_minimalistic_behavior_mod human_extended_no_behavior_mod human_extended_behavior_mod neutral_minimalistic_no_behavior_mod neutral_extended_no_behavior_mod salary_estimator
 
 # Compare with paired t-test
 uv run scripts/h1b_dataset/compare_with_paired_ttest_verbose.py \
-    --estimates-dir data/h1b-lca-disclosure-data-2020-2024/sampled_${soc_weight}/"$model_tag" \
+    --estimates-dir data/h1b-lca-disclosure-data-2020-2024/sampled-${soc_weight}/"$model_tag" \
     --glob "*.csv" \
     --actual-col PREVAILING_WAGE \
     --estimate-col estimated_salary_in_usd
