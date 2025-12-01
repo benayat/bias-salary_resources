@@ -103,7 +103,7 @@ def main():
             yield lst[i : i + size]
 
     model_tag = args.model.split("/")[-1]
-    out_dir = f"data/h1b-lca-disclosure-data-2020-2024/sampled_{derived_soc_weight_mode}/{model_tag}"
+    out_dir = f"data/h1b-lca-disclosure-data-2020-2024/sampled-{derived_soc_weight_mode}/{model_tag}"
     os.makedirs(out_dir, exist_ok=True)
 
     # Loop through each persona
