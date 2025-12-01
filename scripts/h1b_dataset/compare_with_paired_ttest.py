@@ -48,13 +48,22 @@ def safe_bool_series(s: pd.Series) -> pd.Series:
     return ss.isin(["true", "1", "yes", "y"])
 
 
-def filename_to_model_tag(path: Path) -> str:
+def filename_to_model_tag(path: Path) -> tuple[str, str]:
+    """
+    Extract model name and persona from path structure:
+    sampled_<weight>/model_name/llm_estimated_salaries-<persona>.csv
+
+    Returns: (model_name, persona)
+    """
+    model_name = path.parent.name  # Get the parent directory name (model name)
     stem = path.stem
-    m = re.match(r"llm_estimated_salaries(?:_debug)?(.*)$", stem)
+    # Extract persona from filename: llm_estimated_salaries(-|_)<persona>
+    m = re.match(r"llm_estimated_salaries(?:_debug)?[-_](.+)$", stem)
     if m and m.group(1):
-        tag = m.group(1).lstrip("_-")
-        return tag or stem
-    return stem
+        persona = m.group(1)
+    else:
+        persona = "unknown"
+    return model_name, persona
 
 
 def mean_ci_t(x: np.ndarray, alpha: float = 0.05) -> Tuple[float, float]:
@@ -242,11 +251,13 @@ def main() -> None:
         try:
             df = pd.read_csv(fp, low_memory=False)
         except Exception as e:
-            print(f"\n=== {fp.name} ===")
+            model_name, persona = filename_to_model_tag(fp)
+            print(f"\n=== Model: {model_name} | Persona: {persona} ===")
             print(f"  ERROR reading CSV: {e}")
             continue
 
-        print(f"\n=== Model: {filename_to_model_tag(fp)}  ({fp.name}) ===")
+        model_name, persona = filename_to_model_tag(fp)
+        print(f"\n=== Model: {model_name} | Persona: {persona} | File: {fp.name} ===")
 
         missing = [c for c in (args.actual_col, args.estimate_col) if c not in df.columns]
         if missing:
