@@ -41,7 +41,7 @@ def main():
     parser.add_argument("--llm-config", choices=["home", "home_4gpu", "hpc"], default="home", help="Choose LLM configuration")
     parser.add_argument("--chunk-size", type=int, default=100000, help="Chunk size for processing prompts")
     parser.add_argument("--input-csv-file", type=str, default="data/h1b-lca-disclosure-data-2020-2024/h1b_2024_sampled.csv", help="Path to input CSV file")
-    parser.add_argument("--persona-to-use", type=str, default="", help="Persona to use for salary estimation")
+    parser.add_argument("--personas-to-use", nargs="*", default=["salary_estimator"], help="List of personas to use for estimation")
     args = parser.parse_args()
 
     is_debug_mode = args.debug
@@ -54,12 +54,6 @@ def main():
         llm_config = HPC_CONFIG
     else:
         llm_config = HOME_CONFIG
-
-    if args.persona_to_use:
-        system_prompt = PERSONAS.get(args.persona_to_use, "")+SALARY_SYSTEM_PROMPT
-    else:
-        system_prompt = SALARY_SYSTEM_PROMPT
-
 
     # Load the dataset
     input_csv = args.input_csv_file
@@ -105,79 +99,94 @@ def main():
         for i in range(0, len(lst), size):
             yield lst[i : i + size]
 
-    # Prepare prompts
-    prompts = []
-    row_indices = []
-    for idx, row in h1b_df.iterrows():
-        user_content = SALARY_USER_PROMPT.format(
-            job_title=row.get("JOB_TITLE", ""),
-            soc_code=row.get("SOC_CODE", ""),
-            soc_title=row.get("SOC_TITLE", ""),
-            full_time_position=row.get("FULL_TIME_POSITION", ""),
-            total_worker_positions=row.get("TOTAL_WORKER_POSITIONS", ""),
-            worksite_city=row.get("WORKSITE_CITY", ""),
-            worksite_state=row.get("WORKSITE_STATE", ""),
-            naics_code=row.get("NAICS_CODE", ""),
-        )
-        prompts.append(
-            {
-                "messages": [
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_content},
-                ]
-            }
-        )
-        row_indices.append(idx)
-
-    # Run in chunks
-    estimated_salaries = []
-    for chunk_prompts, chunk_indices in zip(chunk_list(prompts, chunk_size), chunk_list(row_indices, chunk_size)):
-        results = llm.run_batch(chunk_prompts, sampling_params, output_field="output")
-        for row_idx, result in zip(chunk_indices, results):
-            output = str(result.get("output", "")).strip()
-            digits = "".join(c for c in output if c.isdigit())
-            try:
-                est = int(digits)
-            except ValueError:
-                est = 0  # default for invalid outputs
-            estimated_salaries.append((row_idx, est))
-
-    # Write predictions back
-    h1b_df["estimated_salary_in_usd"] = np.nan
-    for row_idx, est in estimated_salaries:
-        h1b_df.at[row_idx, "estimated_salary_in_usd"] = est
-
-    output_cols = [
-        "ROW_ID",
-        "JOB_TITLE",
-        "SOC_CODE",
-        "SOC_TITLE",
-        "WORKSITE_STATE",
-        "NAICS_CODE",
-        "FULL_TIME_POSITION",
-        "TOTAL_WORKER_POSITIONS",
-        "PREVAILING_WAGE",
-        "estimated_salary_in_usd",
-        "IS_AI",
-        "PAIR_ID",
-        "MATCH_LEVEL",
-    ]
-    h1b_df = h1b_df[output_cols]
-
-    # Save
     model_tag = args.model.split("/")[-1]
-
     out_dir = f"data/h1b-lca-disclosure-data-2020-2024/sampled_{derived_soc_weight_mode}"
     os.makedirs(out_dir, exist_ok=True)
-    if is_debug_mode:
-        output_path = f"{out_dir}/llm_estimated_salaries_debug{model_tag}-{args.persona_to_use}.csv"
-    else:
-        output_path = f"{out_dir}/llm_estimated_salaries{model_tag}-{args.persona_to_use}.csv"
 
-    h1b_df.to_csv(output_path, index=False)
+    # Loop through each persona
+    for persona_name in args.personas_to_use:
+        print(f"\n{'='*60}")
+        print(f"Processing persona: {persona_name}")
+        print(f"{'='*60}")
+
+        if persona_name:
+            system_prompt = PERSONAS.get(persona_name, "") + SALARY_SYSTEM_PROMPT
+        else:
+            system_prompt = SALARY_SYSTEM_PROMPT
+
+        # Prepare prompts
+        prompts = []
+        row_indices = []
+        for idx, row in h1b_df.iterrows():
+            user_content = SALARY_USER_PROMPT.format(
+                job_title=row.get("JOB_TITLE", ""),
+                soc_code=row.get("SOC_CODE", ""),
+                soc_title=row.get("SOC_TITLE", ""),
+                full_time_position=row.get("FULL_TIME_POSITION", ""),
+                total_worker_positions=row.get("TOTAL_WORKER_POSITIONS", ""),
+                worksite_city=row.get("WORKSITE_CITY", ""),
+                worksite_state=row.get("WORKSITE_STATE", ""),
+                naics_code=row.get("NAICS_CODE", ""),
+            )
+            prompts.append(
+                {
+                    "messages": [
+                        {"role": "system", "content": system_prompt},
+                        {"role": "user", "content": user_content},
+                    ]
+                }
+            )
+            row_indices.append(idx)
+
+        # Run in chunks
+        estimated_salaries = []
+        for chunk_prompts, chunk_indices in zip(chunk_list(prompts, chunk_size), chunk_list(row_indices, chunk_size)):
+            results = llm.run_batch(chunk_prompts, sampling_params, output_field="output")
+            for row_idx, result in zip(chunk_indices, results):
+                output = str(result.get("output", "")).strip()
+                digits = "".join(c for c in output if c.isdigit())
+                try:
+                    est = int(digits)
+                except ValueError:
+                    est = 0  # default for invalid outputs
+                estimated_salaries.append((row_idx, est))
+
+        # Write predictions back
+        h1b_df_copy = h1b_df.copy()
+        h1b_df_copy["estimated_salary_in_usd"] = np.nan
+        for row_idx, est in estimated_salaries:
+            h1b_df_copy.at[row_idx, "estimated_salary_in_usd"] = est
+
+        output_cols = [
+            "ROW_ID",
+            "JOB_TITLE",
+            "SOC_CODE",
+            "SOC_TITLE",
+            "WORKSITE_STATE",
+            "NAICS_CODE",
+            "FULL_TIME_POSITION",
+            "TOTAL_WORKER_POSITIONS",
+            "PREVAILING_WAGE",
+            "estimated_salary_in_usd",
+            "IS_AI",
+            "PAIR_ID",
+            "MATCH_LEVEL",
+        ]
+        h1b_df_copy = h1b_df_copy[output_cols]
+
+        # Save
+        if is_debug_mode:
+            output_path = f"{out_dir}/llm_estimated_salaries_debug{model_tag}-{persona_name}.csv"
+        else:
+            output_path = f"{out_dir}/llm_estimated_salaries{model_tag}-{persona_name}.csv"
+
+        h1b_df_copy.to_csv(output_path, index=False)
+        print(f"Salary estimation complete for persona '{persona_name}'. Saved: {output_path}")
 
     llm.delete_client()
-    print(f"Salary estimation complete. Saved: {output_path}")
+    print(f"\n{'='*60}")
+    print(f"All personas processed successfully!")
+    print(f"{'='*60}")
 
 
 if __name__ == "__main__":
