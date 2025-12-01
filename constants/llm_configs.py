@@ -65,9 +65,9 @@ HPC_CONFIG = LLMResourceConfig(
     use_transformers=False,
 )
 
-# Default sampled configuration for both setups
+# Default sampled_inverse configuration for both setups
 DEFAULT_SAMPLING_CONFIG = SamplingConfig(
     temperature=0.0,  # Deterministic for estimation tasks
-    top_p=1.0,  # No nucleus sampled
+    top_p=1.0,  # No nucleus sampled_inverse
     max_tokens=8,  # Sufficient for compensation estimates
 )

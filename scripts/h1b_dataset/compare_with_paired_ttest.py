@@ -16,7 +16,7 @@ Notes:
 
 Usage:
   uv run scripts/h1b_dataset/compare_with_paired_ttest.py \
-    --estimates-dir data/.../sampled \
+    --estimates-dir data/.../sampled_inverse \
     --glob "*.csv" \
     --actual-col PREVAILING_WAGE \
     --estimate-col estimated_salary_in_usd \

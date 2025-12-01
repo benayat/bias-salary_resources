@@ -1,3 +1,4 @@
+import os
 import re
 
 import pandas as pd
@@ -36,6 +37,7 @@ def main():
     parser.add_argument("--debug", action="store_true", help="Enable debug mode (process first 10 rows)")
     parser.add_argument("--llm-config", choices=["home", "home_4gpu", "hpc"], default="home", help="Choose LLM configuration")
     parser.add_argument("--chunk-size", type=int, default=100000, help="Chunk size for processing prompts")
+    parser.add_argument("--input-csv-file", type=str, default="data/h1b-lca-disclosure-data-2020-2024/h1b_2024_sampled.csv", help="Path to input CSV file")
     args = parser.parse_args()
 
     is_debug_mode = args.debug
@@ -50,8 +52,9 @@ def main():
         llm_config = HOME_CONFIG
 
     # Load the dataset
-    input_csv = "data/h1b-lca-disclosure-data-2020-2024/h1b_2024_sampled.csv"
-    # input_csv = "data/h1b-lca-disclosure-data-2020-2024/Combined_LCA_Disclosure_Data_FY2024.csv"
+    input_csv = args.input_csv_file
+    derived_soc_weight_mode = input_csv.split("_")[-1].replace(".csv", "")
+    print(f"Using derived_soc_weight_mode: {derived_soc_weight_mode}")
     h1b_df = pd.read_csv(input_csv, low_memory=False)
 
     # Keep only columns we need + keep everything else (you can drop if you want)
@@ -146,7 +149,9 @@ def main():
 
     # Save
     model_tag = args.model.split("/")[-1]
-    out_dir = "data/h1b-lca-disclosure-data-2020-2024/sampled"
+
+    out_dir = f"data/h1b-lca-disclosure-data-2020-2024/sampled_{derived_soc_weight_mode}"
+    os.makedirs(out_dir, exist_ok=True)
     if is_debug_mode:
         output_path = f"{out_dir}/llm_estimated_salaries_debug{model_tag}.csv"
     else:
