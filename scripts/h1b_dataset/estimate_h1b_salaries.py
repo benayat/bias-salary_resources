@@ -38,7 +38,7 @@ def main():
     parser.add_argument("--client-type", choices=["vllm", "openai"], default="vllm", help="Type of LLM client to use")
     parser.add_argument("--debug", action="store_true", help="Enable debug mode (process first 10 rows)")
     parser.add_argument("--openai-api-key", type=str, default="", help="OpenAI API key (if using OpenAI client)")
-    parser.add_argument("--llm-config", choices=["home", "home_4gpu", "hpc"], default="home", help="Choose LLM configuration")
+    parser.add_argument("--llm-config", choices=["home", "home_4gpu", "hpc", "home_small"], default="home", help="Choose LLM configuration")
     parser.add_argument("--chunk-size", type=int, default=100000, help="Chunk size for processing prompts")
     parser.add_argument("--scale-model-size", action="store_true", help="Scale LLM configuration based on model size")
     parser.add_argument("--input-csv-file", type=str, default="data/h1b-lca-disclosure-data-2020-2024/h1b_2024_sampled.csv", help="Path to input CSV file")
@@ -53,6 +53,8 @@ def main():
         llm_config = HOME_4GPU_CONFIG
     elif args.llm_config == "hpc":
         llm_config = HPC_CONFIG
+    elif args.llm_config == "home_small":
+        llm_config = HOME_CONFIG_SMALL
     else:
         llm_config = HOME_CONFIG
 
