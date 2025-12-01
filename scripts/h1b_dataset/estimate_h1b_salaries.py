@@ -4,19 +4,20 @@ import re
 import pandas as pd
 import numpy as np
 from llm import LLMClient, SamplingConfig
-from constants import HOME_CONFIG, HOME_4GPU_CONFIG, HPC_CONFIG
+from constants import HOME_CONFIG, HOME_4GPU_CONFIG, HPC_CONFIG, PERSONAS, PERSONA_COMPLETION_SUFFIX, SALARY_SYSTEM_PROMPT
 import argparse
+
 
 MODEL_NAME = "meta-llama/Llama-3.2-3B-Instruct"
 CHUNK_SIZE = 30000
 
 # Salary estimation prompts
-SALARY_SYSTEM_PROMPT = """You are a salary estimation assistant for H1B job applications.
-
-You must return ONLY a single integer (the annual USD salary).
-- No dollar signs, commas, decimals, or explanations
-- Round to the nearest whole number
-"""
+# SALARY_SYSTEM_PROMPT = """You are a salary estimation assistant for H1B job applications.
+#
+# You must return ONLY a single integer (the annual USD salary).
+# - No dollar signs, commas, decimals, or explanations
+# - Round to the nearest whole number
+# """
 
 SALARY_USER_PROMPT = """Estimate the yearly salary in USD for this H1B job application based on the following features:
 - job_title: {job_title}
@@ -38,6 +39,7 @@ def main():
     parser.add_argument("--llm-config", choices=["home", "home_4gpu", "hpc"], default="home", help="Choose LLM configuration")
     parser.add_argument("--chunk-size", type=int, default=100000, help="Chunk size for processing prompts")
     parser.add_argument("--input-csv-file", type=str, default="data/h1b-lca-disclosure-data-2020-2024/h1b_2024_sampled.csv", help="Path to input CSV file")
+    parser.add_argument("--persona-to-use", type=str, default="", help="Persona to use for salary estimation")
     args = parser.parse_args()
 
     is_debug_mode = args.debug
@@ -50,6 +52,12 @@ def main():
         llm_config = HPC_CONFIG
     else:
         llm_config = HOME_CONFIG
+
+    if args.persona_to_use:
+        system_prompt = PERSONAS.get(args.persona_to_use, "")+SALARY_SYSTEM_PROMPT
+    else:
+        system_prompt = SALARY_SYSTEM_PROMPT
+
 
     # Load the dataset
     input_csv = args.input_csv_file
@@ -105,7 +113,7 @@ def main():
         prompts.append(
             {
                 "messages": [
-                    {"role": "system", "content": SALARY_SYSTEM_PROMPT},
+                    {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_content},
                 ]
             }

@@ -1,6 +1,8 @@
 # from .prompts import BLS_PROMPT, LEVELS_FYI_PROMPT, SYSTEM_MINIMAL
 from .prompts_new import BLS_PROMPT, LEVELS_FYI_PROMPT, SYSTEM_MINIMAL
 from .llm_configs import DEFAULT_SAMPLING_CONFIG, HPC_CONFIG, HOME_CONFIG, HOME_4GPU_CONFIG
+from .personas import PERSONAS, PERSONA_COMPLETION_SUFFIX
+from .salary_prompts import SALARY_SYSTEM_PROMPT
 #    - role: Occupation/title
 __all__ = [
     "SYSTEM_MINIMAL",
@@ -10,4 +12,7 @@ __all__ = [
     "HPC_CONFIG",
     "HOME_4GPU_CONFIG",
     "DEFAULT_SAMPLING_CONFIG",
+    "PERSONAS",
+    "PERSONA_COMPLETION_SUFFIX",
+    "SALARY_SYSTEM_PROMPT",
 ]
