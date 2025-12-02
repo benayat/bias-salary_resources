@@ -66,7 +66,7 @@ HPC_CONFIG = LLMResourceConfig(
 )
 
 HPC_2H200_CONFIG = LLMResourceConfig(
-    gpu_memory_utilization=0.92,        # small headroom vs 0.95
+    gpu_memory_utilization=0.95,        # small headroom vs 0.95
     max_model_len=512,                  # enough for your ~100-token prompts + outputs
     max_num_seqs=1,                  # high concurrency, real limiter is KV
     max_num_batched_tokens=512,   # 2^20, fits under ~1.36M KV tokens
