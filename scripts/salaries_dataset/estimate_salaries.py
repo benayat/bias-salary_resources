@@ -1,6 +1,6 @@
 import pandas as pd
 from llm import LLMClient, SamplingConfig
-from constants import HOME_CONFIG, HOME_4GPU_CONFIG, HPC_CONFIG
+from constants import HOME_CONFIG, HOME_4GPU_CONFIG, HPC_CONFIG, HOME_CONFIG_SMALL
 import argparse
 
 # set env var VLLM_ENABLE_V1_MULTIPROCESSING to 0 to avoid multiprocessing issues on some systems
@@ -14,18 +14,19 @@ LLM_CONFIG=HOME_CONFIG
 # LLM_CONFIG=HOME_4GPU_CONFIG
 
 # Salary estimation prompts
-SALARY_SYSTEM_PROMPT = """You are a salary estimation assistant for data science jobs.
+SALARY_SYSTEM_PROMPT = """You are a salary estimation assistant for Data Science, AI & ML jobs.
 
 You must return ONLY a single integer (the annual USD salary).
 - No dollar signs, commas, decimals, or explanations
 - Round to the nearest whole number
 """
 
-SALARY_USER_PROMPT = """Estimate the yearly salary in USD for this data science job based on the following features:
-- work_year: {work_year}
-- experience_level: {experience_level}
-- employment_type: {employment_type}
+SALARY_USER_PROMPT = """Estimate the yearly salary in USD for this job based on the following features:
 - job_title: {job_title}
+- employment_type: {employment_type}
+- work_year: {work_year}
+- company_size: {company_size}
+- experience_level: {experience_level}
 - salary_currency: {salary_currency}
 - employee_residence: {employee_residence}
 - remote_ratio: {remote_ratio}
@@ -55,9 +56,10 @@ def main():
     global MODEL_NAME
     parser = argparse.ArgumentParser(description="Estimate salaries for data science jobs using LLM")
     # Explicitly pass MODEL_NAME as a default value in the argument parser
-    parser.add_argument('--model', default="meta-llama/Llama-3.2-3B-Instruct", help='LLM model name')
+    parser.add_argument('--model', default="Qwen/Qwen3-4B-Instruct-2507", help='LLM model name')
+    parser.add_argument('--input-csv', default='data/salaries-for-data-science-jobs/salaries.csv', help='Path to input CSV file')
     parser.add_argument("--debug", action="store_true", help="Enable debug mode (process first 10 rows)")
-    parser.add_argument("--llm-config", choices=['home', 'home_4gpu', 'hpc'], default='home', help="Choose LLM configuration")
+    parser.add_argument("--llm-config", choices=['home', 'home_4gpu', 'hpc', 'home_small'], default='home_small', help="Choose LLM configuration")
     # Add CLI argument for chunk size
     parser.add_argument('--chunk-size', type=int, default=30000, help='Chunk size for processing prompts')
     args = parser.parse_args()
@@ -68,13 +70,16 @@ def main():
         LLM_CONFIG = HOME_4GPU_CONFIG
     elif args.llm_config == 'hpc':
         LLM_CONFIG = HPC_CONFIG
+    elif args.llm_config == 'home_small':
+        LLM_CONFIG = HOME_CONFIG_SMALL
     else:
         LLM_CONFIG = HOME_CONFIG
 
     # Update model name
     MODEL_NAME = args.model
     CHUNK_SIZE=args.chunk_size
-    salaries_df = pd.read_csv('data/salaries-for-data-science-jobs/salaries.csv')
+    salaries_df = pd.read_csv(args.input_csv)
+    # Normalize categorical codes
     salaries_df = normalize_codes(salaries_df)
     # Apply debug mode if enabled
     if is_debug_mode:
@@ -127,9 +132,9 @@ def main():
         salaries_df.at[idx, 'estimated_salary_in_usd'] = est
 
     # Save to CSV
-    output_path = f'data/salaries-for-data-science-jobs/llm_estimated_salaries{args.model.split("/")[-1]}.csv'
+    output_path = f'data/salaries-for-data-science-jobs/estimations/llm_estimated_salaries-{args.model.split("/")[-1]}.csv'
     if is_debug_mode:
-        output_path = f'data/salaries-for-data-science-jobs/llm_estimated_salaries_debug{args.model.split("/")[-1]}.csv'
+        output_path = f'data/salaries-for-data-science-jobs/estimations/llm_estimated_salaries_debug-{args.model.split("/")[-1]}.csv'
     salaries_df.to_csv(output_path, index=False)
 
     llm.delete_client()

@@ -20,7 +20,7 @@ uv run scripts/h1b_dataset/sample_dataset.py \
     --output data/h1b-lca-disclosure-data-2020-2024/h1b_2024_sampled-${soc_weight}.csv \
     --seed 42 \
     --target-total 1000 \
-    --max-pairs-per-soc 5 \
+    --max-pairs-per-soc 9 \
     --ai-soc-weight-mode "$soc_weight"
 
 # Run estimation for all personas in a single command
@@ -37,12 +37,6 @@ uv run scripts/h1b_dataset/estimate_h1b_salaries.py \
 #    --personas-to-use salary_estimator
 
 
-# Compare with paired t-test
-#uv run scripts/h1b_dataset/compare_with_paired_ttest_verbose.py \
-#    --estimates-dir data/h1b-lca-disclosure-data-2020-2024/sampled-${soc_weight}/"$model_tag" \
-#    --glob "*.csv" \
-#    --actual-col PREVAILING_WAGE \
-#    --estimate-col estimated_salary_in_usd
 
 uv run scripts/h1b_dataset/compare_welch_hc3.py \
      --estimates-dir data/h1b-lca-disclosure-data-2020-2024/sampled-${soc_weight}/${model_tag} \
