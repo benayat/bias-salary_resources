@@ -1,6 +1,6 @@
 import pandas as pd
 from llm import LLMClient, SamplingConfig
-from constants import HOME_CONFIG, HOME_4GPU_CONFIG, HPC_CONFIG, HOME_CONFIG_SMALL
+from constants import HOME_CONFIG, HOME_4GPU_CONFIG, HPC_CONFIG, HOME_CONFIG_SMALL, HPC_2H200_CONFIG
 import argparse
 
 # set env var VLLM_ENABLE_V1_MULTIPROCESSING to 0 to avoid multiprocessing issues on some systems
@@ -59,7 +59,7 @@ def main():
     parser.add_argument('--model', default="Qwen/Qwen3-4B-Instruct-2507", help='LLM model name')
     parser.add_argument('--input-csv', default='data/salaries-for-data-science-jobs/salaries.csv', help='Path to input CSV file')
     parser.add_argument("--debug", action="store_true", help="Enable debug mode (process first 10 rows)")
-    parser.add_argument("--llm-config", choices=['home', 'home_4gpu', 'hpc', 'home_small'], default='home_small', help="Choose LLM configuration")
+    parser.add_argument("--llm-config", choices=['home', 'home_4gpu', 'hpc', 'hpc2h200', 'home_small'], default='home_small', help="Choose LLM configuration")
     # Add CLI argument for chunk size
     parser.add_argument('--chunk-size', type=int, default=30000, help='Chunk size for processing prompts')
     args = parser.parse_args()
@@ -70,6 +70,8 @@ def main():
         LLM_CONFIG = HOME_4GPU_CONFIG
     elif args.llm_config == 'hpc':
         LLM_CONFIG = HPC_CONFIG
+    elif args.llm_config == 'hpc2h200':
+        LLM_CONFIG = HPC_2H200_CONFIG
     elif args.llm_config == 'home_small':
         LLM_CONFIG = HOME_CONFIG_SMALL
     else:
