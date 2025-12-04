@@ -27,6 +27,7 @@ uv run scripts/h1b_dataset/sample_dataset_new.py \
     --input data/h1b-lca-disclosure-data-2020-2024/Combined_LCA_Disclosure_Data_FY2024.csv \
     --ai-titles data/h1b-lca-disclosure-data-2020-2024/ai_ml_job_titles.csv \
     --output data/h1b-lca-disclosure-data-2020-2024/h1b_2024_sampled-1000.csv \
+    --soc-weight-mode "$soc_weight" \
     --seed 42 \
     --target-total 1000
 
