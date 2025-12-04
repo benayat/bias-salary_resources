@@ -38,7 +38,7 @@ def main():
     parser.add_argument("--client-type", choices=["vllm", "openai"], default="vllm", help="Type of LLM client to use")
     parser.add_argument("--debug", action="store_true", help="Enable debug mode (process first 10 rows)")
     parser.add_argument("--openai-api-key", type=str, default="", help="OpenAI API key (if using OpenAI client)")
-    parser.add_argument("--llm-config", choices=["home", "home_4gpu", "hpc", "hpc2h200", "home_small"], default="home", help="Choose LLM configuration")
+    parser.add_argument("--llm-config", choices=["home", "home_4gpu", "hpc", "hpc2h200", "home_small"], default="home_small", help="Choose LLM configuration")
     parser.add_argument("--chunk-size", type=int, default=100000, help="Chunk size for processing prompts")
     parser.add_argument("--scale-model-size", action="store_true", help="Scale LLM configuration based on model size")
     parser.add_argument("--input-csv-file", type=str, default="data/h1b-lca-disclosure-data-2020-2024/h1b_2024_sampled.csv", help="Path to input CSV file")
@@ -62,7 +62,8 @@ def main():
 
     # Load the dataset
     input_csv = args.input_csv_file
-    derived_soc_weight_mode = input_csv.split("-")[-1].replace(".csv", "")
+    derived_soc_weight_mode = 1000
+    # derived_soc_weight_mode = input_csv.split("-")[-1].replace(".csv", "")
     print(f"Using derived_soc_weight_mode: {derived_soc_weight_mode}")
     h1b_df = pd.read_csv(input_csv, low_memory=False)
 
@@ -174,8 +175,8 @@ def main():
             "PREVAILING_WAGE",
             "estimated_salary_in_usd",
             "IS_AI",
-            "PAIR_ID",
-            "MATCH_LEVEL",
+            # "PAIR_ID",
+            # "MATCH_LEVEL",
         ]
         h1b_df_copy = h1b_df_copy[output_cols]
 
