@@ -42,6 +42,7 @@ uv run scripts/h1b_dataset/sample_dataset_new.py \
 uv run scripts/h1b_dataset/estimate_h1b_salaries.py \
     --model "$model" \
     --input-csv-file data/h1b-lca-disclosure-data-2020-2024/h1b_2024_sampled-1000.csv \
+    --llm-config hpc2h200 \
     --personas-to-use salary_estimator
 
 
