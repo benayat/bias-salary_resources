@@ -3,6 +3,7 @@
 # Model to use from first arg, SOC weight mode from second arg
 model=$1
 soc_weight=${2:-uniform}  # Default to 'uniform' if not provided
+llm_config=${3:-hpc2h200}  # Default to 'hpc2h200' if not provided
 
 # Extract model tag (last part after /)
 model_tag="${model##*/}"
@@ -11,6 +12,7 @@ echo "Running pipeline with:"
 echo "  Model: $model"
 echo "  Model tag: $model_tag"
 echo "  SOC weight mode: $soc_weight"
+echo "  LLM config: $llm_config"
 echo ""
 
 # Sample the dataset
@@ -41,7 +43,7 @@ echo ""
 #    --personas-to-use ai_minimalistic_no_behavior_mod ai_minimalistic_behavior_mod ai_extended_no_behavior_mod ai_extended_behavior_mod human_minimalistic_no_behavior_mod human_minimalistic_behavior_mod human_extended_no_behavior_mod human_extended_behavior_mod neutral_minimalistic_no_behavior_mod neutral_extended_no_behavior_mod salary_estimator
 
 
-uv run scripts/h1b_dataset/estimate_h1b_salaries.py     --model "$model"     --input-csv-file data/h1b-lca-disclosure-data-2020-2024/h1b_2024_sampled-1000_block_balanced.csv     --llm-config hpc2h200     --personas-to-use salary_estimator
+uv run scripts/h1b_dataset/estimate_h1b_salaries.py     --model "$model"     --input-csv-file data/h1b-lca-disclosure-data-2020-2024/h1b_2024_sampled-1000_block_balanced.csv     --llm-config "$llm_config"     --personas-to-use salary_estimator
 
 
 
