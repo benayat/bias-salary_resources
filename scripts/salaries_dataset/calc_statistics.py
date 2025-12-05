@@ -381,6 +381,56 @@ def main() -> None:
             print("  No valid rows after SPB filtering.")
             continue
 
+
+        def debug_spb_summary(df: pd.DataFrame, actual_col: str, estimate_col: str, ai_col: str, n_samples: int = 5):
+            """
+            Quick diagnostics: prints group sizes, means, sign counts, median est/act ratio,
+            and example rows for unexpected signs.
+            """
+            import numpy as np
+
+            a = pd.to_numeric(df[actual_col], errors="coerce")
+            e = pd.to_numeric(df[estimate_col], errors="coerce")
+            spb = pd.to_numeric(df["SPB"], errors="coerce")
+
+            print("DEBUG SPB SUMMARY:")
+            print(f"  columns: actual={actual_col} ({a.dtype})  estimate={estimate_col} ({e.dtype})  ai={ai_col} ({df[ai_col].dtype})")
+            print(f"  total rows (post-SPB-filter): {len(df)}  ai_true={int(df[ai_col].sum())}  ai_false={int((~df[ai_col]).sum())}")
+
+            def grp_stats(mask, name):
+                if mask.sum() == 0:
+                    print(f"  {name}: EMPTY")
+                    return
+                spb_g = spb[mask].dropna()
+                a_g = a[mask].dropna()
+                e_g = e[mask].dropna()
+                print(f"  {name}: n={len(spb_g)}  mean_spb={float(spb_g.mean()):.3f}%  median_spb={float(spb_g.median()):.3f}%")
+                print(f"    mean_actual={float(a_g.mean()):.2f}  mean_est={float(e_g.mean()):.2f}  median(est/act)={float((e_g / a_g).median()):.3f}")
+                pos = (spb_g > 0).sum()
+                neg = (spb_g < 0).sum()
+                zero = (spb_g == 0).sum()
+                print(f"    sign_counts: +={int(pos)}  -={int(neg)}  0={int(zero)}")
+
+                # show sample unexpected rows
+                print(f"    Examples (first {n_samples}) where SPB < 0:")
+                print(df.loc[mask & (spb < 0), [actual_col, estimate_col, "SPB"]].head(n_samples).to_string(index=False))
+                print(f"    Examples (first {n_samples}) where SPB > 0:")
+                print(df.loc[mask & (spb > 0), [actual_col, estimate_col, "SPB"]].head(n_samples).to_string(index=False))
+
+            grp_stats(df[ai_col], "AI group")
+            grp_stats(~df[ai_col], "Other group")
+
+            # quick checks
+            swapped = (e.mean() < a.mean())
+            print(f"  Quick check: mean(estimate) {'<' if swapped else '>='} mean(actual) -> swapped_hint={swapped}")
+            # check for large scale mismatch
+            ratio_median = float((e / a).median())
+            if ratio_median > 10 or ratio_median < 0.1:
+                print(f"  WARNING: median(est/act) = {ratio_median:.3f} suggests a units/scale mismatch (e.g., thousands).")
+
+        debug_spb_summary(df, actual_col, estimate_col, ai_col)
+
+
         # Print detected mapping
         print(f"  Detected dataset: {profile.name}")
         print(f"  Using columns: actual={actual_col}  estimate={estimate_col}  ai={ai_col}")
