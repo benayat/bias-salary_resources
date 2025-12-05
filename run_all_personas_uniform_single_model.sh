@@ -53,4 +53,4 @@ uv run scripts/h1b_dataset/estimate_h1b_salaries.py     --model "$model"     --i
 #     --min-actual 1 \
 #     --spb-cap 0
 
-uv run scripts/h1b_dataset/compare_welch_hc3.py      --estimates-dir data/h1b-lca-disclosure-data-2020-2024/sampled-1000/"$model"      --glob "*.csv"      --actual-col PREVAILING_WAGE      --estimate-col estimated_salary_in_usd      --min-actual 1      --spb-cap 0
+uv run scripts/h1b_dataset/compare_welch_hc3.py      --estimates-dir data/h1b-lca-disclosure-data-2020-2024/sampled-${soc_weight}/${model_tag}       --glob "*.csv"      --actual-col PREVAILING_WAGE      --estimate-col estimated_salary_in_usd      --min-actual 1      --spb-cap 0

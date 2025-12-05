@@ -62,8 +62,8 @@ def main():
 
     # Load the dataset
     input_csv = args.input_csv_file
-    derived_soc_weight_mode = 1000
-    # derived_soc_weight_mode = input_csv.split("-")[-1].replace(".csv", "")
+    # derived_soc_weight_mode = 1000
+    derived_soc_weight_mode = input_csv.split("-")[-1].replace(".csv", "")
     print(f"Using derived_soc_weight_mode: {derived_soc_weight_mode}")
     h1b_df = pd.read_csv(input_csv, low_memory=False)
 
