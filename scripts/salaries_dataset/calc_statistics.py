@@ -323,7 +323,7 @@ def main() -> None:
     # Optional overrides (auto-detected if omitted)
     ap.add_argument("--actual-col", default="salary_in_usd", help="Actual wage/salary column. If blank, auto-detected.")
     ap.add_argument("--estimate-col", default="estimated_salary_in_usd", help="Estimate column. If blank, auto-detected.")
-    ap.add_argument("--ai-col", default="is_ai_job", help="AI label column. If blank, auto-detected.")
+    ap.add_argument("--ai-col", default="IS_AI", help="AI label column. If blank, auto-detected.")
 
     # Extra controls (repeatable flags)
     ap.add_argument("--extra-cat", action="append", default=[], help="Extra categorical control column (repeatable).")
