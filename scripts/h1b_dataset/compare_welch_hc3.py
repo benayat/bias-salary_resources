@@ -252,6 +252,32 @@ def hc3_regression(
         "r2": float(fit.rsquared),
     }
 
+def check_normality(spb_ai: np.ndarray, spb_ot: np.ndarray) -> dict:
+    """
+    Check normality of SPB for AI and non-AI groups using Shapiro-Wilk test.
+    Returns dict with test statistics and p-values for both groups.
+    """
+    result = {}
+
+    for label, data in [("AI", spb_ai), ("Other", spb_ot)]:
+        data = data[np.isfinite(data)]
+        if len(data) < 3:
+            result[label] = {"ok": False}
+            continue
+
+        try:
+            stat, p = stats.shapiro(data)
+            result[label] = {
+                "ok": True,
+                "statistic": float(stat),
+                "p_value": float(p),
+                "is_normal": p > 0.05
+            }
+        except Exception:
+            result[label] = {"ok": False}
+
+    return result
+
 
 def main() -> None:
     ap = argparse.ArgumentParser(description="Welch + HC3 analysis across model CSV outputs.")
@@ -313,6 +339,16 @@ def main() -> None:
 
         spb_ai = df.loc[df[args.ai_col], "SPB"].to_numpy(float)
         spb_ot = df.loc[~df[args.ai_col], "SPB"].to_numpy(float)
+
+        norm = check_normality(spb_ai, spb_ot)
+        if norm.get("AI", {}).get("ok") and norm.get("Other", {}).get("ok"):
+            ai_n = norm["AI"]
+            ot_n = norm["Other"]
+            print(f"  Normality (Shapiro-Wilk):")
+            print(f"    AI:    W={ai_n['statistic']:.4f}  p={fmt_p(ai_n['p_value'])}  {'(Normal)' if ai_n['is_normal'] else '(NOT Normal)'}")
+            print(f"    Other: W={ot_n['statistic']:.4f}  p={fmt_p(ot_n['p_value'])}  {'(Normal)' if ot_n['is_normal'] else '(NOT Normal)'}")
+
+
 
         # 1) Welch test
         w = welch_test(spb_ai, spb_ot)

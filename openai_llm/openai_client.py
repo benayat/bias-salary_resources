@@ -16,6 +16,7 @@ class SamplingConfig:
     temperature: float = 0.0
     top_p: float = 1.0
     max_tokens: int = 2
+    seed: int = 12345
 
 
 class LLMClient:
@@ -50,14 +51,36 @@ class LLMClient:
         results = []
         for prompt in prompts:
             try:
+                # Build API call parameters
                 messages = prompt["messages"]
-                response = self.client.chat.completions.create(
-                    model=self.model_name,
-                    messages=messages,
-                    temperature=sampling_params.temperature,
-                    top_p=sampling_params.top_p,
-                    max_tokens=sampling_params.max_tokens,
-                )
+                api_params = {
+                    "model": self.model_name,
+                    "messages": messages,
+                    "temperature": sampling_params.temperature,
+                    # "max_tokens": sampling_params.max_tokens,
+                    "seed": sampling_params.seed,
+                    # "n": sampling_params.n,
+                }
+
+                # OpenAI uses max_completion_tokens, other providers use max_tokens
+                if "api.openai.com" in self.config.base_url:
+                    api_params["max_completion_tokens"] = sampling_params.max_tokens
+                    api_params["reasoning_effort"] = "none"
+                else:
+                    api_params["max_tokens"] = sampling_params.max_tokens
+
+                # Add seed if provided (DeepSeek and Google don't support it, so skip)
+                if sampling_params.seed is not None and not ("deepseek.com" in self.config.base_url or "google" in self.config.base_url):
+                    api_params["seed"] = sampling_params.seed
+
+                # DeepSeek-specific: disable thinking mode
+                if "deepseek.com" in self.config.base_url:
+                    api_params["extra_body"] = {"thinking": {"type": "disabled"}}
+
+                if "anthropic.com" not in self.config.base_url:
+                    api_params["top_p"] = sampling_params.top_p
+
+                response = self.client.chat.completions.create(**api_params)
                 output = response.choices[0].message.content.strip()
                 results.append({
                     **prompt.get("metadata", {}),

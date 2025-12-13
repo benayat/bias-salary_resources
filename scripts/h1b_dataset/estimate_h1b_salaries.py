@@ -38,6 +38,7 @@ def main():
     parser.add_argument("--client-type", choices=["vllm", "openai"], default="vllm", help="Type of LLM client to use")
     parser.add_argument("--debug", action="store_true", help="Enable debug mode (process first 10 rows)")
     parser.add_argument("--openai-api-key", type=str, default="", help="OpenAI API key (if using OpenAI client)")
+    parser.add_argument("--openai-base-url", type=str, default="https://api.openai.com/v1", help="OpenAI API base URL")
     parser.add_argument("--llm-config", choices=["home", "home_4gpu", "hpc", "hpc2h200", "home_small"], default="home_small", help="Choose LLM configuration")
     parser.add_argument("--chunk-size", type=int, default=100000, help="Chunk size for processing prompts")
     parser.add_argument("--scale-model-size", action="store_true", help="Scale LLM configuration based on model size")
@@ -66,6 +67,7 @@ def main():
     derived_soc_weight_mode = input_csv.split("-")[-1].replace(".csv", "")
     print(f"Using derived_soc_weight_mode: {derived_soc_weight_mode}")
     h1b_df = pd.read_csv(input_csv, low_memory=False)
+    # h1b_df = h1b_df.head(3)
 
     # Keep only columns we need + keep everything else (you can drop if you want)
     required_cols = [
@@ -92,11 +94,10 @@ def main():
             llm_config.scale_for_model_size(model_size_b)
 
     if args.client_type == "openai":
-        from openai_llm.openai_client import OpenAIConfig, LLMClient as OpenAILLMClient
-        llm_config = OpenAIConfig(api_key=args.openai_api_key)
-        # llm_config = OpenAIConfig(api_key=os.getenv("OPENAI_API_KEY"))
+        from openai_llm.openai_client import OpenAIConfig, LLMClient as OpenAILLMClient, SamplingConfig as OpenAISamplingConfig
+        llm_config = OpenAIConfig(api_key=args.openai_api_key, base_url=args.openai_base_url)
         llm = OpenAILLMClient(model_name=args.model, config=llm_config)
-        sampling_params = SamplingConfig(temperature=0.0, top_p=1.0, max_tokens=10)
+        sampling_params = OpenAISamplingConfig(temperature=0.0, top_p=1.0, max_tokens=16)
     else:
         llm = LLMClient(model_name=args.model, config=llm_config)
         sampling_params = SamplingConfig(temperature=0.0, top_p=1.0, max_tokens=10)
@@ -105,7 +106,7 @@ def main():
         for i in range(0, len(lst), size):
             yield lst[i : i + size]
 
-    model_tag = args.model.split("/")[-1]
+    model_tag = args.model.split("/")[-1] if args.client_type == "vllm" else args.model.split("-")[0]
     out_dir = f"data/h1b-lca-disclosure-data-2020-2024/sampled-{derived_soc_weight_mode}/{model_tag}"
     os.makedirs(out_dir, exist_ok=True)
 
@@ -144,11 +145,37 @@ def main():
             )
             row_indices.append(idx)
 
-        # Run in chunks
+        # Determine output path
+        if is_debug_mode:
+            output_path = f"{out_dir}/llm_estimated_salaries_debug-{persona_name}.csv"
+        else:
+            output_path = f"{out_dir}/llm_estimated_salaries-{persona_name}.csv"
+
+        # Check if output file exists and load existing results
+        processed_indices = set()
+        if os.path.exists(output_path):
+            existing_df = pd.read_csv(output_path)
+            if "estimated_salary_in_usd" in existing_df.columns:
+                processed_indices = set(existing_df.index[existing_df["estimated_salary_in_usd"].notna()].tolist())
+                print(f"Found existing output with {len(processed_indices)} completed rows. Resuming...")
+
+        # Run in chunks with progress saving
+        SAVE_INTERVAL = 50
         estimated_salaries = []
+        total_processed = 0
+
         for chunk_prompts, chunk_indices in zip(chunk_list(prompts, chunk_size), chunk_list(row_indices, chunk_size)):
-            results = llm.run_batch(chunk_prompts, sampling_params, output_field="output")
-            for row_idx, result in zip(chunk_indices, results):
+            # Filter out already processed indices
+            indices_to_process = [(i, idx) for i, idx in enumerate(chunk_indices) if idx not in processed_indices]
+            if not indices_to_process:
+                print(f"Skipping chunk - all {len(chunk_indices)} rows already processed")
+                continue
+
+            filtered_prompts = [chunk_prompts[i] for i, _ in indices_to_process]
+            filtered_indices = [idx for _, idx in indices_to_process]
+
+            results = llm.run_batch(filtered_prompts, sampling_params, output_field="output")
+            for row_idx, result in zip(filtered_indices, results):
                 output = str(result.get("output", "")).strip()
                 digits = "".join(c for c in output if c.isdigit())
                 try:
@@ -156,8 +183,33 @@ def main():
                 except ValueError:
                     est = 0  # default for invalid outputs
                 estimated_salaries.append((row_idx, est))
+                total_processed += 1
 
-        # Write predictions back
+                # Save progress every SAVE_INTERVAL prompts
+                if total_processed % SAVE_INTERVAL == 0:
+                    h1b_df_copy = h1b_df.copy()
+                    h1b_df_copy["estimated_salary_in_usd"] = np.nan
+                    for idx, salary in estimated_salaries:
+                        h1b_df_copy.at[idx, "estimated_salary_in_usd"] = salary
+
+                    output_cols = [
+                        "ROW_ID",
+                        "JOB_TITLE",
+                        "SOC_CODE",
+                        "SOC_TITLE",
+                        "WORKSITE_STATE",
+                        "NAICS_CODE",
+                        "FULL_TIME_POSITION",
+                        "TOTAL_WORKER_POSITIONS",
+                        "PREVAILING_WAGE",
+                        "estimated_salary_in_usd",
+                        "IS_AI",
+                    ]
+                    h1b_df_copy = h1b_df_copy[output_cols]
+                    h1b_df_copy.to_csv(output_path, index=False)
+                    print(f"Progress saved: {total_processed} prompts processed")
+
+        # Final save with all results
         h1b_df_copy = h1b_df.copy()
         h1b_df_copy["estimated_salary_in_usd"] = np.nan
         for row_idx, est in estimated_salaries:
@@ -175,19 +227,10 @@ def main():
             "PREVAILING_WAGE",
             "estimated_salary_in_usd",
             "IS_AI",
-            # "PAIR_ID",
-            # "MATCH_LEVEL",
         ]
         h1b_df_copy = h1b_df_copy[output_cols]
-
-        # Save
-        if is_debug_mode:
-            output_path = f"{out_dir}/llm_estimated_salaries_debug-{persona_name}.csv"
-        else:
-            output_path = f"{out_dir}/llm_estimated_salaries-{persona_name}.csv"
-
         h1b_df_copy.to_csv(output_path, index=False)
-        print(f"Salary estimation complete for persona '{persona_name}'. Saved: {output_path}")
+        print(f"Salary estimation complete for persona '{persona_name}'. Total processed: {total_processed}. Saved: {output_path}")
 
     llm.delete_client()
     print(f"\n{'='*60}")
