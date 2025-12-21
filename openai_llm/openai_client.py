@@ -84,6 +84,8 @@ class LLMClient:
                     api_params["top_p"] = sampling_params.top_p
 
                 response = self.client.chat.completions.create(**api_params)
+                #debug
+                print(response)
                 output = response.choices[0].message.content.strip()
                 results.append({
                     **prompt.get("metadata", {}),
