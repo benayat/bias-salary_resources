@@ -97,7 +97,7 @@ def main():
         from openai_llm.openai_client import OpenAIConfig, LLMClient as OpenAILLMClient, SamplingConfig as OpenAISamplingConfig
         llm_config = OpenAIConfig(api_key=args.openai_api_key, base_url=args.openai_base_url)
         llm = OpenAILLMClient(model_name=args.model, config=llm_config)
-        sampling_params = OpenAISamplingConfig(temperature=0.0, top_p=1.0, max_tokens=16)
+        sampling_params = OpenAISamplingConfig(temperature=0.0, top_p=1.0, max_tokens=256) if "gpt-oss" in args.model else OpenAISamplingConfig(temperature=0.0, top_p=1.0, max_tokens=16)
     else:
         llm = LLMClient(model_name=args.model, config=llm_config)
         sampling_params = SamplingConfig(temperature=0.0, top_p=1.0, max_tokens=16)
@@ -175,6 +175,8 @@ def main():
             filtered_indices = [idx for _, idx in indices_to_process]
 
             results = llm.run_batch(filtered_prompts, sampling_params, output_field="output")
+            if is_debug_mode:
+                print(f"Chunk results: {results}")
             for row_idx, result in zip(filtered_indices, results):
 
                 output = str(result.get("output", "")).strip()
