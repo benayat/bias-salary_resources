@@ -8,7 +8,7 @@ from constants import HOME_CONFIG, HOME_4GPU_CONFIG, HOME_CONFIG_SMALL, HPC_CONF
 import argparse
 
 
-MODEL_NAME = "meta-llama/Llama-3.2-3B-Instruct"
+MODEL_NAME = "meta-maverick-llama3.3-70b-instruct-api-llama/Llama-3.2-3B-Instruct"
 CHUNK_SIZE = 30000
 
 # Salary estimation prompts
@@ -100,7 +100,7 @@ def main():
         sampling_params = OpenAISamplingConfig(temperature=0.0, top_p=1.0, max_tokens=16)
     else:
         llm = LLMClient(model_name=args.model, config=llm_config)
-        sampling_params = SamplingConfig(temperature=0.0, top_p=1.0, max_tokens=10)
+        sampling_params = SamplingConfig(temperature=0.0, top_p=1.0, max_tokens=16)
 
     def chunk_list(lst, size):
         for i in range(0, len(lst), size):
@@ -176,7 +176,9 @@ def main():
 
             results = llm.run_batch(filtered_prompts, sampling_params, output_field="output")
             for row_idx, result in zip(filtered_indices, results):
+
                 output = str(result.get("output", "")).strip()
+                print(f"output: {output}")
                 digits = "".join(c for c in output if c.isdigit())
                 try:
                     est = int(digits)
