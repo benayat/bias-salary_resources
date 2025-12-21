@@ -77,6 +77,9 @@ class LLMClient:
                 if "deepseek.com" in self.config.base_url:
                     api_params["extra_body"] = {"thinking": {"type": "disabled"}}
 
+                if "gpt-oss" in self.model_name:
+                    api_params["extra_body"] = {"reasoning_effort": "low"}
+
                 if "anthropic.com" not in self.config.base_url:
                     api_params["top_p"] = sampling_params.top_p
 
