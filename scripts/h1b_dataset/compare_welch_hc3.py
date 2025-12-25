@@ -380,5 +380,15 @@ def main() -> None:
             print(f"    AI uplift coef (ΔSPB, pp): {reg['ai_coef']:.4f}  SE(HC3)={reg['ai_se_hc3']:.4f}  t={reg['ai_t']:.4f}  p={fmt_p(reg['ai_p'])}")
             print(f"    95% CI AI coef: [{ci[0]:.4f}, {ci[1]:.4f}]")
 
+        # After regression output
+        is_significant_welch = w.get("p_one_greater", 1.0) < 0.05 if w.get("ok") else False
+        is_significant_reg = reg.get("ai_p", 1.0) < 0.05 if reg else False
+
+        if w.get("ok") and reg:
+            print(f"  → Statistical significance (Welch): {'YES (p<0.05)' if is_significant_welch else 'NO (p≥0.05)'}")
+            print(f"  → Statistical significance (OLS+HC3): {'YES (p<0.05)' if is_significant_reg else 'NO (p≥0.05)'}")
+        elif w.get("ok"):
+            print(f"  → Statistical significance (Welch): {'YES (p<0.05)' if is_significant_welch else 'NO (p≥0.05)'}")
+
 if __name__ == "__main__":
     main()

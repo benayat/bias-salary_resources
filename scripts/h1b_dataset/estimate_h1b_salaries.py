@@ -37,7 +37,7 @@ def main():
     parser.add_argument("--model", default=MODEL_NAME, help="LLM model name")
     parser.add_argument("--client-type", choices=["vllm", "openai"], default="vllm", help="Type of LLM client to use")
     parser.add_argument("--debug", action="store_true", help="Enable debug mode (process first 10 rows)")
-    parser.add_argument("--openai-api-key", type=str, default="", help="OpenAI API key (if using OpenAI client)")
+    parser.add_argument("--openai-api-key", type=str, default="crap", help="OpenAI API key (if using OpenAI client)")
     parser.add_argument("--openai-base-url", type=str, default="https://api.openai.com/v1", help="OpenAI API base URL")
     parser.add_argument("--llm-config", choices=["home", "home_4gpu", "hpc", "hpc2h200", "home_small"], default="home_small", help="Choose LLM configuration")
     parser.add_argument("--chunk-size", type=int, default=100000, help="Chunk size for processing prompts")
@@ -110,7 +110,7 @@ def main():
         sampling_params = OpenAISamplingConfig(temperature=0.0, top_p=1.0, max_tokens=256) if "gpt-oss" in args.model else OpenAISamplingConfig(temperature=0.0, top_p=1.0, max_tokens=16)
     else:
         llm = LLMClient(model_name=args.model, config=llm_config)
-        sampling_params = SamplingConfig(temperature=0.0, top_p=1.0, max_tokens=16)
+        sampling_params = SamplingConfig(temperature=0.0, top_p=1.0, max_tokens=512) if "deepseek" in args.model else SamplingConfig(temperature=0.0, top_p=1.0, max_tokens=16)
 
     def chunk_list(lst, size):
         for i in range(0, len(lst), size):
