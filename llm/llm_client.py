@@ -24,14 +24,14 @@ class LLMResourceConfig:
     enable_prefix_caching: bool = True
     enforce_eager: bool = False
     use_transformers: bool = False
-
+    enable_chunked_prefill: bool = False
     # attention_backend: Optional[str] = "flashinfer"
 
     def scale_for_model_size(self, model_size_b: float):
         """Scale config parameters for a given model size (in billions) to fit within VRAM, based on a 3B baseline."""
         if model_size_b <= 0:
             raise ValueError("Model size must be positive.")
-        scale_factor = 3 / model_size_b
+        scale_factor = 1 / model_size_b
         print(f"scale_factor: {scale_factor} for model size {model_size_b}B")
         self.gpu_memory_utilization = 0.9
         # self.gpu_memory_utilization = min(0.9, max(0.9 * scale_factor, 0.7))
@@ -55,6 +55,7 @@ class LLMResourceConfig:
             "enforce_eager": self.enforce_eager,
             "model_impl": "transformers" if self.use_transformers else "vllm",
             # "attention_backend": self.attention_backend,
+            "enable_chunked_prefill": self.enable_chunked_prefill,
         }
 
 
@@ -63,7 +64,8 @@ class SamplingConfig:
     temperature: float = 0.0
     top_p: float = 1.0
     max_tokens: int = 2
-    # batch_size: int = 100
+    n: int = 1
+    seed: int = 12345
 
 
 class LLMClient:
@@ -80,6 +82,8 @@ class LLMClient:
     ):
         self.model_name = model_name
         self.config = config
+        self.disable_thinking = ("Qwen3" in model_name or "deepseek" in model_name) and not "Instruct" in model_name
+        self.is_deepseek = "deepseek" in model_name.lower()
 
         # vLLM engine
         self.llm = LLM(self.model_name, **config.to_vllm_config())
@@ -98,6 +102,29 @@ class LLMClient:
     # Internal helpers
     # ---------------------------------------------------------------------
 
+    def _post_process_output(self, text: str) -> str:
+        """
+        Post-process output text. For deepseek models, extract only content after </think> tag.
+
+        Args:
+            text: Raw output text from the model
+
+        Returns:
+            Processed text (content after </think> for deepseek, unchanged for others)
+        """
+        if not self.is_deepseek:
+            return text
+
+        # For deepseek models, extract content after </think> tag
+        nthink_end = "</think>\n\n"
+        if nthink_end in text:
+            # Find the position after </think> and return everything after it
+            idx = text.find(nthink_end) + len(nthink_end)
+            return text[idx:].strip()
+
+        # If no </think> tag found, return as-is
+        return text
+
     def _messages_to_text(self, messages: List[Dict[str, str]]) -> str:
         """
         Convert a chat `messages` list into a single text using the chat template,
@@ -112,7 +139,7 @@ class LLMClient:
             messages,
             tokenize=False,
             add_generation_prompt=True,
-            # chat_template_kwargs={"enable_thinking": False},
+            enable_thinking=False if self.disable_thinking else True
         )
 
     def _batch_tokenize_messages(self, prompts: List[Dict[str, Any]]) -> list[TokensPrompt]:
@@ -172,6 +199,8 @@ class LLMClient:
             temperature=sampling_params.temperature,
             top_p=sampling_params.top_p,
             max_tokens=sampling_params.max_tokens,
+            n=sampling_params.n,
+            seed=sampling_params.seed,
         )
         try:
             # Default / fast path: pre-tokenize to token IDs and feed directly
@@ -185,7 +214,7 @@ class LLMClient:
             return [
                 {
                     **prompts[i].get("metadata", {}),
-                    output_field: outputs[i].outputs[0].text.strip(),
+                    output_field: self._post_process_output(outputs[i].outputs[0].text.strip()),
                 }
                 for i in range(len(outputs))
             ]
@@ -210,6 +239,8 @@ class LLMClient:
         """Reset the LLM client to use a different model, using the same config."""
         logging.info(f"Resetting llm model to {model_name}")
         self.model_name = model_name
+        self.disable_thinking = ("Qwen3" in model_name or "deepseek" in model_name) and not "Instruct" in model_name
+        self.is_deepseek = "deepseek" in model_name.lower()
         self.delete_client()
 
         # Recreate vLLM engine
