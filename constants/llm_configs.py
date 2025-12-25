@@ -44,7 +44,7 @@ HOME_4GPU_CONFIG = LLMResourceConfig(
     disable_log_stats=True,  # Disable verbose logging
     max_parallel_loading_workers=8,  # More workers for faster loading
     enable_prefix_caching=True,  # Enable prefix caching
-    enforce_eager=False,  # Use default execution mode
+    enforce_eager=True,  # Use default execution mode
     use_transformers=False,  # Use vLLM backend
 )
 
