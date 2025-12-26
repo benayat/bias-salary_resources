@@ -1,5 +1,0 @@
-mistralai/Ministral-3-14B-Instruct-2512
-microsoft/phi-4
-Qwen/Qwen3-30B-A3B
-Qwen/Qwen3-32B
-nvidia/Llama-4-Scout-17B-16E-Instruct-NVFP4
