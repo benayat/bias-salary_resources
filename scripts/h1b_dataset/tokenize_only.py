@@ -13,7 +13,7 @@ from transformers import AutoTokenizer
 from constants import HOME_CONFIG, HOME_4GPU_CONFIG, HPC_CONFIG
 
 
-MODEL_NAME = "meta-llama/Llama-3.2-3B-Instruct"
+MODEL_NAME = "meta-maverick-llama3.3-70b-instruct-api-llama/Llama-3.2-3B-Instruct"
 
 AI_ML_SYSTEM_PROMPT = (
     "You are a job title classifier. Determine if the job title directly "

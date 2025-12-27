@@ -86,22 +86,23 @@ def main():
 
     if is_debug_mode:
         h1b_df = h1b_df.head(10).copy()
-    # Match patterns like: 70B, 8x7B, 8x22B, 235B-A22B, etc.
-    model_size_match = re.search(r'(\d+)x(\d+)[Bb]|(\d+(?:\.\d+)?)[Bb]', args.model)
-    if model_size_match:
-        if model_size_match.group(1) and model_size_match.group(2):
-            # Handle MoE format like 8x7B (multiply experts by size)
-            model_size_b = float(model_size_match.group(1)) * float(model_size_match.group(2))
+    if args.client_type == "vllm":
+        # Match patterns like: 70B, 8x7B, 8x22B, 235B-A22B, etc.
+        model_size_match = re.search(r'(\d+)x(\d+)[Bb]|(\d+(?:\.\d+)?)[Bb]', args.model)
+        if model_size_match:
+            if model_size_match.group(1) and model_size_match.group(2):
+                # Handle MoE format like 8x7B (multiply experts by size)
+                model_size_b = float(model_size_match.group(1)) * float(model_size_match.group(2))
+            else:
+                # Handle standard format like 70B
+                model_size_b = float(model_size_match.group(3))
         else:
-            # Handle standard format like 70B
-            model_size_b = float(model_size_match.group(3))
-    else:
-        raise ValueError(f"Could not extract model size from model name: {args.model}. Expected format like '70B', '8x7B', '235B-A22B', etc.")
-    if args.scale_model_size:
-        print("model size in B:", model_size_b)
-        llm_config.scale_for_model_size(model_size_b)
-    if model_size_b > 50:
-        llm_config.tensor_parallel_size = 2
+            raise ValueError(f"Could not extract model size from model name: {args.model}. Expected format like '70B', '8x7B', '235B-A22B', etc.")
+        if args.scale_model_size:
+            print("model size in B:", model_size_b)
+            llm_config.scale_for_model_size(model_size_b)
+        if model_size_b > 50:
+            llm_config.tensor_parallel_size = 2
 
     if args.client_type == "openai":
         from openai_llm.openai_client import OpenAIConfig, LLMClient as OpenAILLMClient, SamplingConfig as OpenAISamplingConfig
