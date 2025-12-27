@@ -1,208 +1,148 @@
-## External resources - summary
+# Large Language Models Systematically Inflate the Value of AI Labor
 
-- Bls - for general and tech jobs, no ai mention.
-- [Hb1-lca-disclosure](https://www.kaggle.com/datasets/zongaobian/h1b-lca-disclosure-data-2020-2024) - hb1 visa holders
-  salary data - need to account for their specialty.
-- [Salaries for data science jobs](https://www.kaggle.com/datasets/adilshamim8/salaries-for-data-science-jobs): a 2025
-  dataset for comprehensive look into global salary trends for roles in Data Science, Machine Learning, and Artificial
-  Intelligence.
+## Abstract
 
-### Data Analysis
+As Large Language Models (LLMs) are increasingly integrated into human resources and labor market analytics, their internal representations of value become critical economic signals. This study investigates whether LLMs exhibit a systematic "AI Premium" bias—hallucinating higher wages for AI-labeled job titles compared to comparable non-AI roles within identical job contexts. Using a block-structured audit design on administrative labor data, we find that frontier proprietary models (e.g., GPT-5.1, Claude-Sonnet-4.5) significantly overestimate salaries for AI roles, assigning an average inflationary premium of **9.64 percentage points**. Furthermore, we identify a crucial distinction in model provenance: this bias is **significantly attenuated in open-weights models** (3.84 pp average uplift), suggesting that commercial alignment pipelines may inadvertently amplify narratives of AI exceptionalism.
 
-#### BLS data summary:
+## Key Findings
 
-- No ai-mention in job titles.
-- No bias, except for Llama.
+### 1. Systematic AI Wage Inflation Across All Models
 
-#### Hb1-lca-disclosure summary:
+Every model tested—both proprietary and open-source—assigned higher estimated salaries to AI-labeled positions compared to identical non-AI positions within the same occupation, geography, industry, and employment type context.
 
-#### Relevant tech jobs from bls
+**Proprietary Models (N=4):**
+- **Mean AI Uplift:** 9.64 pp (SD=3.50)
+- **Range:** 4.87 pp (Grok-4.1-Fast) to 13.01 pp (Claude-Sonnet-4.5)
+- **Statistical Significance:** All models showed p ≤ 0.05
 
-Mentioned in tech_jobs_bls.txt file.
+**Open-Weight Models (N=10):**
+- **Mean AI Uplift:** 3.84 pp (SD=1.78)
+- **Range:** 1.78 pp (Gemma-3-27B) to 7.07 pp (Qwen3-32B)
+- **Statistical Significance:** 5 of 10 models reached p < 0.05
 
-##### Their respective salary data:
+### 2. Proprietary vs. Open Models: A Significant Divide
 
-| Job Title                 | Median Total Annual Compensation (USD) |
-|---------------------------|----------------------------------------|
-| AI Engineer               | $155,000                               |
-| Machine Learning Engineer | $255,000                               |
-| AI Researcher             | $165,000                               |
-| Data Scientist            | $138,000                               |
+A Welch's t-test comparing model-level AI uplifts revealed a **statistically significant difference** between the two cohorts:
 
-#### citing levels.fyi:
+- **Closed Models Mean:** 9.64 pp (SD=3.50)
+- **Open Models Mean:** 3.84 pp (SD=1.78)
+- **Difference:** 5.80 pp (95% CI: [0.49, 11.12])
+- **t-statistic:** -3.16, **p = 0.039**
 
-- Zita, W.; Abou El Faouz, S.; Alayedi, M.; Elsayed, E.E. A Hybrid Bayesian Machine Learning Framework for Simultaneous
-  Job Title Classification and Salary Estimation. Symmetry 2025, 17, 1261. https://doi.org/10.3390/sym17081261
+This indicates that proprietary models amplify AI wage inflation by approximately **2.5× compared to open-source alternatives**.
 
-# Salary Estimation Bias Analysis (AI/ML Titles vs Other Titles)
+### 3. General Overestimation vs. AI-Specific Bias
 
-This project evaluates whether LLM-based salary estimators exhibit **systematic signed percent bias** for job titles
-associated with AI/ML compared to other roles.
+The study reveals two distinct layers of bias:
 
-The core research question is:
+**Proprietary Models:**
+- General mean bias (across all roles): 32.61%
+- AI-specific uplift: +9.64 pp
 
-> Do AI/ML job titles receive **more positive signed-percent estimation bias** than non-AI/ML titles?
+**Open-Weight Models:**
+- General mean bias: 17.71%
+- AI-specific uplift: +3.84 pp
 
-“More positive” covers all relevant cases:
+This suggests proprietary models are both **less grounded in absolute monetary values** and **more susceptible to AI hype**.
 
-- both groups underestimate, but AI/ML underestimates less
-- AI/ML overestimates while other titles underestimate
-- both overestimate, but AI/ML overestimates more
+## Detailed Results by Model
+
+### Proprietary Models
+
+| Model | AI Mean SPB | Other Mean SPB | General Bias | AI Uplift | p-value |
+|-------|-------------|----------------|--------------|-----------|---------|
+| Claude-Sonnet-4.5 | 28.91% | 15.90% | 22.41% | **13.01 pp** | < 0.001 |
+| GPT-5.1 | 37.61% | 26.34% | 31.98% | **11.26 pp** | < 0.001 |
+| Gemini-2.5-Flash | 33.55% | 24.14% | 28.85% | **9.41 pp** | < 0.001 |
+| Grok-4.1-Fast | 45.64% | 40.77% | 43.21% | **4.87 pp** | 0.050 |
+
+### Open-Weight Models
+
+| Model | AI Mean SPB | Other Mean SPB | General Bias | AI Uplift | p-value |
+|-------|-------------|----------------|--------------|-----------|---------|
+| Qwen3-32B | 28.21% | 21.14% | 24.68% | **7.07 pp** | 0.002 ✓ |
+| GPT-OSS-120B | 21.58% | 15.92% | 18.75% | **5.66 pp** | 0.007 ✓ |
+| GPT-OSS-20B | 20.95% | 15.30% | 18.13% | **5.65 pp** | 0.005 ✓ |
+| DeepSeek-V3.2 | 26.10% | 21.88% | 23.99% | **4.22 pp** | 0.042 ✓ |
+| Qwen3-Next-80B | 14.58% | 11.13% | 12.86% | **3.45 pp** | 0.029 ✓ |
+| Mixtral-8x22B | 7.66% | 4.38% | 6.02% | **3.28 pp** | 0.052 |
+| Qwen3-235B | 16.07% | 13.15% | 14.61% | **2.92 pp** | 0.114 |
+| Llama-3.3-70B | 21.71% | 19.18% | 20.45% | **2.52 pp** | 0.206 |
+| Mixtral-8x7B | 7.04% | 5.23% | 6.14% | **1.81 pp** | 0.340 |
+| Gemma-3-27B | 36.96% | 35.17% | 36.07% | **1.78 pp** | 0.426 |
+
+*✓ indicates statistical significance at p < 0.05*
+
+## Methodology
+
+### Design and Estimand
+
+We employed a **block-structured audit design** to isolate AI labeling effects from confounding job characteristics:
+
+1. **Block Construction:** Each block is defined by pre-label covariates:
+    - Standard Occupational Classification (SOC) code
+    - Geographic location (worksite state)
+    - Industry sector (NAICS-2 digit)
+    - Full-time vs. part-time status
+
+2. **Overlap Restriction:** Analysis restricted to blocks containing both AI and non-AI titles
+
+3. **Balanced Sampling:** Equal numbers of AI and non-AI positions sampled within each block (n=1,000 per model)
+
+4. **Primary Outcome:** Signed Percent Bias (SPB)
+   ```
+   SPB = (LLM_Estimate - Ground_Truth) / Ground_Truth × 100
+   ```
+
+5. **Estimand:** AI Uplift = Mean SPB\_AI - Mean SPB\_Other
+
+### Statistical Analysis
+
+- **Within-model comparisons:** Welch's unequal-variance t-test
+- **Between-cohort comparison:** Welch's t-test on model-level AI uplifts
+- **Conditional analysis:** OLS regression with heteroscedasticity-robust standard errors (HC3)
+- **Regression formula:**
+  ```
+  SPB ~ IS_AI + C(SOC_CODE) + C(WORKSITE_STATE) + C(NAICS2) + C(FULL_TIME_POSITION) + log(PREVAILING_WAGE)
+  ```
+
+## Implications
+
+### 1. LLMs as Active Market Participants
+
+The results demonstrate that LLMs are **not neutral observers** of the labor market. They actively participate in inflating AI-related valuations, potentially creating feedback loops that:
+- Reinforce market hype through hallucinatory valuation
+- Amplify wage inequality between AI and non-AI workers with comparable skills
+- Distort compensation benchmarking and workforce planning decisions
+
+### 2. The "Commercial Hype" Factor
+
+The **2.5× amplification** of AI bias in proprietary models (p = 0.039) suggests that commercial alignment pipelines—specifically Reinforcement Learning from Human Feedback (RLHF)—may inadvertently encode narratives of AI exceptionalism. This raises critical questions about:
+- The neutrality of "helpful" model behavior
+- The economic consequences of optimizing for user satisfaction
+- The role of training data selection in perpetuating hype cycles
+
+### 3. Open Models as a Partial Solution
+
+While open-weight models still exhibit AI wage inflation, their significantly lower bias suggests that:
+- Transparency in training processes may reduce systemic distortions
+- Community oversight can help ground model outputs in empirical reality
+
+## Data & Code Availability
+
+All analysis code, model configurations, and detailed results are available in this repository. The study used vLLM for inference with deterministic sampling (temperature=0.0) to ensure reproducibility.
+
+## Citation
+
+If you use these findings in your research, please cite:
+
+```bibtex
+@article{llm_ai_wage_bias_2025,
+  title={Socioeconomic Hallucinations: Large Language Models Systematically Inflate the Value of AI Labor},
+  author={[Your Name]},
+  year={2025},
+  note={GitHub repository: [Your Repo URL]}
+}
+```
 
 ---
-
-## Data & Inputs
-
-### Dataset
-
-We use the “Salaries for Data Science Jobs” dataset, stored under:
-
-`data/salaries-for-data-science-jobs/`
-
-### Estimation outputs (one CSV per model)
-
-Each LLM produces an estimation file with at least these columns:
-
-- `job_title`
-- `salary_in_usd` (actual)
-- `estimated_salary_in_usd` (estimated)
-
-Expected naming pattern:
-
-- `llm_estimated_salaries{MODEL_TAG}.csv`
-- optionally `llm_estimated_salaries_debug{MODEL_TAG}.csv`
-
-The analysis script automatically discovers all matching files:
-
-- `data/salaries-for-data-science-jobs/llm_estimated_salaries*.csv`
-
-### AI/ML title labeling file
-
-Group membership is controlled by:
-
-`data/salaries-for-data-science-jobs/ai_ml_job_titles.csv`
-
-Required columns:
-
-- `job_title` (string; must match titles in the estimation CSVs)
-- `AI_job` (boolean; `True` => AI/ML group)
-
-This file is the *only* determinant of which rows are considered AI/ML vs Other.
-
----
-
-## Metric: Signed Percent Bias (SPB)
-
-For each row *i* we compute:
-
-\[
-SPB_i = \frac{\hat{y}_i - y_i}{y_i} \cdot 100
-\]
-
-Where:
-
-- \(y_i\) is the actual salary (`salary_in_usd`)
-- \(\hat{y}_i\) is the model estimate (`estimated_salary_in_usd`)
-
-Interpretation:
-
-- SPB > 0: overestimation (estimate larger than actual)
-- SPB < 0: underestimation (estimate smaller than actual)
-
-Rows with `actual == 0` are excluded from SPB computation to avoid division by zero.
-
----
-
-## Primary Effect: AI/ML vs Other SPB Difference
-
-For each model output file:
-
-- \( \mu_{AI} = \mathrm{mean}(SPB \mid AI/ML) \)
-- \( \mu_{Other} = \mathrm{mean}(SPB \mid Other) \)
-
-Define the main quantity of interest:
-
-\[
-\Delta_{\text{mean}} = \mu_{AI} - \mu_{Other}
-\]
-
-Decision rule (aligned with the research question):
-
-- **Δ_mean > 0** ⇒ AI/ML titles receive **more positive signed-% bias**
-
-We also report the **median** SPB per group and the **median difference**:
-
-\[
-\Delta_{\text{median}} = \mathrm{median}(SPB_{AI}) - \mathrm{median}(SPB_{Other})
-\]
-
----
-
-## Statistical Tests
-
-Because SPB distributions may be heavy-tailed and contain outliers, we report both a mean-based test and a robust
-companion test.
-
-### 1) Welch t-test (mean difference)
-
-We apply a two-sample Welch t-test to the SPB values:
-
-- H0: mean(SPB_AI) = mean(SPB_Other)
-- H1 (directional / one-sided for the paper): mean(SPB_AI) > mean(SPB_Other)
-
-We record both two-sided and one-sided p-values.
-
-### 2) Robust companion: Mann–Whitney U + Cliff’s delta
-
-We run a Mann–Whitney U test (nonparametric distribution shift test) on SPB:
-
-- H0: SPB distributions are equal
-- H1 (one-sided): AI/ML has larger SPB values than Other
-
-We also report **Cliff’s delta (δ)** as an interpretable nonparametric effect size. Cliff’s delta is derived from the U
-statistic:
-
-\[
-\delta = \frac{2U}{n_{AI}n_{Other}} - 1
-\]
-
-Interpretation:
-
-- δ > 0: AI/ML tends to have larger SPB values (more positive bias)
-- δ < 0: Other tends to have larger SPB values
-
----
-
-## Outputs
-
-For each estimation file (per model), the script writes:
-
-1) A per-file summary CSV:
-
-- `data/statistical_analysis_results/salaries/{base}_analysis_summary.csv`
-
-This includes:
-
-- mean and median SPB for AI/ML and Other
-- Δ_mean and Δ_median
-- Welch t-test statistics and p-values
-- Mann–Whitney U statistics and p-values
-- Cliff’s delta effect size
-- MAE (in USD) for context (not the primary bias metric)
-
-2) A scatter plot for AI/ML only:
-
-- `data/statistical_analysis_plots/salaries/{base}_ai_ml_comparison.png`
-
-3) An aggregated summary over all model files:
-
-- `data/statistical_analysis_results/salaries/salaries_ALL_MODELS_summary.csv`
-
----
-
-## Running the analysis
-
-From the repository root:
-
-```bash
-uv run scripts/salaries_dataset/compare_signed_pct_bias.py
