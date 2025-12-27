@@ -221,7 +221,7 @@ def main() -> None:
     ap.add_argument("--year-unit-value", default="Year")
     ap.add_argument("--allow-missing-unit-cols", action="store_true")
 
-    ap.add_argument("--target-total", type=int, default=200,
+    ap.add_argument("--target-total", type=int, default=1000,
                     help="Total output rows; produces target_total//2 AI + target_total//2 Other (block-balanced).")
     ap.add_argument("--seed", type=int, default=0)
 
