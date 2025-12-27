@@ -1,4 +1,15 @@
 #!/bin/bash
+#SBATCH --job-name=salaries_pipeline_h1b
+#SBATCH --output=/home/fast/trabelb1/projects/bias-salary_resources/h1b_pipeline%j.out
+#SBATCH --error=/home/fast/trabelb1/projects/bias-salary_resources/h1b_pipeline%j.err
+#SBATCH --partition=H200-4h
+#SBATCH --gres=gpu:2
+#SBATCH --cpus-per-task=16
+source ~/.bash_profile
+REPO_LOCATION="/home/fast/trabelb1/projects/bias-salary_resources"
+nvidia-smi
+cd $REPO_LOCATION
+export PYTHONPATH=$(pwd)
 
 # Sample the dataset
 uv run scripts/h1b_dataset/sample_block_balanced.py --input data/h1b-lca-disclosure-data-2020-2024/Combined_LCA_Disclosure_Data_FY2024.csv --ai-titles data/h1b-lca-disclosure-data-2020-2024/ai_ml_job_titles.csv --output data/sampled_1000_uniform.csv --target-total 1000 --max-per-block 10 --weight-mode uniform --seed 0
@@ -17,7 +28,7 @@ models=(
 served_models=(
 "openai/gpt-oss-20b"
 "openai/gpt-oss-120b"
-"mistralai/Ministral-3-14B-Instruct-2512"
+#"mistralai/Ministral-3-14B-Instruct-2512"
 )
 
 # Run estimation for each model
