@@ -42,6 +42,7 @@ def main():
     parser.add_argument("--llm-config", choices=["home", "home_4gpu", "hpc", "hpc2h200", "home_small"], default="home_small", help="Choose LLM configuration")
     parser.add_argument("--chunk-size", type=int, default=100000, help="Chunk size for processing prompts")
     parser.add_argument("--scale-model-size", action="store_true", help="Scale LLM configuration based on model size")
+    parser.add_argument("--tensor-parallel-size", type=int, default=None, help="Tensor parallel size for distributed inference (overrides auto-detection)")
     parser.add_argument("--input-csv-file", type=str, default="data/h1b-lca-disclosure-data-2020-2024/h1b_2024_sampled.csv", help="Path to input CSV file")
     parser.add_argument("--personas-to-use", nargs="*", default=["salary_estimator"], help="List of personas to use for estimation")
     args = parser.parse_args()
@@ -101,8 +102,11 @@ def main():
         if args.scale_model_size:
             print("model size in B:", model_size_b)
             llm_config.scale_for_model_size(model_size_b)
-        if model_size_b > 50:
-            llm_config.tensor_parallel_size = 2
+
+        # Set tensor parallel size from CLI arg if provided
+        if args.tensor_parallel_size is not None:
+            llm_config.tensor_parallel_size = args.tensor_parallel_size
+            print(f"Using tensor_parallel_size={args.tensor_parallel_size} from CLI argument")
 
     if args.client_type == "openai":
         from openai_llm.openai_client import OpenAIConfig, LLMClient as OpenAILLMClient, SamplingConfig as OpenAISamplingConfig
