@@ -210,6 +210,8 @@ def main() -> None:
     ap.add_argument("--state-col", default="WORKSITE_STATE")
     ap.add_argument("--naics-col", default="NAICS_CODE")
     ap.add_argument("--ft-col", default="FULL_TIME_POSITION")
+    ap.add_argument("--pw-wage-level-col", default="PW_WAGE_LEVEL",
+                    help="Prevailing wage level column to include in block definition and filter for non-null values")
 
     # CASE_STATUS filter
     ap.add_argument("--status-col", default="CASE_STATUS")
@@ -262,7 +264,7 @@ def main() -> None:
         df_raw.insert(0, "ROW_ID", np.arange(len(df_raw), dtype=np.int64))
 
     # Required columns
-    for c in (args.job_title_col, args.status_col, args.soc_col, args.state_col, args.naics_col, args.ft_col):
+    for c in (args.job_title_col, args.status_col, args.soc_col, args.state_col, args.naics_col, args.ft_col, args.pw_wage_level_col):
         if c not in df_raw.columns:
             raise KeyError(f"Missing required column '{c}' in input.")
 
@@ -271,6 +273,12 @@ def main() -> None:
     # CASE_STATUS
     df_raw = df_raw[df_raw[args.status_col].astype(str) == str(args.status_value)]
     n_after_status = len(df_raw)
+
+    # Filter out rows with NaN PW_WAGE_LEVEL
+    before_pwl = len(df_raw)
+    df_raw = df_raw[df_raw[args.pw_wage_level_col].notna()]
+    n_after_pwl = len(df_raw)
+    print(f"Rows after filtering non-null {args.pw_wage_level_col}: {n_after_pwl:,} (dropped {before_pwl - n_after_pwl:,}, {100*(before_pwl - n_after_pwl)/before_pwl:.2f}%)")
 
     # Yearly wage units
     for col in (args.pw_unit_col, args.wage_unit_col):
@@ -325,8 +333,9 @@ def main() -> None:
     st_s = clean_str_series(df[args.state_col])
     n2_s = df[args.naics_col].map(naics2).astype(str)
     ft_s = clean_str_series(df[args.ft_col])
+    pwl_s = clean_str_series(df[args.pw_wage_level_col])
 
-    block_id = (soc_s + "||" + st_s + "||" + n2_s + "||" + ft_s).to_numpy(dtype=object)
+    block_id = (soc_s + "||" + st_s + "||" + n2_s + "||" + ft_s + "||" + pwl_s).to_numpy(dtype=object)
     df["BLOCK_ID"] = block_id  # helpful for audits/debug; you can drop later
 
     # Count per block (AI vs Other)
