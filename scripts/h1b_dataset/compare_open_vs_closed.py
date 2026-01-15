@@ -161,5 +161,46 @@ def main():
     else:
         print("CONCLUSION: No significant difference in AI Uplift (p >= 0.05)")
 
+    # Calculate 95% CI for each cohort mean (treating each as a separate estimate)
+    print("\n" + "="*60)
+    print("COHORT-LEVEL 95% CONFIDENCE INTERVALS FOR MEAN AI UPLIFT")
+    print("="*60)
+
+    # Open models CI and p-value (one-sample t-test against H0: mean = 0)
+    open_se = sd_open / np.sqrt(len(open_uplifts))
+    open_t_crit = stats.t.ppf(0.975, df=len(open_uplifts) - 1)
+    open_ci_lower = mu_open - open_t_crit * open_se
+    open_ci_upper = mu_open + open_t_crit * open_se
+
+    # One-sample t-test: H0: mean uplift = 0
+    open_t_stat = mu_open / open_se
+    open_p_val = 2 * (1 - stats.t.cdf(abs(open_t_stat), df=len(open_uplifts) - 1))
+
+    print(f"OPEN Models (N={len(open_uplifts)}):")
+    print(f"  Mean AI Uplift: {mu_open:.4f} pp")
+    print(f"  Standard Error: {open_se:.4f}")
+    print(f"  95% CI: [{open_ci_lower:.4f}, {open_ci_upper:.4f}] pp")
+    print(f"  t-statistic (H0: mean=0): {open_t_stat:.4f}")
+    print(f"  p-value: {open_p_val:.4f}")
+    print(f"  → {'Significantly different from zero (p<0.05)' if open_p_val < 0.05 else 'Not significantly different from zero (p≥0.05)'}")
+
+    # Closed models CI and p-value
+    closed_se = sd_closed / np.sqrt(len(closed_uplifts))
+    closed_t_crit = stats.t.ppf(0.975, df=len(closed_uplifts) - 1)
+    closed_ci_lower = mu_closed - closed_t_crit * closed_se
+    closed_ci_upper = mu_closed + closed_t_crit * closed_se
+
+    # One-sample t-test: H0: mean uplift = 0
+    closed_t_stat = mu_closed / closed_se
+    closed_p_val = 2 * (1 - stats.t.cdf(abs(closed_t_stat), df=len(closed_uplifts) - 1))
+
+    print(f"\nCLOSED Models (N={len(closed_uplifts)}):")
+    print(f"  Mean AI Uplift: {mu_closed:.4f} pp")
+    print(f"  Standard Error: {closed_se:.4f}")
+    print(f"  95% CI: [{closed_ci_lower:.4f}, {closed_ci_upper:.4f}] pp")
+    print(f"  t-statistic (H0: mean=0): {closed_t_stat:.4f}")
+    print(f"  p-value: {closed_p_val:.4f}")
+    print(f"  → {'Significantly different from zero (p<0.05)' if closed_p_val < 0.05 else 'Not significantly different from zero (p≥0.05)'}")
+
 if __name__ == "__main__":
     main()
