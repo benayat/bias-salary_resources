@@ -114,7 +114,7 @@ def main():
         from openai_llm.openai_client import OpenAIConfig, LLMClient as OpenAILLMClient, SamplingConfig as OpenAISamplingConfig
         llm_config = OpenAIConfig(api_key=args.openai_api_key, base_url=args.openai_base_url)
         llm = OpenAILLMClient(model_name=args.model, config=llm_config)
-        sampling_params = OpenAISamplingConfig(temperature=0.0, top_p=1.0, max_tokens=1024) if "gpt-oss" in args.model else OpenAISamplingConfig(temperature=0.0, top_p=1.0, max_tokens=16)
+        sampling_params = OpenAISamplingConfig(temperature=0.0, top_p=1.0, max_tokens=4096) if "gpt-oss" in args.model else OpenAISamplingConfig(temperature=0.0, top_p=1.0, max_tokens=16)
     else:
         llm = LLMClient(model_name=args.model, config=llm_config)
         sampling_params = SamplingConfig(temperature=0.0, top_p=1.0, max_tokens=512) if "deepseek" in args.model else SamplingConfig(temperature=0.0, top_p=1.0, max_tokens=16)
