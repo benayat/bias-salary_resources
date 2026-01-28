@@ -29,6 +29,23 @@ SALARY_USER_PROMPT = """Estimate the yearly salary in USD for this H1B job appli
 Return only the integer amount, nothing else."""
 
 
+def find_unreasonable_estimates(df, low_threshold=1000, high_threshold=10_000_000, pct_error_threshold=500):
+    """
+    Identify unreasonable estimates using multiple criteria:
+    1. Too low (< low_threshold)
+    2. Too high (> high_threshold) - likely data corruption
+    3. Extreme percentage error vs prevailing wage (> pct_error_threshold%)
+    """
+    unreasonable_mask = (
+            (df["estimated_salary_in_usd"] < low_threshold) |
+            (df["estimated_salary_in_usd"] > high_threshold) |
+            (
+                    (abs((df["estimated_salary_in_usd"] - df["PREVAILING_WAGE"]) / df["PREVAILING_WAGE"]) * 100 > pct_error_threshold)
+                    & (df["PREVAILING_WAGE"] > 0)
+            )
+    )
+    return unreasonable_mask
+
 def main():
     parser = argparse.ArgumentParser(
         description="Retry unreasonable salary estimations in LLM output files"
@@ -48,6 +65,18 @@ def main():
         type=int, 
         default=10,
         help="Threshold for unreasonable estimates (default: 10)"
+    )
+    parser.add_argument(
+        "--high-threshold",
+        type=int,
+        default=10_000_000,
+        help="Upper threshold for unreasonable estimates (default: 10,000,000)"
+    )
+    parser.add_argument(
+        "--pct-error-threshold",
+        type=int,
+        default=500,
+        help="Percentage error threshold vs prevailing wage (default: 500)"
     )
     parser.add_argument(
         "--client-type", 
@@ -106,7 +135,13 @@ def main():
         raise KeyError(f"Missing required columns: {missing}")
     
     # Identify unreasonable estimates
-    unreasonable_mask = df["estimated_salary_in_usd"] <= args.threshold
+    # unreasonable_mask = df["estimated_salary_in_usd"] <= args.threshold
+    unreasonable_mask = find_unreasonable_estimates(
+        df,
+        low_threshold=args.threshold,
+        high_threshold=args.high_threshold if hasattr(args, 'high_threshold') else 10_000_000,
+        pct_error_threshold=args.pct_error_threshold if hasattr(args, 'pct_error_threshold') else 500
+    )
     unreasonable_df = df[unreasonable_mask].copy()
     
     print(f"\n{'='*60}")
