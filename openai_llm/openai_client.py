@@ -69,6 +69,9 @@ class LLMClient:
                 else:
                     api_params["max_tokens"] = sampling_params.max_tokens
 
+                if "grok" in self.model_name:
+                    api_params["extra_body"] = {"reasoning": {"enabled": False}}
+
                 # Add seed if provided (DeepSeek and Google don't support it, so skip)
                 if sampling_params.seed is not None and not ("deepseek.com" in self.config.base_url or "google" in self.config.base_url):
                     api_params["seed"] = sampling_params.seed

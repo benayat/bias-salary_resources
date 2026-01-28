@@ -171,7 +171,7 @@ def main():
         llm = OpenAILLMClient(model_name=args.model, config=llm_config)
         sampling_params = OpenAISamplingConfig(
             temperature=0.0, top_p=1.0,
-            max_tokens=4096 if "gpt-oss" in args.model else 16
+            max_tokens=6500 if "gpt-oss" in args.model else 16
         )
     
     # Prepare system prompt
