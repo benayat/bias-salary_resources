@@ -28,6 +28,7 @@ SALARY_USER_PROMPT = """Estimate the yearly salary in USD for this H1B job appli
 - worksite_city: {worksite_city}
 - worksite_state: {worksite_state}
 - naics_code: {naics_code}
+- pw_wage_level: {pw_wage_level}
 
 Return only the integer amount, nothing else."""
 
@@ -70,7 +71,7 @@ def main():
     h1b_df = pd.read_csv(input_csv, low_memory=False)
     # h1b_df = h1b_df.head(3)
 
-    # Keep only columns we need + keep everything else (you can drop if you want)
+    # Keep only columns we need + keep everything else
     required_cols = [
         "JOB_TITLE",
         "SOC_CODE",
@@ -80,6 +81,7 @@ def main():
         "WORKSITE_CITY",
         "WORKSITE_STATE",
         "NAICS_CODE",
+        "PW_WAGE_LEVEL",
     ]
     missing = [c for c in required_cols if c not in h1b_df.columns]
     if missing:
@@ -149,6 +151,7 @@ def main():
                 worksite_city=row.get("WORKSITE_CITY", ""),
                 worksite_state=row.get("WORKSITE_STATE", ""),
                 naics_code=row.get("NAICS_CODE", ""),
+                pw_wage_level=row.get("PW_WAGE_LEVEL", ""),
             )
             prompts.append(
                 {
