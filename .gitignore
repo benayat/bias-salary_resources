@@ -18,6 +18,8 @@ wheels/
 
 # Data (large files)
 data/
+# Exception: include sqrt-2000 dataset for paper reproducibility
+!data/sqrt-2000/
 
 # Logs
 *.log
