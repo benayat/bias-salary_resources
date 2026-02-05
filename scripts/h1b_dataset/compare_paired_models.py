@@ -182,6 +182,12 @@ def main():
         ci_lower = uplift - t_crit * se_diff
         ci_upper = uplift + t_crit * se_diff
         
+        # Calculate Cohen's d effect size
+        sd_ai = spb_ai.std(ddof=1)
+        sd_other = spb_other.std(ddof=1)
+        pooled_sd = np.sqrt(((n_ai - 1) * sd_ai**2 + (n_other - 1) * sd_other**2) / (n_ai + n_other - 2))
+        cohens_d = (mean_ai - mean_other) / pooled_sd
+
         # Print results
         print("\n" + "-"*70)
         print("RESULTS (using mean estimate across all models)")
@@ -209,6 +215,18 @@ def main():
         print(f"  t-statistic: {t_stat:.4f}")
         print(f"  p-value: {p_val:.4e}")
         print(f"  degrees of freedom: {df:.2f}")
+        print(f"  Cohen's d: {cohens_d:.4f}")
+
+        # Interpret Cohen's d
+        if abs(cohens_d) < 0.2:
+            effect_size = "negligible"
+        elif abs(cohens_d) < 0.5:
+            effect_size = "small"
+        elif abs(cohens_d) < 0.8:
+            effect_size = "medium"
+        else:
+            effect_size = "large"
+        print(f"  Effect size: {effect_size}")
         print(f"  → {'✓ Significant AI uplift (p<0.05)' if p_val < 0.05 else '✗ Not significant (p≥0.05)'}")
         
         # Additional: Test if mean AI uplift is different from zero (one-sample)

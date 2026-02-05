@@ -165,6 +165,26 @@ def welch_test(ai: np.ndarray, other: np.ndarray) -> dict:
 
     diff = float(ai.mean() - other.mean())
     ci_lo, ci_hi = mean_ci_diff_welch(ai, other)
+
+    # Calculate Cohen's d effect size and Welch-Satterthwaite df
+    n_ai = ai.size
+    n_other = other.size
+    var_ai = ai.var(ddof=1)
+    var_other = other.var(ddof=1)
+
+    # Pooled standard deviation
+    pooled_sd = np.sqrt(((n_ai - 1) * var_ai + (n_other - 1) * var_other) / (n_ai + n_other - 2))
+    cohens_d = diff / pooled_sd if pooled_sd > 0 else float('nan')
+
+    # Welch-Satterthwaite degrees of freedom
+    se2 = var_ai / n_ai + var_other / n_other
+    if se2 > 0:
+        num = se2 ** 2
+        den = ((var_ai / n_ai) ** 2 / (n_ai - 1)) + ((var_other / n_other) ** 2 / (n_other - 1))
+        df_welch = num / den if den > 0 else min(n_ai - 1, n_other - 1)
+    else:
+        df_welch = min(n_ai - 1, n_other - 1)
+
     res.update({
         "ok": True,
         "mean_ai": float(ai.mean()),
@@ -175,6 +195,8 @@ def welch_test(ai: np.ndarray, other: np.ndarray) -> dict:
         "mape_other": float(np.mean(np.abs(other))),
         "mean_diff": diff,
         "ci95_diff": (ci_lo, ci_hi),
+        "cohens_d": float(cohens_d),
+        "df": float(df_welch),
     })
     return res
 
@@ -356,11 +378,26 @@ def main() -> None:
             print(f"  Welch test: insufficient data (n_ai={w.get('n_ai')}, n_other={w.get('n_other')})")
         else:
             ci = w["ci95_diff"]
+            cohens_d = w.get("cohens_d", float('nan'))
+
+            # Interpret Cohen's d
+            if np.isnan(cohens_d):
+                effect_size = "unknown"
+            elif abs(cohens_d) < 0.2:
+                effect_size = "negligible"
+            elif abs(cohens_d) < 0.5:
+                effect_size = "small"
+            elif abs(cohens_d) < 0.8:
+                effect_size = "medium"
+            else:
+                effect_size = "large"
+
             print(f"  Group means (SPB): AI={w['mean_ai']:.4f}%  Other={w['mean_other']:.4f}%  Diff={w['mean_diff']:.4f} pp")
             print(f"    medians:         AI={w['median_ai']:.4f}%  Other={w['median_other']:.4f}%")
             print(f"    MAPE:            AI={w['mape_ai']:.4f}%  Other={w['mape_other']:.4f}%")
-            print(f"  Welch t-test H0(mean diff=0): t={w['t_stat']:.4f}  p(two)={fmt_p(w['p_two'])}  p(one, AI>Other)={fmt_p(w['p_one_greater'])}")
+            print(f"  Welch t-test H0(mean diff=0): t({w.get('df', float('nan')):.2f})={w['t_stat']:.4f}  p(two)={fmt_p(w['p_two'])}  p(one, AI>Other)={fmt_p(w['p_one_greater'])}")
             print(f"    95% CI diff (AI-Other): [{ci[0]:.4f}, {ci[1]:.4f}] percentage-points")
+            print(f"    Cohen's d: {cohens_d:.4f} ({effect_size} effect)")
 
         # 2) HC3 regression (conditional comparability)
         df["IS_AI_NUM"] = df[args.ai_col].astype(int)
