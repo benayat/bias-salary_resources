@@ -1,5 +1,5 @@
 1. Open models:
-   === Model: open_models |  File: estimations_Llama-3.3-70B-Instruct-llm_estimated_salaries-salary_estimator.csv ===
+   === Model: Llama-3.3-70B-Instruct |  File: estimations_Llama-3.3-70B-Instruct-llm_estimated_salaries-salary_estimator.csv ===
    Normality (Shapiro-Wilk):
    AI:    W=0.9317  p=2.425e-14  (NOT Normal)
    Other: W=0.9425  p=5.437e-13  (NOT Normal)
@@ -15,7 +15,7 @@
    → Statistical significance (Welch): NO (p≥0.05)
    → Statistical significance (OLS+HC3): NO (p≥0.05)
 
-=== Model: open_models |  File: estimations_Mixtral-8x22B-Instruct-v0.1-llm_estimated_salaries-salary_estimator.csv ===
+=== Model: Mixtral-8x22B-Instruct-v0.1 |  File: estimations_Mixtral-8x22B-Instruct-v0.1-llm_estimated_salaries-salary_estimator.csv ===
 Normality (Shapiro-Wilk):
 AI:    W=0.9504  p=6.568e-12  (NOT Normal)
 Other: W=0.9532  p=1.751e-11  (NOT Normal)
@@ -47,7 +47,7 @@ AI uplift coef (ΔSPB, pp): 1.8054  SE(HC3)=1.7031  t=1.0601  p=2.891e-01
 → Statistical significance (Welch): NO (p≥0.05)
 → Statistical significance (OLS+HC3): NO (p≥0.05)
 
-=== Model: open_models |  File: estimations_Qwen3-235B-A22B-Instruct-2507-FP8-llm_estimated_salaries-salary_estimator.csv ===
+=== Model: Qwen3-235B-A22B-Instruct-2507-FP8 |  File: estimations_Qwen3-235B-A22B-Instruct-2507-FP8-llm_estimated_salaries-salary_estimator.csv ===
 Normality (Shapiro-Wilk):
 AI:    W=0.9279  p=8.923e-15  (NOT Normal)
 Other: W=0.9378  p=1.321e-13  (NOT Normal)
@@ -63,7 +63,7 @@ AI uplift coef (ΔSPB, pp): 2.9498  SE(HC3)=1.7548  t=1.6809  p=9.278e-02
 → Statistical significance (Welch): NO (p≥0.05)
 → Statistical significance (OLS+HC3): NO (p≥0.05)
 
-=== Model: open_models |  File: estimations_Qwen3-32B-llm_estimated_salaries-salary_estimator.csv ===
+=== Model: Qwen3-32B |  File: estimations_Qwen3-32B-llm_estimated_salaries-salary_estimator.csv ===
 Normality (Shapiro-Wilk):
 AI:    W=0.8995  p=1.307e-17  (NOT Normal)
 Other: W=0.8967  p=7.410e-18  (NOT Normal)
@@ -79,7 +79,7 @@ AI uplift coef (ΔSPB, pp): 6.9524  SE(HC3)=2.2005  t=3.1595  p=1.581e-03
 → Statistical significance (Welch): YES (p<0.05)
 → Statistical significance (OLS+HC3): YES (p<0.05)
 
-=== Model: open_models |  File: estimations_Qwen3-Next-80B-A3B-Instruct-llm_estimated_salaries-salary_estimator.csv ===
+=== Model: Qwen3-Next-80B-A3B-Instruct |  File: estimations_Qwen3-Next-80B-A3B-Instruct-llm_estimated_salaries-salary_estimator.csv ===
 Normality (Shapiro-Wilk):
 AI:    W=0.9195  p=1.109e-15  (NOT Normal)
 Other: W=0.9464  p=1.777e-12  (NOT Normal)
@@ -95,7 +95,7 @@ AI uplift coef (ΔSPB, pp): 3.4716  SE(HC3)=1.7235  t=2.0142  p=4.399e-02
 → Statistical significance (Welch): YES (p<0.05)
 → Statistical significance (OLS+HC3): YES (p<0.05)
 
-=== Model: open_models |  File: estimations_deepseek3_2.csv ===
+=== Model: deepseek3_2(aka 'deepseek-chat') |  File: estimations_deepseek3_2.csv ===
 Normality (Shapiro-Wilk):
 AI:    W=0.8976  p=8.765e-18  (NOT Normal)
 Other: W=0.9157  p=4.421e-16  (NOT Normal)
@@ -111,7 +111,7 @@ AI uplift coef (ΔSPB, pp): 4.2666  SE(HC3)=1.9973  t=2.1362  p=3.266e-02
 → Statistical significance (Welch): YES (p<0.05)
 → Statistical significance (OLS+HC3): YES (p<0.05)
 
-=== Model: open_models |  File: estimations_gemma-3-27b-it-llm_estimated_salaries-salary_estimator.csv ===
+=== Model: gemma-3-27b-it |  File: estimations_gemma-3-27b-it-llm_estimated_salaries-salary_estimator.csv ===
 Normality (Shapiro-Wilk):
 AI:    W=0.9504  p=6.617e-12  (NOT Normal)
 Other: W=0.9485  p=3.548e-12  (NOT Normal)
@@ -127,7 +127,7 @@ AI uplift coef (ΔSPB, pp): 1.7251  SE(HC3)=2.0721  t=0.8326  p=4.051e-01
 → Statistical significance (Welch): NO (p≥0.05)
 → Statistical significance (OLS+HC3): NO (p≥0.05)
 
-=== Model: open_models |  File: estimations_gpt-oss-120b-llm_estimated_salaries-salary_estimator.csv.csv ===
+=== Model: gpt-oss-120b |  File: estimations_gpt-oss-120b-llm_estimated_salaries-salary_estimator.csv.csv ===
 Normality (Shapiro-Wilk):
 AI:    W=0.9193  p=1.043e-15  (NOT Normal)
 Other: W=0.9422  p=4.824e-13  (NOT Normal)
@@ -143,7 +143,7 @@ AI uplift coef (ΔSPB, pp): 5.6358  SE(HC3)=2.0115  t=2.8018  p=5.082e-03
 → Statistical significance (Welch): YES (p<0.05)
 → Statistical significance (OLS+HC3): YES (p<0.05)
 
-=== Model: open_models |  File: estimations_gpt-oss-20b-llm_estimated_salaries-salary_estimator.csv ===
+=== Model: gpt-oss-20b |  File: estimations_gpt-oss-20b-llm_estimated_salaries-salary_estimator.csv ===
 Normality (Shapiro-Wilk):
 AI:    W=0.9336  p=4.073e-14  (NOT Normal)
 Other: W=0.9413  p=3.776e-13  (NOT Normal)
@@ -160,7 +160,7 @@ AI uplift coef (ΔSPB, pp): 5.5805  SE(HC3)=1.8874  t=2.9568  p=3.109e-03
 → Statistical significance (OLS+HC3): YES (p<0.05)
 
 2. Close models:
-   === Model: closed_models |  File: estimations_claude.csv ===
+   === Model: claude-sonnet-4.5 |  File: estimations_claude.csv ===
    Normality (Shapiro-Wilk):
    AI:    W=0.9156  p=4.501e-16  (NOT Normal)
    Other: W=0.9191  p=1.074e-15  (NOT Normal)
@@ -176,7 +176,7 @@ AI uplift coef (ΔSPB, pp): 5.5805  SE(HC3)=1.8874  t=2.9568  p=3.109e-03
    → Statistical significance (Welch): YES (p<0.05)
    → Statistical significance (OLS+HC3): YES (p<0.05)
 
-=== Model: closed_models |  File: estimations_gemini2_5_flash.csv ===
+=== Model: gemini-2.5-flash |  File: estimations_gemini2_5_flash.csv ===
 Normality (Shapiro-Wilk):
 AI:    W=0.9395  p=2.161e-13  (NOT Normal)
 Other: W=0.9498  p=5.507e-12  (NOT Normal)
@@ -192,7 +192,7 @@ AI uplift coef (ΔSPB, pp): 9.4912  SE(HC3)=2.0104  t=4.7211  p=2.346e-06
 → Statistical significance (Welch): YES (p<0.05)
 → Statistical significance (OLS+HC3): YES (p<0.05)
 
-=== Model: closed_models |  File: estimations_gpt5_1.csv ===
+=== Model: gpt-5.1 |  File: estimations_gpt5_1.csv ===
 Normality (Shapiro-Wilk):
 AI:    W=0.8962  p=6.973e-18  (NOT Normal)
 Other: W=0.9305  p=1.925e-14  (NOT Normal)
@@ -208,7 +208,7 @@ AI uplift coef (ΔSPB, pp): 11.2464  SE(HC3)=2.1122  t=5.3245  p=1.012e-07
 → Statistical significance (Welch): YES (p<0.05)
 → Statistical significance (OLS+HC3): YES (p<0.05)
 
-=== Model: closed_models |  File: estimations_grok-4_1-fast.csv ===
+=== Model: grok-4.1-fast |  File: estimations_grok-4_1-fast.csv ===
 Normality (Shapiro-Wilk):
 AI:    W=0.9021  p=2.217e-17  (NOT Normal)
 Other: W=0.9007  p=1.681e-17  (NOT Normal)
