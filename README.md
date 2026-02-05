@@ -1,5 +1,55 @@
 # LLM Salary Estimation Bias: AI Jobs vs. Non-AI Jobs
 
+## License
+
+**MIT License**
+
+## System Requirements
+
+### Operating System
+- Linux (Ubuntu 20.04+ or equivalent)
+
+### Software Dependencies
+- Python: 3.12+
+- vLLM: 0.11.0+
+- Transformers: 4.45.0+
+- PyTorch: 2.8.0+
+- Pandas: 2.3.3+
+- NumPy: 1.26.0+
+- Matplotlib: 3.10.7+
+- Statsmodels: 0.14.5+
+
+### Hardware Requirements
+- **GPU:** NVIDIA B200 or equivalent (360GB VRAM required)
+- **RAM:** 128GB+ system memory
+- **Storage:** 2TB free disk space, for running all models on a single job (multiple GPUs can reduce storage needs by parallelizing model runs)
+- **Note:** Requires high-end GPU infrastructure; will not run on standard desktop machines
+
+## Installation
+
+**Typical installation time:** < 10 minutes on specialized high-end hardware.
+
+```bash
+# Clone repository
+git clone https://github.com/benayat/Pro-AI-bias-in-LLMs
+cd salary_resources
+
+# Install dependencies using uv
+uv sync
+```
+
+## Usage
+
+**Expected run time:** ~1-2 hours on recommended hardware (requires NVIDIA B200 or equivalent; will not run on standard desktops).
+
+```bash
+# Run salary estimation for a specific model
+python scripts/h1b_dataset/estimate_h1b_salaries.py --model <model_name>
+
+# Run analysis on results
+python scripts/h1b_dataset/compare_open_vs_closed.py
+```
+
 ## Key Findings
 
 ### Systematic AI Wage Overestimation
@@ -122,7 +172,7 @@ The block-structured design isolates AI labeling effects from confounding factor
 
 **Technical Details:**
 - All evaluations used greedy decoding (temperature=0.0) for deterministic outputs
-- Inference powered by vLLM
+- Inference powered by vLLM 0.11.0+
 - 14 models evaluated: 4 proprietary, 10 open-weight
 
 ## Citation
