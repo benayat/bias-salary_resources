@@ -1,0 +1,2 @@
+analysis,outcome,unit,mean_ai_pct_points,mean_other_pct_points,difference_ai_minus_other_pct_points,median_ai_pct_points,median_other_pct_points,n_ai_rows,n_other_rows,t_value,p_value,status
+secondary_row_average_welch_ai_vs_other,mean_overestimation_pct_points,H1B row averaged across models,5.97351378827753,-6.065604078504621,12.039117866782151,1.4094355750772833,-10.324634818345462,1000,1000,10.625998201853763,1.1023782947058885e-25,ok

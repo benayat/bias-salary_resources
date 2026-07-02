@@ -1,0 +1,2 @@
+analysis,outcome,unit,mean_delta_pct_points_ai_minus_other,median_delta_pct_points_ai_minus_other,std_delta_pct_points_ai_minus_other,n_common_support_blocks,positive_blocks,negative_blocks,zero_blocks,t_value,p_value,sign_test_p_value,status
+primary_block_level_contrast_ttest,delta_pct_points_ai_minus_other,BLOCK_ID,11.536075074906387,8.577780659613012,25.95397416095322,530,377,153,0,10.23274473922294,1.5172700900829945e-22,7.73837241386882e-23,ok

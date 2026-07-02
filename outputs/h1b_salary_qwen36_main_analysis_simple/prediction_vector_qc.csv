@@ -1,0 +1,13 @@
+model_slug,model_family,n_rows,n_unique_rows,prediction_vector_hash,n_unique_predicted_salaries,min_predicted_salary_usd,max_predicted_salary_usd
+Llama-3.1-70B-Instruct,Llama,1990,1990,a6802f0d9d79d8ae0a04f2796a82cb98,58,62351.0,250000.0
+Llama-3.1-8B-Instruct,Llama,560,560,57cc87d9454f52da00b62cb31130f8ea,2,123000.0,123456.0
+Llama-3.2-3B-Instruct,Llama,2000,2000,c94ea7d44f41fb5e1fb79476d8bf7683,10,54200.0,964000.0
+Llama-3.3-70B-Instruct,Llama,2000,2000,0ca523f19c801327cf5722d7ad50e97b,139,65821.0,250000.0
+Olmo-3-7B-Instruct,Olmo,1433,1433,8201a1eb0caec376c2e7bfdd5ddc14a4,19,35000.0,300000.0
+Qwen2.5-32B-Instruct,Qwen,2000,2000,82461e753a0ec391132fdc8ef4c5ce51,66,55000.0,350000.0
+Qwen2.5-72B-Instruct,Qwen,2000,2000,052e7b4813eff6fbba1c99efcfb2b46d,32,55000.0,185000.0
+Qwen3-14B,Qwen,2000,2000,b12dc4faf0f3d5cf94998e7fe5a568b5,21,45000.0,250000.0
+Qwen3-32B,Qwen,2000,2000,b4b1cadbe639b7e58a1b129416d8c7e3,35,75000.0,350000.0
+Qwen3-8B,Qwen,1998,1998,7f39d6350e8a5660e9db84aacde75c73,16,75000.0,450000.0
+granite-4.1-30b,Granite,2000,2000,c03aab86b99c2c4eac6fa4452f4467e5,25,65000.0,300000.0
+granite-4.1-8b,Granite,1183,1183,3ae08a8e4f485614e455e14ea90bfb21,14,52000.0,125000.0

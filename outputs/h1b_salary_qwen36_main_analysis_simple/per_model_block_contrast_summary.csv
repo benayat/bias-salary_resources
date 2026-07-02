@@ -1,0 +1,13 @@
+analysis,model_slug,model_family,outcome,mean_delta_pct_points_ai_minus_other,median_delta_pct_points_ai_minus_other,n_common_support_blocks,positive_blocks,negative_blocks,t_value,p_value,status
+per_model_block_contrast_ttest,Llama-3.1-70B-Instruct,Llama,delta_pct_points_ai_minus_other,7.2504834907400735,5.884527578366401,524,317,152,9.18917750526008,9.286412919591072e-19,ok
+per_model_block_contrast_ttest,Llama-3.1-8B-Instruct,Llama,delta_pct_points_ai_minus_other,-1.2803152624566054,0.0,119,30,46,-0.8453715292090695,0.3996143342908334,ok
+per_model_block_contrast_ttest,Llama-3.2-3B-Instruct,Llama,delta_pct_points_ai_minus_other,48.87694422603784,0.0,530,199,202,6.123532124046368,1.7859527092883551e-09,ok
+per_model_block_contrast_ttest,Llama-3.3-70B-Instruct,Llama,delta_pct_points_ai_minus_other,7.414280943027801,6.384780289632511,530,349,151,9.37135075808329,2.0663015750210128e-19,ok
+per_model_block_contrast_ttest,Olmo-3-7B-Instruct,Olmo,delta_pct_points_ai_minus_other,9.077874849765353,4.958657485319911,281,164,67,6.928266499382838,2.926486482026639e-11,ok
+per_model_block_contrast_ttest,Qwen2.5-32B-Instruct,Qwen,delta_pct_points_ai_minus_other,6.588898799176554,5.697759951168258,530,330,165,9.065748492646232,2.4065815570429205e-18,ok
+per_model_block_contrast_ttest,Qwen2.5-72B-Instruct,Qwen,delta_pct_points_ai_minus_other,3.48105247054674,1.5091765555066647,530,286,184,5.760353123074012,1.4254626018533502e-08,ok
+per_model_block_contrast_ttest,Qwen3-14B,Qwen,delta_pct_points_ai_minus_other,9.555330204438526,6.615506778297302,530,343,143,9.30263783458912,3.6064294410621735e-19,ok
+per_model_block_contrast_ttest,Qwen3-32B,Qwen,delta_pct_points_ai_minus_other,10.005325406070225,7.361950806404609,530,344,142,9.27105296010746,4.654216251131954e-19,ok
+per_model_block_contrast_ttest,Qwen3-8B,Qwen,delta_pct_points_ai_minus_other,6.956113998521076,3.492141126455931,530,296,149,7.607654966630338,1.2861297732830233e-13,ok
+per_model_block_contrast_ttest,granite-4.1-30b,Granite,delta_pct_points_ai_minus_other,9.64637309371915,7.59701946786509,530,339,143,9.338261612598632,2.7028930936830183e-19,ok
+per_model_block_contrast_ttest,granite-4.1-8b,Granite,delta_pct_points_ai_minus_other,5.517933429453145,3.237488402513897,200,124,55,6.587177017181687,3.9140880797827217e-10,ok

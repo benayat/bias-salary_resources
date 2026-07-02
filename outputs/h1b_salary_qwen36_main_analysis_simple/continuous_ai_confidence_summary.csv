@@ -1,0 +1,2 @@
+analysis,outcome,n_rows,pearson_r,pearson_p_value,spearman_r,spearman_p_value,status
+row_average_continuous_ai_confidence_correlation,mean_overestimation_pct_points,2000,0.23457813875639594,2.0973606855273116e-26,0.2489577178252359,1.2363670783202578e-29,ok

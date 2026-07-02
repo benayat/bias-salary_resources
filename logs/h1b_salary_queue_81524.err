@@ -1,0 +1,9 @@
+rm: cannot remove '/usr/local/cuda/compat/lib': Read-only file system
+WARNING: Ignoring invalid distribution ~ransformers (/home/users/benaya7/.local/lib/python3.12/site-packages)
+WARNING: Ignoring invalid distribution ~ransformers (/home/users/benaya7/.local/lib/python3.12/site-packages)
+WARNING: Ignoring invalid distribution ~ransformers (/home/users/benaya7/.local/lib/python3.12/site-packages)
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+jax 0.10.0 requires opt_einsum, which is not installed.
+optax 0.2.8 requires absl-py>=0.7.1, which is not installed.
+orbax-checkpoint 0.11.39 requires absl-py, which is not installed.
+WARNING: Ignoring invalid distribution ~ransformers (/home/users/benaya7/.local/lib/python3.12/site-packages)
